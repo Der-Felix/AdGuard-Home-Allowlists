@@ -1,10 +1,23 @@
 # 🛡️ AdGuard Home – DNS Allowlists
 
+![Lists](https://img.shields.io/badge/Lists-73-22c55e?style=flat-square)
+![Rules](https://img.shields.io/badge/Rules-1455-22c55e?style=flat-square)
+![Bundles](https://img.shields.io/badge/Bundles-12-22c55e?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+
 **DE:** 73 kuratierte DNS-Zulassungslisten + 12 Kategorie-Pakete für AdGuard Home, damit wichtige Dienste auch bei aggressiven Blocklisten zuverlässig funktionieren.
 
 **EN:** 73 curated DNS allowlists + 12 category bundles for AdGuard Home to ensure essential services work reliably, even with aggressive blocklists.
 
-> **🔧 [Interactive Generator / Interaktiver Generator](https://der-felix.github.io/AdGuard-Home-Allowlists/)** – Pick what you need / Wähle was du brauchst
+---
+
+### 🌐 [▶ Open Interactive Generator / Interaktiven Generator öffnen](https://der-felix.github.io/AdGuard-Home-Allowlists/)
+
+> Keine Lust alle Listen einzeln rauszusuchen? Der **[Allowlist Generator](https://der-felix.github.io/AdGuard-Home-Allowlists/)** ist eine interaktive Web-App, auf der du deine Dienste auswählen und eine fertige Allowlist-Datei herunterladen oder die URLs direkt kopieren kannst.
+>
+> Don't want to pick lists manually? The **[Allowlist Generator](https://der-felix.github.io/AdGuard-Home-Allowlists/)** is an interactive web app where you can select your services and download a ready-made allowlist file or copy the URLs directly.
+
+[![Generator Preview](https://img.shields.io/badge/🔧_Generator-Live_on_GitHub_Pages-22c55e?style=for-the-badge&logoColor=white)](https://der-felix.github.io/AdGuard-Home-Allowlists/)
 
 ---
 
@@ -195,11 +208,13 @@ https://raw.githubusercontent.com/Der-Felix/AdGuard-Home-Allowlists/main/combine
 https://raw.githubusercontent.com/Der-Felix/AdGuard-Home-Allowlists/main/lists/all-combined.txt
 ```
 
-### Option 4: Interaktiver Generator
+### Option 4: Interaktiver Generator ⭐
 
-Nutze den **[Generator](https://der-felix.github.io/AdGuard-Home-Allowlists/)** um dir deine eigene kombinierte Liste zusammenzustellen.
+> **Empfohlen / Recommended** – Am einfachsten!
 
-Use the **[Generator](https://der-felix.github.io/AdGuard-Home-Allowlists/)** to build your custom combined list.
+Nutze den **[Allowlist Generator](https://der-felix.github.io/AdGuard-Home-Allowlists/)** um dir deine eigene kombinierte Liste zusammenzustellen. Dienste auswählen → Download klicken → In AdGuard Home einfügen. Fertig!
+
+Use the **[Allowlist Generator](https://der-felix.github.io/AdGuard-Home-Allowlists/)** to build your custom combined list. Select services → Click download → Add to AdGuard Home. Done!
 
 ---
 
