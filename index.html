@@ -5,1051 +5,161 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AdGuard Home Allowlist Generator</title>
 <meta name="description" content="73 curated DNS allowlists for AdGuard Home. Pick your services, generate your custom allowlist.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-
-:root {
-  --bg: #080b12;
-  --bg2: #0d1117;
-  --surface: rgba(16,21,32,0.75);
-  --surface-solid: #101520;
-  --glass: rgba(22,28,42,0.55);
-  --glass-border: rgba(74,222,128,0.08);
-  --border: rgba(255,255,255,0.06);
-  --border-hover: rgba(255,255,255,0.12);
-  --text: #e8eaf0;
-  --text2: #6b7394;
-  --text3: #3d4566;
-  --green: #4ade80;
-  --green2: #22c55e;
-  --green-glow: rgba(74,222,128,0.15);
-  --green-dim: rgba(74,222,128,0.05);
-  --radius: 14px;
-  --radius-sm: 10px;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ===== ANIMATED BACKGROUND ===== */
-.bg-grid {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.bg-grid canvas { width: 100%; height: 100%; }
-
-.bg-glow {
-  position: fixed;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.bg-glow-1 {
-  top: -200px;
-  left: 30%;
-  background: var(--green);
-  animation: glowDrift1 20s ease-in-out infinite;
-}
-
-.bg-glow-2 {
-  bottom: -300px;
-  right: 10%;
-  background: #3b82f6;
-  animation: glowDrift2 25s ease-in-out infinite;
-}
-
-@keyframes glowDrift1 {
-  0%,100% { transform: translate(0,0); }
-  50% { transform: translate(-80px, 60px); }
-}
-
-@keyframes glowDrift2 {
-  0%,100% { transform: translate(0,0); }
-  50% { transform: translate(60px, -80px); }
-}
-
-/* ===== LAYOUT ===== */
-.page { position: relative; z-index: 1; }
-
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* ===== HERO ===== */
-.hero {
-  text-align: center;
-  padding: 4rem 1.5rem 2.5rem;
-  position: relative;
-}
-
-.shield-wrap {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.shield-svg {
-  width: 88px;
-  height: 88px;
-  filter: drop-shadow(0 0 30px rgba(74,222,128,0.25));
-  animation: shieldFloat 4s ease-in-out infinite;
-}
-
-@keyframes shieldFloat {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.shield-ring {
-  position: absolute;
-  inset: -12px;
-  border-radius: 50%;
-  border: 1px solid rgba(74,222,128,0.12);
-  animation: ringPulse 3s ease-in-out infinite;
-}
-
-.shield-ring-2 {
-  inset: -24px;
-  border-color: rgba(74,222,128,0.06);
-  animation-delay: 0.5s;
-}
-
-@keyframes ringPulse {
-  0%,100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.08); opacity: 0.5; }
-}
-
-.hero h1 {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
-  animation: fadeUp 0.8s ease both;
-}
-
-.hero h1 .accent {
-  background: linear-gradient(135deg, var(--green) 0%, #6ee7b7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero p {
-  color: var(--text2);
-  font-size: 1.1rem;
-  font-weight: 400;
-  max-width: 480px;
-  margin: 0 auto;
-  animation: fadeUp 0.8s ease 0.15s both;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== STATS ===== */
-.stats-row {
-  display: flex;
-  gap: 1px;
-  justify-content: center;
-  margin: 2rem auto 2.5rem;
-  max-width: 520px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--border);
-  animation: fadeUp 0.8s ease 0.3s both;
-}
-
-.stat-cell {
-  flex: 1;
-  background: var(--surface-solid);
-  padding: 1rem 0.5rem;
-  text-align: center;
-}
-
-.stat-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--green);
-  line-height: 1.2;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.stat-cell:hover .stat-num { transform: scale(1.1); }
-
-.stat-label {
-  font-size: 0.7rem;
-  color: var(--text2);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-top: 0.15rem;
-}
-
-/* ===== TOOLBAR ===== */
-.toolbar {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  animation: fadeUp 0.8s ease 0.45s both;
-}
-
-.search-input {
-  flex: 1;
-  min-width: 220px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.92rem;
-  padding: 0.7rem 1rem 0.7rem 2.6rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--glass);
-  backdrop-filter: blur(12px);
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7394' viewBox='0 0 24 24'%3E%3Cpath d='M21 21l-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z' stroke='%236b7394' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 0.85rem center;
-}
-
-.search-input:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px var(--green-glow);
-}
-
-.search-input::placeholder { color: var(--text3); }
-
-.tool-btn {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  padding: 0.7rem 1rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--glass);
-  backdrop-filter: blur(12px);
-  color: var(--text2);
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.tool-btn:hover {
-  border-color: var(--green);
-  color: var(--green);
-  background: var(--green-dim);
-}
-
-/* ===== CATEGORIES ===== */
-.category {
-  margin-bottom: 2rem;
-  animation: fadeUp 0.6s ease both;
-}
-
-.category:nth-child(1){animation-delay:.5s}
-.category:nth-child(2){animation-delay:.57s}
-.category:nth-child(3){animation-delay:.64s}
-.category:nth-child(4){animation-delay:.71s}
-.category:nth-child(5){animation-delay:.78s}
-.category:nth-child(6){animation-delay:.85s}
-.category:nth-child(7){animation-delay:.9s}
-.category:nth-child(8){animation-delay:.95s}
-.category:nth-child(9){animation-delay:1s}
-.category:nth-child(10){animation-delay:1.05s}
-.category:nth-child(11){animation-delay:1.1s}
-.category:nth-child(12){animation-delay:1.15s}
-.category:nth-child(13){animation-delay:1.2s}
-
-.cat-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.85rem;
-  padding: 0 0.25rem;
-}
-
-.cat-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 8px currentColor;
-}
-
-.cat-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-}
-
-.cat-icon svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.cat-label {
-  font-family: 'Sora', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--text2);
-}
-
-.cat-count {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  color: var(--text3);
-  background: rgba(255,255,255,0.04);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-}
-
-.cat-toggle {
-  margin-left: auto;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text3);
-  cursor: pointer;
-  padding: 0.3rem 0.65rem;
-  border-radius: 6px;
-  transition: all 0.2s;
-  user-select: none;
-}
-
-.cat-toggle:hover {
-  color: var(--green);
-  background: var(--green-dim);
-}
-
-/* ===== SERVICE CARDS ===== */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-  gap: 0.5rem;
-}
-
-.svc {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.7rem 0.8rem;
-  background: var(--glass);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
-  overflow: hidden;
-}
-
-.svc::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--green-glow), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-
-.svc:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-1px);
-}
-
-.svc:hover::before { opacity: 0.5; }
-
-.svc.on {
-  border-color: rgba(74,222,128,0.3);
-  background: rgba(74,222,128,0.06);
-  box-shadow: 0 0 20px rgba(74,222,128,0.06), inset 0 0 20px rgba(74,222,128,0.02);
-}
-
-.svc.on::before { opacity: 1; }
-
-.svc.on .check {
-  background: var(--green2);
-  border-color: var(--green2);
-  box-shadow: 0 0 10px rgba(74,222,128,0.3);
-}
-
-.svc.on .check svg { opacity: 1; transform: scale(1); }
-
-.check {
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  border: 2px solid var(--border-hover);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.2s;
-  position: relative;
-  z-index: 1;
-}
-
-.check svg {
-  width: 12px;
-  height: 12px;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.svc-name {
-  font-size: 0.88rem;
-  font-weight: 500;
-  flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  position: relative;
-  z-index: 1;
-}
-
-.svc-rules {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--text3);
-  flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-  transition: color 0.2s;
-}
-
-.svc.on .svc-rules { color: var(--green); }
-
-/* ===== BOTTOM PANEL ===== */
-.bottom-panel {
-  position: sticky;
-  bottom: 0;
-  z-index: 100;
-  margin-top: 2rem;
-}
-
-.bottom-inner {
-  background: rgba(8,11,18,0.85);
-  backdrop-filter: blur(20px) saturate(1.2);
-  border-top: 1px solid var(--border);
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.bottom-info {
-  flex: 1;
-  min-width: 200px;
-  font-size: 0.9rem;
-  color: var(--text2);
-}
-
-.bottom-info .hl {
-  color: var(--green);
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 600;
-}
-
-.bottom-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-
-.btn {
-  font-family: 'Sora', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.6rem 1.15rem;
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  letter-spacing: 0.2px;
-}
-
-.btn:disabled { opacity: 0.3; cursor: not-allowed; pointer-events: none; }
-
-.btn-g {
-  background: linear-gradient(135deg, var(--green2), #16a34a);
-  color: #031a09;
-  box-shadow: 0 2px 12px rgba(34,197,94,0.2);
-}
-
-.btn-g:hover {
-  box-shadow: 0 4px 24px rgba(34,197,94,0.35);
-  transform: translateY(-1px);
-}
-
-.btn-o {
-  background: var(--glass);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border);
-  color: var(--text2);
-}
-
-.btn-o:hover {
-  border-color: var(--green);
-  color: var(--green);
-  background: var(--green-dim);
-}
-
-/* ===== MODAL ===== */
-.overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(6px);
-  z-index: 200;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  animation: fadeIn 0.2s ease;
-}
-
-.overlay.open { display: flex; }
-
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-.modal {
-  background: var(--surface-solid);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 2rem;
-  max-width: 720px;
-  width: 100%;
-  max-height: 85vh;
-  overflow: auto;
-  animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  box-shadow: 0 25px 80px rgba(0,0,0,0.5);
-}
-
-@keyframes modalIn {
-  from { opacity: 0; transform: scale(0.95) translateY(10px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-.modal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.25rem;
-}
-
-.modal-head h2 {
-  font-family: 'Sora', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.modal-x {
-  background: none;
-  border: none;
-  color: var(--text3);
-  font-size: 1.4rem;
-  cursor: pointer;
-  padding: 0.25rem;
-  line-height: 1;
-  border-radius: 6px;
-  transition: all 0.15s;
-}
-
-.modal-x:hover { color: var(--text); background: rgba(255,255,255,0.05); }
-
-.modal pre {
-  background: var(--bg);
-  padding: 1.25rem;
-  border-radius: var(--radius-sm);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-break: break-all;
-  max-height: 50vh;
-  overflow-y: auto;
-  line-height: 1.7;
-  color: var(--green);
-  border: 1px solid var(--border);
-}
-
-.modal .btn { margin-top: 1rem; width: 100%; justify-content: center; }
-
-/* ===== TOAST ===== */
-.toast {
-  position: fixed;
-  bottom: 5.5rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(12px);
-  background: var(--green2);
-  color: #031a09;
-  padding: 0.55rem 1.2rem;
-  border-radius: 10px;
-  font-family: 'Sora', sans-serif;
-  font-weight: 600;
-  font-size: 0.82rem;
-  opacity: 0;
-  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
-  z-index: 300;
-  pointer-events: none;
-  box-shadow: 0 8px 30px rgba(34,197,94,0.3);
-}
-
-.toast.pop { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-/* ===== GITHUB BADGE ===== */
-.gh-badge {
-  position: fixed;
-  top: 1.25rem;
-  right: 1.25rem;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text3);
-  text-decoration: none;
-  padding: 0.45rem 0.85rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--glass);
-  backdrop-filter: blur(8px);
-  transition: all 0.2s;
-}
-
-.gh-badge:hover {
-  border-color: var(--green);
-  color: var(--green);
-  background: var(--green-dim);
-}
-
-.gh-badge svg { width: 16px; height: 16px; }
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 3rem 1rem 6rem;
-  color: var(--text3);
-  font-size: 0.78rem;
-}
-
-footer a { color: var(--text2); text-decoration: none; }
-footer a:hover { color: var(--green); }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero { padding: 3rem 1rem 2rem; }
-  .shield-svg { width: 68px; height: 68px; }
-  .services { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-  .bottom-inner { flex-direction: column; text-align: center; }
-  .bottom-actions { justify-content: center; width: 100%; }
-  .btn { flex: 1; min-width: 0; justify-content: center; }
-  .stats-row { max-width: 100%; }
-}
-
-@media (max-width: 480px) {
-  .services { grid-template-columns: 1fr 1fr; gap: 0.4rem; }
-  .svc { padding: 0.6rem; gap: 0.4rem; }
-  .svc-name { font-size: 0.78rem; }
-  .toolbar { gap: 0.4rem; }
-}
-
-/* ===== SCROLLBAR ===== */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+:root{--bg:#060910;--solid:#0f1320;--glass:rgba(20,26,42,.5);--border:rgba(255,255,255,.055);--bh:rgba(255,255,255,.11);--txt:#e6e9f0;--t2:#636d8c;--t3:#353d56;--g:#4ade80;--g2:#22c55e;--g3:#16a34a;--gg:rgba(74,222,128,.14);--gd:rgba(74,222,128,.045);--r:14px;--rs:10px}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:200px}
+.bg-c{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.bg-c canvas{width:100%;height:100%}
+.glow{position:fixed;border-radius:50%;filter:blur(130px);opacity:.06;pointer-events:none;z-index:0}
+.glow-a{width:650px;height:650px;top:-220px;left:25%;background:var(--g);animation:gd1 22s ease-in-out infinite}
+.glow-b{width:500px;height:500px;bottom:-250px;right:8%;background:#6366f1;animation:gd2 28s ease-in-out infinite}
+@keyframes gd1{0%,100%{transform:translate(0,0)}50%{transform:translate(-90px,70px)}}
+@keyframes gd2{0%,100%{transform:translate(0,0)}50%{transform:translate(70px,-90px)}}
+.page{position:relative;z-index:1}.wrap{max-width:1140px;margin:0 auto;padding:0 1.5rem}
+.hero{text-align:center;padding:3.5rem 1.5rem 1.5rem}
+.sw{display:inline-block;margin-bottom:1.2rem;position:relative}
+.ss{width:80px;height:80px;filter:drop-shadow(0 0 28px rgba(74,222,128,.22));animation:sf 4s ease-in-out infinite}
+@keyframes sf{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.sr{position:absolute;border-radius:50%;border:1px solid rgba(74,222,128,.1);animation:rp 3s ease-in-out infinite}
+.sr1{inset:-10px}.sr2{inset:-22px;border-color:rgba(74,222,128,.05);animation-delay:.5s}
+@keyframes rp{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.45}}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(1.8rem,4.5vw,2.9rem);font-weight:800;letter-spacing:-1.2px;line-height:1.15;margin-bottom:.55rem;animation:fu .7s ease both}
+.hero h1 .ac{background:linear-gradient(135deg,var(--g),#6ee7b7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--t2);font-size:1rem;max-width:460px;margin:0 auto;animation:fu .7s ease .12s both}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.stats{display:flex;gap:1px;justify-content:center;margin:1.5rem auto 1.8rem;max-width:500px;border-radius:var(--r);overflow:hidden;background:var(--border);animation:fu .7s ease .25s both}
+.st{flex:1;background:var(--solid);padding:.85rem .5rem;text-align:center;transition:background .2s}.st:hover{background:#131828}
+.sn{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:600;color:var(--g);line-height:1.2}
+.sl{font-size:.65rem;color:var(--t2);text-transform:uppercase;letter-spacing:1.5px;margin-top:.1rem}
+.presets{display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;animation:fu .7s ease .35s both}
+.preset{font-family:'Sora',sans-serif;font-size:.72rem;font-weight:600;padding:.45rem .85rem;border-radius:20px;border:1px solid var(--border);background:var(--glass);backdrop-filter:blur(8px);color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap;letter-spacing:.3px}
+.preset:hover{border-color:var(--g);color:var(--g);background:var(--gd);transform:translateY(-1px)}
+.preset.active{border-color:var(--g2);color:var(--bg);background:var(--g2);box-shadow:0 2px 14px rgba(34,197,94,.25)}
+.toolbar{display:flex;gap:.45rem;margin-bottom:1.8rem;flex-wrap:wrap;animation:fu .7s ease .4s both}
+.qi{flex:1;min-width:200px;font-family:'DM Sans',sans-serif;font-size:.9rem;padding:.65rem .9rem .65rem 2.4rem;border-radius:var(--rs);border:1px solid var(--border);background:var(--glass);backdrop-filter:blur(10px);color:var(--txt);outline:none;transition:border-color .2s,box-shadow .2s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'%3E%3Cpath d='M21 21l-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z' stroke='%23636d8c' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:.8rem center}
+.qi:focus{border-color:var(--g);box-shadow:0 0 0 3px var(--gg)}.qi::placeholder{color:var(--t3)}
+.tb{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;padding:.65rem .9rem;border-radius:var(--rs);border:1px solid var(--border);background:var(--glass);backdrop-filter:blur(10px);color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.tb:hover{border-color:var(--g);color:var(--g);background:var(--gd)}
+.cat{margin-bottom:1.8rem;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}.cat.vis{opacity:1;transform:translateY(0)}
+.cb{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;padding:0 .15rem}
+.cd{width:7px;height:7px;border-radius:50%;flex-shrink:0;box-shadow:0 0 7px currentColor}
+.ci{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;flex-shrink:0}.ci svg{width:100%;height:100%;display:block}
+.cl{font-family:'Sora',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--t2)}
+.cc{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--t3);background:rgba(255,255,255,.03);padding:.12rem .45rem;border-radius:3px}
+.ct{margin-left:auto;font-size:.7rem;font-weight:500;color:var(--t3);cursor:pointer;padding:.25rem .55rem;border-radius:5px;transition:all .2s;user-select:none}.ct:hover{color:var(--g);background:var(--gd)}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:.45rem}
+.sv{position:relative;display:flex;align-items:center;gap:.55rem;padding:.62rem .72rem;background:var(--glass);backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;user-select:none;transition:all .18s cubic-bezier(.4,0,.2,1);overflow:hidden}
+.sv::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gg),transparent 55%);opacity:0;transition:opacity .25s;pointer-events:none}
+.sv:hover{border-color:var(--bh);transform:translateY(-1px)}.sv:hover::before{opacity:.4}.sv:active{transform:scale(.985)}
+.sv.on{border-color:rgba(74,222,128,.28);background:rgba(74,222,128,.05);box-shadow:0 0 16px rgba(74,222,128,.04),inset 0 0 16px rgba(74,222,128,.015)}
+.sv.on::before{opacity:1}.sv.on .ck{background:var(--g2);border-color:var(--g2);box-shadow:0 0 8px rgba(74,222,128,.25)}.sv.on .ck svg{opacity:1;transform:scale(1)}.sv.on .ru{color:var(--g)}
+.ck{width:18px;height:18px;border-radius:5px;border:2px solid var(--bh);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s;position:relative;z-index:1}
+.ck svg{width:11px;height:11px;opacity:0;transform:scale(.4);transition:all .18s cubic-bezier(.34,1.56,.64,1)}
+.nm{font-size:.84rem;font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative;z-index:1}
+.ru{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--t3);flex-shrink:0;position:relative;z-index:1;transition:color .2s}
+.ripple{position:absolute;border-radius:50%;background:rgba(74,222,128,.1);transform:scale(0);animation:rip .5s ease-out forwards;pointer-events:none;z-index:0}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+.bp{position:sticky;bottom:0;z-index:100;margin-top:1.5rem}
+.bi{background:rgba(6,9,16,.88);backdrop-filter:blur(22px) saturate(1.3);border-top:1px solid var(--border);padding:.9rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1140px;margin:0 auto}
+.bl{flex:1;min-width:180px;font-size:.88rem;color:var(--t2)}.bl .h{color:var(--g);font-family:'JetBrains Mono',monospace;font-weight:600}
+.pr{width:36px;height:36px;flex-shrink:0}.pr circle{transition:stroke-dashoffset .4s cubic-bezier(.4,0,.2,1)}
+.ba{display:flex;gap:.45rem;flex-wrap:wrap}
+.btn{font-family:'Sora',sans-serif;font-size:.78rem;font-weight:600;padding:.55rem 1.05rem;border-radius:var(--rs);border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.3rem;letter-spacing:.2px}
+.btn:disabled{opacity:.25;cursor:not-allowed;pointer-events:none}
+.bg2{background:linear-gradient(135deg,var(--g2),var(--g3));color:#031a09;box-shadow:0 2px 10px rgba(34,197,94,.18)}.bg2:hover{box-shadow:0 4px 22px rgba(34,197,94,.32);transform:translateY(-1px)}
+.bo{background:var(--glass);backdrop-filter:blur(6px);border:1px solid var(--border);color:var(--t2)}.bo:hover{border-color:var(--g);color:var(--g);background:var(--gd)}
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(5px);z-index:200;align-items:center;justify-content:center;padding:1.5rem}
+.ov.open{display:flex;animation:fi .2s ease}@keyframes fi{from{opacity:0}to{opacity:1}}
+.mo{background:var(--solid);border:1px solid var(--border);border-radius:16px;padding:1.75rem;max-width:700px;width:100%;max-height:84vh;overflow:auto;animation:mi .3s cubic-bezier(.34,1.56,.64,1);box-shadow:0 22px 70px rgba(0,0,0,.5)}
+@keyframes mi{from{opacity:0;transform:scale(.95) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mh{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}.mh h2{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600}
+.mx{background:none;border:none;color:var(--t3);font-size:1.3rem;cursor:pointer;padding:.2rem;line-height:1;border-radius:5px;transition:all .15s}.mx:hover{color:var(--txt);background:rgba(255,255,255,.04)}
+.mo pre{background:var(--bg);padding:1.1rem;border-radius:var(--rs);font-family:'JetBrains Mono',monospace;font-size:.7rem;overflow-x:auto;white-space:pre-wrap;word-break:break-all;max-height:48vh;overflow-y:auto;line-height:1.7;color:var(--g);border:1px solid var(--border)}
+.mo .btn{margin-top:.85rem;width:100%;justify-content:center}
+.toast{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%) translateY(10px);background:var(--g2);color:#031a09;padding:.5rem 1.1rem;border-radius:9px;font-family:'Sora',sans-serif;font-weight:600;font-size:.78rem;opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);z-index:300;pointer-events:none;box-shadow:0 6px 25px rgba(34,197,94,.28)}.toast.pop{opacity:1;transform:translateX(-50%) translateY(0)}
+.gh{position:fixed;top:1.1rem;right:1.1rem;z-index:50;display:flex;align-items:center;gap:.35rem;font-family:'Sora',sans-serif;font-size:.72rem;font-weight:600;color:var(--t3);text-decoration:none;padding:.4rem .75rem;border-radius:7px;border:1px solid var(--border);background:var(--glass);backdrop-filter:blur(8px);transition:all .2s}
+.gh:hover{border-color:var(--g);color:var(--g);background:var(--gd)}.gh svg{width:15px;height:15px}
+footer{text-align:center;padding:2.5rem 1rem 5.5rem;color:var(--t3);font-size:.72rem}footer a{color:var(--t2);text-decoration:none}footer a:hover{color:var(--g)}
+@media(max-width:768px){.hero{padding:2.5rem 1rem 1.2rem}.ss{width:64px;height:64px}.sg{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}.bi{flex-direction:column;text-align:center;gap:.65rem}.ba{justify-content:center;width:100%}.btn{flex:1;min-width:0;justify-content:center}.stats{max-width:100%}.pr{display:none}}
+@media(max-width:480px){.sg{grid-template-columns:1fr 1fr;gap:.35rem}.sv{padding:.5rem .55rem;gap:.35rem}.nm{font-size:.75rem}.toolbar{gap:.35rem}}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bh);border-radius:3px}
 </style>
 </head>
 <body>
-
-<!-- Background -->
-<div class="bg-grid"><canvas id="gridCanvas"></canvas></div>
-<div class="bg-glow bg-glow-1"></div>
-<div class="bg-glow bg-glow-2"></div>
-
-<!-- GitHub Badge -->
-<a class="gh-badge" href="https://github.com/Der-Felix/AdGuard-Home-Allowlists" target="_blank">
-  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-  Star on GitHub
-</a>
-
+<div class="bg-c"><canvas id="gc"></canvas></div><div class="glow glow-a"></div><div class="glow glow-b"></div>
+<a class="gh" href="https://github.com/Der-Felix/AdGuard-Home-Allowlists" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
 <div class="page">
-  <!-- Hero -->
-  <header class="hero">
-    <div class="shield-wrap">
-      <div class="shield-ring"></div>
-      <div class="shield-ring shield-ring-2"></div>
-      <svg class="shield-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="shieldGrad" x1="10" y1="0" x2="90" y2="120" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#4ade80"/>
-            <stop offset="100%" stop-color="#16a34a"/>
-          </linearGradient>
-          <filter id="shieldGlow">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <path d="M50 5L10 25V55C10 82 50 115 50 115S90 82 90 55V25L50 5Z" fill="url(#shieldGrad)" opacity="0.12" filter="url(#shieldGlow)"/>
-        <path d="M50 5L10 25V55C10 82 50 115 50 115S90 82 90 55V25L50 5Z" stroke="url(#shieldGrad)" stroke-width="2.5" fill="none">
-          <animate attributeName="stroke-dasharray" values="0 400;320 400" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-        </path>
-        <path d="M35 58L46 69L68 45" stroke="#4ade80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0">
-          <animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.2s" fill="freeze"/>
-          <animate attributeName="stroke-dasharray" values="0 60;60 60" dur="0.5s" begin="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-        </path>
-      </svg>
-    </div>
-    <h1>AdGuard <span class="accent">Allowlist</span> Generator</h1>
-    <p>Wähle deine Dienste, generiere deine Allowlist. Pick services, build your list.</p>
-  </header>
-
-  <!-- Stats -->
-  <div class="container">
-    <div class="stats-row">
-      <div class="stat-cell">
-        <div class="stat-num" id="sTotal">73</div>
-        <div class="stat-label">Listen</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num" id="sRules">1455</div>
-        <div class="stat-label">Regeln</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num" id="sPicked">0</div>
-        <div class="stat-label">Gewählt</div>
-      </div>
-    </div>
-
-    <!-- Toolbar -->
-    <div class="toolbar">
-      <input class="search-input" type="text" placeholder="Suchen / Search …" id="q">
-      <button class="tool-btn" onclick="pickAll()">✓ Alle</button>
-      <button class="tool-btn" onclick="pickNone()">✕ Keine</button>
-    </div>
-
-    <!-- Categories -->
-    <div id="cats"></div>
-  </div>
-
-  <!-- Bottom Panel -->
-  <div class="bottom-panel">
-    <div class="bottom-inner">
-      <div class="bottom-info">
-        <span class="hl" id="bRules">0</span> Regeln aus <span class="hl" id="bSvc">0</span> Diensten
-      </div>
-      <div class="bottom-actions">
-        <button class="btn btn-o" onclick="showUrls()" id="xUrl" disabled>📋 URLs</button>
-        <button class="btn btn-o" onclick="showPreview()" id="xPre" disabled>👁 Vorschau</button>
-        <button class="btn btn-g" onclick="dl()" id="xDl" disabled>⬇ Download</button>
-      </div>
-    </div>
-  </div>
-
-  <footer>Made with 🛡️ by <a href="https://github.com/Der-Felix" target="_blank">Der-Felix</a></footer>
-</div>
-
-<!-- Modal -->
-<div class="overlay" id="ov">
-  <div class="modal">
-    <div class="modal-head">
-      <h2 id="mT"></h2>
-      <button class="modal-x" onclick="closeM()">✕</button>
-    </div>
-    <pre id="mB"></pre>
-    <button class="btn btn-g" onclick="copyM()">📋 Kopieren / Copy</button>
-  </div>
-</div>
-
+<header class="hero"><div class="sw"><div class="sr sr1"></div><div class="sr sr2"></div>
+<svg class="ss" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sg" x1="10" y1="0" x2="90" y2="120" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#16a34a"/></linearGradient><filter id="gf"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M50 5L10 25V55C10 82 50 115 50 115S90 82 90 55V25L50 5Z" fill="url(#sg)" opacity=".1" filter="url(#gf)"/><path d="M50 5L10 25V55C10 82 50 115 50 115S90 82 90 55V25L50 5Z" stroke="url(#sg)" stroke-width="2.5" fill="none"><animate attributeName="stroke-dasharray" values="0 400;320 400" dur="1.4s" fill="freeze" calcMode="spline" keySplines=".4 0 .2 1"/></path><path d="M35 58L46 69L68 45" stroke="#4ade80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0"><animate attributeName="opacity" values="0;1" dur=".25s" begin="1.1s" fill="freeze"/><animate attributeName="stroke-dasharray" values="0 60;60 60" dur=".45s" begin="1.1s" fill="freeze" calcMode="spline" keySplines=".4 0 .2 1"/></path></svg></div>
+<h1>AdGuard <span class="ac">Allowlist</span> Generator</h1><p>Wähle deine Dienste, generiere deine Allowlist. Pick services, build your list.</p></header>
+<div class="wrap">
+<div class="stats"><div class="st"><div class="sn" id="sT">73</div><div class="sl">Listen</div></div><div class="st"><div class="sn" id="sR">1455</div><div class="sl">Regeln</div></div><div class="st"><div class="sn" id="sP">0</div><div class="sl">Gewählt</div></div></div>
+<div class="presets" id="presets"><button class="preset" data-p="essential">⚡ Essentials</button><button class="preset" data-p="privacy">🔐 Privacy First</button><button class="preset" data-p="entertainment">🎬 Entertainment</button><button class="preset" data-p="german">🇩🇪 German Pack</button><button class="preset" data-p="work">💼 Remote Work</button><button class="preset" data-p="family">👨‍👩‍👧‍👦 Family</button></div>
+<div class="toolbar"><input class="qi" type="text" placeholder="Suchen / Search …" id="q"><button class="tb" onclick="pickAll()">✓ Alle</button><button class="tb" onclick="pickNone()">✕ Keine</button></div>
+<div id="cats"></div></div>
+<div class="bp"><div class="bi">
+<svg class="pr" viewBox="0 0 36 36" id="ring"><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--border)" stroke-width="2.5"/><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--g2)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="97.4" stroke-dashoffset="97.4" transform="rotate(-90 18 18)" id="ringC"/></svg>
+<div class="bl"><span class="h" id="bR">0</span> Regeln aus <span class="h" id="bS">0</span> Diensten</div>
+<div class="ba"><button class="btn bo" onclick="showUrls()" id="xU" disabled>📋 URLs</button><button class="btn bo" onclick="showPre()" id="xP" disabled>👁 Vorschau</button><button class="btn bg2" onclick="dl()" id="xD" disabled>⬇ Download</button></div>
+</div></div>
+<footer>Made with 🛡️ by <a href="https://github.com/Der-Felix" target="_blank" rel="noopener">Der-Felix</a> · <a href="https://github.com/Der-Felix/AdGuard-Home-Allowlists" target="_blank" rel="noopener">View Source</a></footer></div>
+<div class="ov" id="ov"><div class="mo"><div class="mh"><h2 id="mT"></h2><button class="mx" onclick="closeM()">✕</button></div><pre id="mB"></pre><button class="btn bg2" onclick="copyM()">📋 Kopieren / Copy</button></div></div>
 <div class="toast" id="toast">Kopiert! ✓</div>
-
 <script>
-/* ===== BACKGROUND GRID ===== */
-(function(){
-  const c=document.getElementById('gridCanvas'),ctx=c.getContext('2d');
-  let w,h,dots=[];
-  const SP=40,MA=0.12;
-  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight;dots=[];for(let x=SP;x<w;x+=SP)for(let y=SP;y<h;y+=SP)dots.push({x,y,b:Math.random()*Math.PI*2})}
-  let mx=-999,my=-999;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-  function draw(t){ctx.clearRect(0,0,w,h);for(const d of dots){const dx=d.x-mx,dy=d.y-my,dist=Math.sqrt(dx*dx+dy*dy),prox=Math.max(0,1-dist/200),pulse=Math.sin(t*.001+d.b)*.3+.7,alpha=(MA*pulse+prox*.25)*.7,sz=1+prox*1.5;ctx.beginPath();ctx.arc(d.x,d.y,sz,0,Math.PI*2);ctx.fillStyle=`rgba(74,222,128,${alpha})`;ctx.fill()}requestAnimationFrame(draw)}
-  window.addEventListener('resize',resize);resize();requestAnimationFrame(draw);
-})();
+(function(){const c=document.getElementById('gc'),x=c.getContext('2d');let w,h,d=[];function rs(){w=c.width=innerWidth;h=c.height=innerHeight;d=[];for(let a=35;a<w;a+=35)for(let b=35;b<h;b+=35)d.push({x:a,y:b,p:Math.random()*Math.PI*2})}let mx=-999,my=-999;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});function dr(t){x.clearRect(0,0,w,h);for(const p of d){const dx=p.x-mx,dy=p.y-my,ds=Math.sqrt(dx*dx+dy*dy),pr=Math.max(0,1-ds/180),pu=Math.sin(t*.001+p.p)*.3+.7,a=(.1*pu+pr*.22)*.7,s=.8+pr*1.8;x.beginPath();x.arc(p.x,p.y,s,0,Math.PI*2);x.fillStyle=`rgba(74,222,128,${a})`;x.fill()}requestAnimationFrame(dr)}addEventListener('resize',rs);rs();requestAnimationFrame(dr)})();
 
-/* ===== DATA ===== */
 const R='https://raw.githubusercontent.com/Der-Felix/AdGuard-Home-Allowlists/main';
 const C=[
-  {id:'ai',icon:'🤖',l:'AI Services',c:'#c084fc',s:[{id:'chatgpt',n:'ChatGPT / OpenAI',r:20},{id:'claude-ai',n:'Claude / Anthropic',r:13},{id:'gemini',n:'Google Gemini',r:12},{id:'midjourney',n:'Midjourney',r:11},{id:'perplexity',n:'Perplexity AI',r:5},{id:'deepl',n:'DeepL',r:7},{id:'copilot',n:'Microsoft Copilot',r:14},{id:'huggingface',n:'Hugging Face',r:9}]},
-  {id:'social',icon:'💬',l:'Social Media',c:'#f472b6',s:[{id:'instagram',n:'Instagram',r:17},{id:'facebook',n:'Facebook',r:26},{id:'tiktok',n:'TikTok',r:24},{id:'twitter',n:'X (Twitter)',r:20},{id:'reddit',n:'Reddit',r:21},{id:'pinterest',n:'Pinterest',r:11},{id:'linkedin',n:'LinkedIn',r:11},{id:'snapchat',n:'Snapchat',r:16},{id:'mastodon',n:'Mastodon',r:13},{id:'threads',n:'Threads',r:9},{id:'bluesky',n:'Bluesky',r:9}]},
-  {id:'stream',icon:'📺',l:'Streaming & Media',c:'#fb923c',s:[{id:'youtube',n:'YouTube',r:36},{id:'spotify',n:'Spotify',r:45},{id:'netflix',n:'Netflix',r:21},{id:'disneyplus',n:'Disney+',r:24},{id:'primevideo',n:'Prime Video',r:16},{id:'appletv',n:'Apple TV+',r:15},{id:'crunchyroll',n:'Crunchyroll',r:13},{id:'paramountplus',n:'Paramount+',r:11},{id:'dazn',n:'DAZN',r:13},{id:'plex',n:'Plex',r:21},{id:'twitch',n:'Twitch',r:24},{id:'ard-zdf',n:'ARD & ZDF',r:29},{id:'joyn',n:'Joyn',r:8},{id:'rtlplus',n:'RTL+',r:9}]},
-  {id:'msg',icon:'✉️',l:'Messaging',c:'#22d3ee',s:[{id:'whatsapp',n:'WhatsApp',r:28},{id:'signal',n:'Signal',r:20},{id:'telegram',n:'Telegram',r:19},{id:'slack',n:'Slack',r:19},{id:'zoom',n:'Zoom',r:17},{id:'discord',n:'Discord',r:18}]},
-  {id:'game',icon:'🎮',l:'Gaming',c:'#f87171',s:[{id:'steam',n:'Steam',r:25},{id:'epicgames',n:'Epic Games',r:16},{id:'playstation',n:'PlayStation',r:15},{id:'nintendo',n:'Nintendo',r:16},{id:'riotgames',n:'Riot Games',r:16},{id:'xbox',n:'Xbox',r:17}]},
-  {id:'apple',icon:'🍎',l:'Apple',c:'#e2e4ea',s:[{id:'icloud',n:'iCloud & Apple',r:82},{id:'icloud-privaterelay',n:'Private Relay',r:15}]},
-  {id:'goog',icon:'🔍',l:'Google',c:'#60a5fa',s:[{id:'google',n:'Google Services',r:80},{id:'googlehome',n:'Google Home',r:17}]},
-  {id:'ms',icon:'🪟',l:'Microsoft',c:'#60a5fa',s:[{id:'microsoft',n:'Microsoft 365',r:60}]},
-  {id:'vpn',icon:'🔐',l:'VPN & Security',c:'#4ade80',s:[{id:'nordvpn',n:'NordVPN',r:28},{id:'mullvad',n:'Mullvad',r:11},{id:'expressvpn',n:'ExpressVPN',r:10},{id:'cloudflare',n:'Cloudflare',r:21},{id:'bitwarden',n:'Bitwarden',r:13},{id:'proton',n:'Proton',r:32},{id:'tailscale',n:'Tailscale',r:12},{id:'wireguard',n:'WireGuard',r:4}]},
-  {id:'home',icon:'🏠',l:'Smart Home',c:'#facc15',s:[{id:'alexa',n:'Alexa',r:17},{id:'googlehome',n:'Google Home',r:17},{id:'homeassistant',n:'Home Assistant',r:12},{id:'sonos',n:'Sonos',r:10}]},
-  {id:'mail',icon:'📧',l:'E-Mail & Cloud',c:'#22d3ee',s:[{id:'gmx',n:'GMX & WEB.DE',r:34},{id:'dropbox',n:'Dropbox',r:15},{id:'mega',n:'MEGA',r:9}]},
-  {id:'shop',icon:'💳',l:'Shopping & Finance',c:'#fb923c',s:[{id:'amazon',n:'Amazon',r:36},{id:'paypal',n:'PayPal',r:23},{id:'ebay',n:'eBay',r:18},{id:'klarna',n:'Klarna',r:10},{id:'banking-de',n:'German Banking',r:27}]},
-  {id:'util',icon:'🔧',l:'Utilities',c:'#8b90a5',s:[{id:'github',n:'GitHub',r:28},{id:'mozilla',n:'Firefox',r:25},{id:'letsencrypt',n:"Let's Encrypt",r:13},{id:'dhl',n:'DHL',r:14}]}
+{id:'ai',l:'AI Services',c:'#c084fc',s:[{id:'chatgpt',n:'ChatGPT / OpenAI',r:20},{id:'claude-ai',n:'Claude / Anthropic',r:13},{id:'gemini',n:'Google Gemini',r:12},{id:'midjourney',n:'Midjourney',r:11},{id:'perplexity',n:'Perplexity AI',r:5},{id:'deepl',n:'DeepL',r:7},{id:'copilot',n:'Microsoft Copilot',r:14},{id:'huggingface',n:'Hugging Face',r:9}]},
+{id:'social',l:'Social Media',c:'#f472b6',s:[{id:'instagram',n:'Instagram',r:17},{id:'facebook',n:'Facebook',r:26},{id:'tiktok',n:'TikTok',r:24},{id:'twitter',n:'X (Twitter)',r:20},{id:'reddit',n:'Reddit',r:21},{id:'pinterest',n:'Pinterest',r:11},{id:'linkedin',n:'LinkedIn',r:11},{id:'snapchat',n:'Snapchat',r:16},{id:'mastodon',n:'Mastodon',r:13},{id:'threads',n:'Threads',r:9},{id:'bluesky',n:'Bluesky',r:9}]},
+{id:'stream',l:'Streaming & Media',c:'#fb923c',s:[{id:'youtube',n:'YouTube',r:36},{id:'spotify',n:'Spotify',r:45},{id:'netflix',n:'Netflix',r:21},{id:'disneyplus',n:'Disney+',r:24},{id:'primevideo',n:'Prime Video',r:16},{id:'appletv',n:'Apple TV+',r:15},{id:'crunchyroll',n:'Crunchyroll',r:13},{id:'paramountplus',n:'Paramount+',r:11},{id:'dazn',n:'DAZN',r:13},{id:'plex',n:'Plex',r:21},{id:'twitch',n:'Twitch',r:24},{id:'ard-zdf',n:'ARD & ZDF',r:29},{id:'joyn',n:'Joyn',r:8},{id:'rtlplus',n:'RTL+',r:9}]},
+{id:'msg',l:'Messaging',c:'#22d3ee',s:[{id:'whatsapp',n:'WhatsApp',r:28},{id:'signal',n:'Signal',r:20},{id:'telegram',n:'Telegram',r:19},{id:'slack',n:'Slack',r:19},{id:'zoom',n:'Zoom',r:17},{id:'discord',n:'Discord',r:18}]},
+{id:'game',l:'Gaming',c:'#f87171',s:[{id:'steam',n:'Steam',r:25},{id:'epicgames',n:'Epic Games',r:16},{id:'playstation',n:'PlayStation',r:15},{id:'nintendo',n:'Nintendo',r:16},{id:'riotgames',n:'Riot Games',r:16},{id:'xbox',n:'Xbox',r:17}]},
+{id:'apple',l:'Apple',c:'#e2e4ea',s:[{id:'icloud',n:'iCloud & Apple',r:82},{id:'icloud-privaterelay',n:'Private Relay',r:15}]},
+{id:'goog',l:'Google',c:'#60a5fa',s:[{id:'google',n:'Google Services',r:80},{id:'googlehome',n:'Google Home',r:17}]},
+{id:'ms',l:'Microsoft',c:'#60a5fa',s:[{id:'microsoft',n:'Microsoft 365',r:60}]},
+{id:'vpn',l:'VPN & Security',c:'#4ade80',s:[{id:'nordvpn',n:'NordVPN',r:28},{id:'mullvad',n:'Mullvad',r:11},{id:'expressvpn',n:'ExpressVPN',r:10},{id:'cloudflare',n:'Cloudflare',r:21},{id:'bitwarden',n:'Bitwarden',r:13},{id:'proton',n:'Proton',r:32},{id:'tailscale',n:'Tailscale',r:12},{id:'wireguard',n:'WireGuard',r:4}]},
+{id:'home',l:'Smart Home',c:'#facc15',s:[{id:'alexa',n:'Alexa',r:17},{id:'googlehome',n:'Google Home',r:17},{id:'homeassistant',n:'Home Assistant',r:12},{id:'sonos',n:'Sonos',r:10}]},
+{id:'mail',l:'E-Mail & Cloud',c:'#22d3ee',s:[{id:'gmx',n:'GMX & WEB.DE',r:34},{id:'dropbox',n:'Dropbox',r:15},{id:'mega',n:'MEGA',r:9}]},
+{id:'shop',l:'Shopping & Finance',c:'#fb923c',s:[{id:'amazon',n:'Amazon',r:36},{id:'paypal',n:'PayPal',r:23},{id:'ebay',n:'eBay',r:18},{id:'klarna',n:'Klarna',r:10},{id:'banking-de',n:'German Banking',r:27}]},
+{id:'util',l:'Utilities',c:'#8b90a5',s:[{id:'github',n:'GitHub',r:28},{id:'mozilla',n:'Firefox',r:25},{id:'letsencrypt',n:"Let's Encrypt",r:13},{id:'dhl',n:'DHL',r:14}]}
 ];
+const PRESETS={essential:['google','icloud','whatsapp','youtube','spotify','paypal','github','letsencrypt','mozilla','bitwarden'],privacy:['proton','signal','mullvad','bitwarden','mozilla','tailscale','wireguard','letsencrypt','cloudflare','mastodon'],entertainment:['youtube','spotify','netflix','disneyplus','primevideo','twitch','crunchyroll','plex','steam','discord','appletv','dazn','paramountplus'],german:['gmx','ard-zdf','joyn','rtlplus','dhl','banking-de','ebay','klarna','amazon','paypal','google'],work:['google','microsoft','slack','zoom','github','dropbox','linkedin','cloudflare','chatgpt','claude-ai','copilot','letsencrypt'],family:['youtube','spotify','netflix','disneyplus','whatsapp','icloud','google','nintendo','amazon','dhl','paypal','homeassistant','alexa']};
+const IC={ai:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C7.6 2 4 5.4 4 9.5c0 2.4 1.2 4.5 3 5.8V18a2 2 0 002 2h6a2 2 0 002-2v-2.7c1.8-1.3 3-3.4 3-5.8C20 5.4 16.4 2 12 2z" opacity=".2" fill="currentColor"><animate attributeName="opacity" values=".1;.28;.1" dur="3s" repeatCount="indefinite"/></path><path d="M12 2C7.6 2 4 5.4 4 9.5c0 2.4 1.2 4.5 3 5.8V18a2 2 0 002 2h6a2 2 0 002-2v-2.7c1.8-1.3 3-3.4 3-5.8C20 5.4 16.4 2 12 2z"/><circle cx="9" cy="9.5" r="1" fill="currentColor"><animate attributeName="r" values="1;1.4;1" dur="2s" repeatCount="indefinite"/></circle><circle cx="15" cy="9.5" r="1" fill="currentColor"><animate attributeName="r" values="1;1.4;1" dur="2s" begin=".4s" repeatCount="indefinite"/></circle><path d="M9 13.5s1.2 1.5 3 1.5 3-1.5 3-1.5"/></svg>`,social:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="8" width="12" height="9" rx="3" fill="currentColor" opacity=".12"/><rect x="9" y="8" width="12" height="9" rx="3"/><path d="M12 20.5l2-2.5h4"/><circle cx="13" cy="12.5" r=".7" fill="currentColor"><animate attributeName="opacity" values="1;.3;1" dur="1.5s" repeatCount="indefinite"/></circle><circle cx="16" cy="12.5" r=".7" fill="currentColor"><animate attributeName="opacity" values="1;.3;1" dur="1.5s" begin=".25s" repeatCount="indefinite"/></circle><circle cx="19" cy="12.5" r=".7" fill="currentColor"><animate attributeName="opacity" values="1;.3;1" dur="1.5s" begin=".5s" repeatCount="indefinite"/></circle></svg>`,stream:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" opacity=".2"><animate attributeName="r" values="9;10;9" dur="3s" repeatCount="indefinite"/></circle><circle cx="12" cy="12" r="9"/><polygon points="10,7.5 10,16.5 18,12" fill="currentColor" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2.5s" repeatCount="indefinite"/></polygon></svg>`,msg:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g><animateTransform attributeName="transform" type="translate" values="0,0;.8,-.8;0,0" dur="3s" repeatCount="indefinite"/><polygon points="22,2 15,22 11,13 2,9" fill="currentColor" opacity=".1"/><polygon points="22,2 15,22 11,13 2,9"/><path d="M22 2L11 13"/></g></svg>`,game:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g><animateTransform attributeName="transform" type="rotate" values="0 12 12;-1.5 12 12;0 12 12;1.5 12 12;0 12 12" dur="4s" repeatCount="indefinite"/><rect x="3" y="6" width="18" height="12" rx="5" fill="currentColor" opacity=".08"/><rect x="3" y="6" width="18" height="12" rx="5"/><path d="M6 11h4M8 9v4" opacity=".7"/><circle cx="16" cy="10" r=".8" fill="currentColor"/><circle cx="18" cy="12" r=".8" fill="currentColor"/></g></svg>`,apple:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 7.5C19.5 9 21 11.5 20 15c-1 3.5-3.5 6-5.5 6s-2-.8-3-.8-1.5.8-3 .8-4-2.5-5-6 0-6 2-8 3.5-2 5-1.5c1-.3 1.5-.5 2.5-.5s1.5.2 2.5.5c1.5-.5 3-.5 4.5 0z" fill="currentColor" opacity=".12"/><path d="M17.5 7.5C19.5 9 21 11.5 20 15c-1 3.5-3.5 6-5.5 6s-2-.8-3-.8-1.5.8-3 .8-4-2.5-5-6 0-6 2-8 3.5-2 5-1.5c1-.3 1.5-.5 2.5-.5s1.5.2 2.5.5c1.5-.5 3-.5 4.5 0z"/><path d="M12 3c-1-1.5-3-2-4.5-1.5" opacity=".6"/></svg>`,goog:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5" fill="currentColor" opacity=".08"><animate attributeName="r" values="6.5;7;6.5" dur="3s" repeatCount="indefinite"/></circle><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke-width="2"/></svg>`,ms:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="8" rx="1.5" fill="currentColor" opacity=".12"><animate attributeName="opacity" values=".12;.3;.12" dur="3s" repeatCount="indefinite"/></rect><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5" fill="currentColor" opacity=".12"><animate attributeName="opacity" values=".12;.3;.12" dur="3s" begin=".4s" repeatCount="indefinite"/></rect><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>`,vpn:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v5c0 5.5 3.4 10.3 8 12 4.6-1.7 8-6.5 8-12V6l-8-4z" fill="currentColor" opacity=".1"><animate attributeName="opacity" values=".06;.18;.06" dur="3s" repeatCount="indefinite"/></path><path d="M12 2L4 6v5c0 5.5 3.4 10.3 8 12 4.6-1.7 8-6.5 8-12V6l-8-4z"/><rect x="9.5" y="11" width="5" height="4.5" rx="1"/><path d="M10.5 11V9.5a1.5 1.5 0 013 0V11"><animate attributeName="stroke-dasharray" values="0,20;12,20;12,20;0,20" dur="4s" repeatCount="indefinite"/></path></svg>`,home:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V10.5z" fill="currentColor" opacity=".08"/><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V10.5z"/><circle cx="12" cy="10" r="1.3" fill="currentColor" opacity=".5"><animate attributeName="r" values="1.3;2;1.3" dur="2.5s" repeatCount="indefinite"/></circle></svg>`,mail:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 5l10 8 10-8"/></svg>`,shop:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1h4l2.7 13.4a1 1 0 001 .8h9.7a1 1 0 001-.8L22 6H6"/><circle cx="9.5" cy="20" r="1.3" fill="currentColor"/><circle cx="18.5" cy="20" r="1.3" fill="currentColor"/><circle cx="14" cy="4" r=".8" fill="currentColor" opacity="0"><animate attributeName="cy" values="2;9;9" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.7;0" dur="3s" repeatCount="indefinite"/></circle></svg>`,util:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g><animateTransform attributeName="transform" type="rotate" values="0 12 12;360 12 12" dur="22s" repeatCount="indefinite"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity=".15"/><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></g></svg>`};
+const pk=new Set(),chk=`<svg viewBox="0 0 12 12" fill="none" stroke="#031a09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2.5 6 5 8.5 9.5 3.5"/></svg>`,CIRC=2*Math.PI*15.5;
+let TOTAL=0;{const s=new Set();C.forEach(c=>c.s.forEach(x=>{if(!s.has(x.id)){TOTAL+=x.r;s.add(x.id)}}));}
 
-const picked=new Set();
-const chk=`<svg viewBox="0 0 12 12" fill="none" stroke="#031a09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2.5 6 5 8.5 9.5 3.5"/></svg>`;
+function render(){const box=document.getElementById('cats');box.innerHTML='';C.forEach(cat=>{const el=document.createElement('div');el.className='cat';el.dataset.cat=cat.id;const allOn=cat.s.every(s=>pk.has(s.id));el.innerHTML=`<div class="cb"><div class="cd" style="color:${cat.c};background:${cat.c}"></div><span class="ci" style="color:${cat.c}">${IC[cat.id]||''}</span><span class="cl">${cat.l}</span><span class="cc">${cat.s.length}</span><span class="ct" data-c="${cat.id}">${allOn?'✕ Keine':'✓ Alle'}</span></div><div class="sg">${cat.s.map(s=>`<div class="sv${pk.has(s.id)?' on':''}" data-id="${s.id}"><div class="ck">${chk}</div><span class="nm">${s.n}</span><span class="ru">${s.r}</span></div>`).join('')}</div>`;box.appendChild(el)});box.querySelectorAll('.sv').forEach(c=>{c.addEventListener('click',e=>{rip(e,c);tog(c.dataset.id)})});box.querySelectorAll('.ct').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();togCat(b.dataset.c)}));obsCats();sync()}
 
-/* ===== ANIMATED SVG ICONS ===== */
-const catIcons = {
-  /* AI – brain with neural pulse */
-  ai: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 2C7.6 2 4 5.4 4 9.5c0 2.4 1.2 4.5 3 5.8V18a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2.7c1.8-1.3 3-3.4 3-5.8C20 5.4 16.4 2 12 2z" opacity="0.25" fill="currentColor"><animate attributeName="opacity" values="0.12;0.28;0.12" dur="3s" repeatCount="indefinite"/></path>
-    <path d="M12 2C7.6 2 4 5.4 4 9.5c0 2.4 1.2 4.5 3 5.8V18a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2.7c1.8-1.3 3-3.4 3-5.8C20 5.4 16.4 2 12 2z"/>
-    <circle cx="9" cy="9.5" r="1.2" fill="currentColor"><animate attributeName="r" values="1.2;1.6;1.2" dur="2s" repeatCount="indefinite"/></circle>
-    <circle cx="15" cy="9.5" r="1.2" fill="currentColor"><animate attributeName="r" values="1.2;1.6;1.2" dur="2s" begin="0.4s" repeatCount="indefinite"/></circle>
-    <path d="M9 13.5c0 0 1.2 1.5 3 1.5s3-1.5 3-1.5"/>
-    <line x1="9" y1="21" x2="9" y2="22"/><line x1="15" y1="21" x2="15" y2="22"/>
-  </svg>`,
+function rip(e,el){const r=document.createElement('span');r.className='ripple';const rc=el.getBoundingClientRect();r.style.left=(e.clientX-rc.left)+'px';r.style.top=(e.clientY-rc.top)+'px';r.style.width=r.style.height=Math.max(rc.width,rc.height)+'px';el.appendChild(r);r.addEventListener('animationend',()=>r.remove())}
+function tog(id){pk.has(id)?pk.delete(id):pk.add(id);const el=document.querySelector(`.sv[data-id="${id}"]`);if(el)el.classList.toggle('on',pk.has(id));updT();sync();clrP()}
+function togCat(cid){const cat=C.find(c=>c.id===cid),ids=cat.s.map(s=>s.id),all=ids.every(i=>pk.has(i));ids.forEach(i=>all?pk.delete(i):pk.add(i));ids.forEach(i=>{const el=document.querySelector(`.sv[data-id="${i}"]`);if(el)el.classList.toggle('on',pk.has(i))});updT();sync();clrP()}
+function pickAll(){C.forEach(c=>c.s.forEach(s=>pk.add(s.id)));document.querySelectorAll('.sv').forEach(e=>e.classList.add('on'));updT();sync();clrP()}
+function pickNone(){pk.clear();document.querySelectorAll('.sv').forEach(e=>e.classList.remove('on'));updT();sync();clrP()}
+function updT(){C.forEach(cat=>{const all=cat.s.every(s=>pk.has(s.id));const b=document.querySelector(`.ct[data-c="${cat.id}"]`);if(b)b.textContent=all?'✕ Keine':'✓ Alle'})}
+function uniq(){const s=new Set(),o=[];C.forEach(c=>c.s.forEach(v=>{if(pk.has(v.id)&&!s.has(v.id)){o.push(v);s.add(v.id)}}));return o}
+function animN(el,to){const fr=parseInt(el.textContent)||0;if(fr===to)return;const dur=Math.min(350,Math.abs(to-fr)*6);const st=performance.now();(function f(now){const p=Math.min((now-st)/dur,1);el.textContent=Math.round(fr+(to-fr)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(st)}
+function sync(){const u=uniq(),rules=u.reduce((a,s)=>a+s.r,0);animN(document.getElementById('sP'),u.length);animN(document.getElementById('bR'),rules);document.getElementById('bS').textContent=u.length;const has=u.length>0;document.getElementById('xU').disabled=!has;document.getElementById('xP').disabled=!has;document.getElementById('xD').disabled=!has;document.getElementById('ringC').style.strokeDashoffset=CIRC-(CIRC*(rules/TOTAL))}
 
-  /* Social – two overlapping chat bubbles with bounce */
-  social: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 8h-1V6a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v5a3 3 0 0 0 2 2.8V17l2.5-2H9" opacity="0.5"/>
-    <rect x="9" y="8" width="12" height="9" rx="3" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.1;0.25;0.1" dur="3s" repeatCount="indefinite"/></rect>
-    <rect x="9" y="8" width="12" height="9" rx="3"/>
-    <path d="M12 20.5l2-2.5h4"/>
-    <circle cx="13" cy="12.5" r="0.8" fill="currentColor"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
-    <circle cx="16" cy="12.5" r="0.8" fill="currentColor"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.25s" repeatCount="indefinite"/></circle>
-    <circle cx="19" cy="12.5" r="0.8" fill="currentColor"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.5s" repeatCount="indefinite"/></circle>
-  </svg>`,
-
-  /* Streaming – play triangle with ring pulse */
-  stream: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="9" opacity="0.3"><animate attributeName="r" values="9;10;9" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/></circle>
-    <circle cx="12" cy="12" r="9"/>
-    <polygon points="10,7.5 10,16.5 18,12" fill="currentColor" opacity="0.9">
-      <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2.5s" repeatCount="indefinite"/>
-    </polygon>
-  </svg>`,
-
-  /* Messaging – paper plane with fly animation */
-  msg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <g><animateTransform attributeName="transform" type="translate" values="0,0;1,-1;0,0" dur="3s" repeatCount="indefinite"/>
-      <path d="M22 2L11 13"/>
-      <polygon points="22,2 15,22 11,13 2,9" fill="currentColor" opacity="0.12"/>
-      <polygon points="22,2 15,22 11,13 2,9"/>
-      <line x1="11" y1="13" x2="15" y2="22" opacity="0.5"/>
-    </g>
-  </svg>`,
-
-  /* Gaming – gamepad with subtle wiggle */
-  game: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <g><animateTransform attributeName="transform" type="rotate" values="0 12 12;-2 12 12;0 12 12;2 12 12;0 12 12" dur="4s" repeatCount="indefinite"/>
-      <path d="M6 11h4M8 9v4" opacity="0.8"/>
-      <circle cx="16" cy="10" r="0.9" fill="currentColor"/>
-      <circle cx="18" cy="12" r="0.9" fill="currentColor"/>
-      <rect x="3" y="6" width="18" height="12" rx="5" fill="currentColor" opacity="0.1"/>
-      <rect x="3" y="6" width="18" height="12" rx="5"/>
-    </g>
-  </svg>`,
-
-  /* Apple – apple with subtle shine sweep */
-  apple: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 3c-1-1.5-3-2-4.5-1.5" opacity="0.7"/>
-    <path d="M17.5 7.5C19.5 9 21 11.5 20 15c-1 3.5-3.5 6-5.5 6s-2-.8-3-.8-1.5.8-3 .8-4-2.5-5-6 0-6 2-8 3.5-2 5-1.5c1-.3 1.5-.5 2.5-.5s1.5.2 2.5.5c1.5-.5 3-.5 4.5 0z" fill="currentColor" opacity="0.15">
-      <animate attributeName="opacity" values="0.1;0.22;0.1" dur="4s" repeatCount="indefinite"/>
-    </path>
-    <path d="M17.5 7.5C19.5 9 21 11.5 20 15c-1 3.5-3.5 6-5.5 6s-2-.8-3-.8-1.5.8-3 .8-4-2.5-5-6 0-6 2-8 3.5-2 5-1.5c1-.3 1.5-.5 2.5-.5s1.5.2 2.5.5c1.5-.5 3-.5 4.5 0z"/>
-    <path d="M14.5 4c0 0-.5-2-2.5-2" opacity="0.6"><animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></path>
-  </svg>`,
-
-  /* Google – magnifying glass with scan */
-  goog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="10.5" cy="10.5" r="6.5" fill="currentColor" opacity="0.1"><animate attributeName="r" values="6.5;7;6.5" dur="3s" repeatCount="indefinite"/></circle>
-    <circle cx="10.5" cy="10.5" r="6.5"/>
-    <line x1="15.5" y1="15.5" x2="21" y2="21" stroke-width="2"/>
-    <path d="M7 10.5h7" opacity="0.4"><animate attributeName="transform" attributeType="XML" type="translate" values="0,-2;0,2;0,-2" dur="2.5s" repeatCount="indefinite"/></path>
-  </svg>`,
-
-  /* Microsoft – 4 window panes with stagger fade */
-  ms: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="3" y="3" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" repeatCount="indefinite"/></rect>
-    <rect x="3" y="3" width="8" height="8" rx="1.5"/>
-    <rect x="13" y="3" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" begin="0.4s" repeatCount="indefinite"/></rect>
-    <rect x="13" y="3" width="8" height="8" rx="1.5"/>
-    <rect x="3" y="13" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" begin="0.8s" repeatCount="indefinite"/></rect>
-    <rect x="3" y="13" width="8" height="8" rx="1.5"/>
-    <rect x="13" y="13" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
-    <rect x="13" y="13" width="8" height="8" rx="1.5"/>
-  </svg>`,
-
-  /* VPN – shield with lock pulse */
-  vpn: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 2L4 6v5c0 5.5 3.4 10.3 8 12 4.6-1.7 8-6.5 8-12V6l-8-4z" fill="currentColor" opacity="0.12"><animate attributeName="opacity" values="0.08;0.22;0.08" dur="3s" repeatCount="indefinite"/></path>
-    <path d="M12 2L4 6v5c0 5.5 3.4 10.3 8 12 4.6-1.7 8-6.5 8-12V6l-8-4z"/>
-    <rect x="9.5" y="11" width="5" height="4.5" rx="1" fill="currentColor" opacity="0.3"/>
-    <rect x="9.5" y="11" width="5" height="4.5" rx="1"/>
-    <path d="M10.5 11V9.5a1.5 1.5 0 0 1 3 0V11"><animate attributeName="stroke-dasharray" values="0,20;12,20;12,20;0,20" dur="4s" repeatCount="indefinite"/></path>
-  </svg>`,
-
-  /* Smart Home – house with glow/pulse light */
-  home: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10.5z" fill="currentColor" opacity="0.1"/>
-    <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10.5z"/>
-    <rect x="9" y="14" width="6" height="7" rx="0.5" opacity="0.5"/>
-    <circle cx="12" cy="10" r="1.5" fill="currentColor" opacity="0.6"><animate attributeName="r" values="1.5;2.2;1.5" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/></circle>
-  </svg>`,
-
-  /* Mail – envelope with flap open/close */
-  mail: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="5" width="20" height="14" rx="3" fill="currentColor" opacity="0.1"/>
-    <rect x="2" y="5" width="20" height="14" rx="3"/>
-    <path d="M2 5l10 8 10-8"><animateTransform attributeName="transform" type="translate" values="0,0;0,-0.5;0,0" dur="3s" repeatCount="indefinite"/></path>
-    <circle cx="18" cy="8" r="2" fill="currentColor" opacity="0"><animate attributeName="opacity" values="0;0.6;0.6;0" dur="4s" repeatCount="indefinite"/></circle>
-  </svg>`,
-
-  /* Shopping – shopping cart with item drop */
-  shop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M1 1h4l2.7 13.4a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L22 6H6"/>
-    <circle cx="9.5" cy="20" r="1.5" fill="currentColor"/>
-    <circle cx="18.5" cy="20" r="1.5" fill="currentColor"/>
-    <circle cx="14" cy="4" r="1" fill="currentColor" opacity="0">
-      <animate attributeName="cy" values="2;9;9" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
-    </circle>
-  </svg>`,
-
-  /* Utilities – gear with slow rotation */
-  util: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <g><animateTransform attributeName="transform" type="rotate" values="0 12 12;360 12 12" dur="20s" repeatCount="indefinite"/>
-      <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.2"/>
-      <circle cx="12" cy="12" r="3"/>
-      <path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
-    </g>
-  </svg>`
-};
-
-function render(){
-  const box=document.getElementById('cats');box.innerHTML='';
-  C.forEach(cat=>{
-    const el=document.createElement('div');el.className='category';el.dataset.cat=cat.id;
-    const allOn=cat.s.every(s=>picked.has(s.id));
-    const icon=catIcons[cat.id]||'';
-    el.innerHTML=`<div class="cat-bar"><div class="cat-dot" style="color:${cat.c};background:${cat.c}"></div><span class="cat-icon" style="color:${cat.c}">${icon}</span><span class="cat-label">${cat.l}</span><span class="cat-count">${cat.s.length}</span><span class="cat-toggle" data-c="${cat.id}">${allOn?'✕ Keine':'✓ Alle'}</span></div><div class="services">${cat.s.map(s=>`<div class="svc ${picked.has(s.id)?'on':''}" data-id="${s.id}"><div class="check">${chk}</div><span class="svc-name">${s.n}</span><span class="svc-rules">${s.r}</span></div>`).join('')}</div>`;
-    box.appendChild(el);
-  });
-  box.querySelectorAll('.svc').forEach(c=>c.addEventListener('click',()=>tog(c.dataset.id)));
-  box.querySelectorAll('.cat-toggle').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();togCat(b.dataset.c)}));
-  sync();
-}
-
-function tog(id){
-  picked.has(id)?picked.delete(id):picked.add(id);
-  const el=document.querySelector(`.svc[data-id="${id}"]`);
-  if(el)el.classList.toggle('on',picked.has(id));
-  updateCatToggles();
-  sync();
-}
-function togCat(cid){
-  const cat=C.find(c=>c.id===cid);
-  const ids=cat.s.map(s=>s.id);
-  const allOn=ids.every(id=>picked.has(id));
-  ids.forEach(id=>allOn?picked.delete(id):picked.add(id));
-  ids.forEach(id=>{const el=document.querySelector(`.svc[data-id="${id}"]`);if(el)el.classList.toggle('on',picked.has(id))});
-  updateCatToggles();
-  sync();
-}
-function pickAll(){
-  C.forEach(c=>c.s.forEach(s=>picked.add(s.id)));
-  document.querySelectorAll('.svc').forEach(el=>el.classList.add('on'));
-  updateCatToggles();
-  sync();
-}
-function pickNone(){
-  picked.clear();
-  document.querySelectorAll('.svc').forEach(el=>el.classList.remove('on'));
-  updateCatToggles();
-  sync();
-}
-function updateCatToggles(){
-  C.forEach(cat=>{
-    const allOn=cat.s.every(s=>picked.has(s.id));
-    const btn=document.querySelector(`.cat-toggle[data-c="${cat.id}"]`);
-    if(btn)btn.textContent=allOn?'✕ Keine':'✓ Alle';
-  });
-}
-
-function uniq(){const seen=new Set(),out=[];C.forEach(c=>c.s.forEach(s=>{if(picked.has(s.id)&&!seen.has(s.id)){out.push(s);seen.add(s.id)}}));return out}
-
-function sync(){
-  const u=uniq(),rules=u.reduce((a,s)=>a+s.r,0);
-  document.getElementById('sPicked').textContent=u.length;
-  document.getElementById('bRules').textContent=rules;
-  document.getElementById('bSvc').textContent=u.length;
-  const has=u.length>0;
-  document.getElementById('xUrl').disabled=!has;
-  document.getElementById('xPre').disabled=!has;
-  document.getElementById('xDl').disabled=!has;
-}
-
-function applyF(){const q=document.getElementById('q').value.toLowerCase().trim();document.querySelectorAll('.category').forEach(cat=>{let any=false;cat.querySelectorAll('.svc').forEach(s=>{const m=!q||s.querySelector('.svc-name').textContent.toLowerCase().includes(q);s.style.display=m?'':'none';if(m)any=true});cat.style.display=any?'':'none'})}
-document.getElementById('q').addEventListener('input',applyF);
+let aP=null;document.getElementById('presets').addEventListener('click',e=>{const btn=e.target.closest('.preset');if(!btn)return;const p=btn.dataset.p;if(aP===p){pickNone();aP=null;btn.classList.remove('active');return}pk.clear();(PRESETS[p]||[]).forEach(id=>pk.add(id));document.querySelectorAll('.sv').forEach(el=>el.classList.toggle('on',pk.has(el.dataset.id)));document.querySelectorAll('.preset').forEach(b=>b.classList.remove('active'));btn.classList.add('active');aP=p;updT();sync()});
+function clrP(){aP=null;document.querySelectorAll('.preset').forEach(b=>b.classList.remove('active'))}
+document.getElementById('q').addEventListener('input',function(){const q=this.value.toLowerCase().trim();document.querySelectorAll('.cat').forEach(cat=>{let any=false;cat.querySelectorAll('.sv').forEach(s=>{const m=!q||s.querySelector('.nm').textContent.toLowerCase().includes(q);s.style.display=m?'':'none';if(m)any=true});cat.style.display=any?'':'none'})});
+function obsCats(){if(!('IntersectionObserver' in window)){document.querySelectorAll('.cat').forEach(c=>c.classList.add('vis'));return}const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ob.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.cat').forEach(c=>ob.observe(c))}
 
 function openM(t,b){document.getElementById('mT').textContent=t;document.getElementById('mB').textContent=b;document.getElementById('ov').classList.add('open')}
 function closeM(){document.getElementById('ov').classList.remove('open')}
 document.getElementById('ov').addEventListener('click',e=>{if(e.target===document.getElementById('ov'))closeM()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
-
-function copyM(){navigator.clipboard.writeText(document.getElementById('mB').textContent).then(()=>{const t=document.getElementById('toast');t.classList.add('pop');setTimeout(()=>t.classList.remove('pop'),1600)})}
-
+function copyM(){navigator.clipboard.writeText(document.getElementById('mB').textContent).then(()=>{const t=document.getElementById('toast');t.classList.add('pop');setTimeout(()=>t.classList.remove('pop'),1500)})}
 function showUrls(){openM('📋 Raw URLs für AdGuard Home',uniq().map(s=>`${R}/lists/${s.id}.txt`).join('\n'))}
-
-async function fetchL(svcs){
-  let o=`# =============================================================\n# AdGuard Home – Custom Allowlist\n# Generated: ${new Date().toISOString().split('T')[0]}\n# Services: ${svcs.map(s=>s.n).join(', ')}\n# Source: https://github.com/Der-Felix/AdGuard-Home-Allowlists\n# =============================================================\n\n`;
-  for(const s of svcs){try{const r=await fetch(`${R}/lists/${s.id}.txt`);if(r.ok)o+=(await r.text())+'\n\n'}catch(e){o+=`# Error loading ${s.id}.txt\n\n`}}return o;
-}
-
-async function showPreview(){openM('👁 Vorschau / Preview','Lade Regeln …');document.getElementById('mB').textContent=await fetchL(uniq())}
-
+async function fetchL(sv){let o=`# =============================================================\n# AdGuard Home – Custom Allowlist\n# Generated: ${new Date().toISOString().split('T')[0]}\n# Services: ${sv.map(s=>s.n).join(', ')}\n# Source: https://github.com/Der-Felix/AdGuard-Home-Allowlists\n# =============================================================\n\n`;for(const s of sv){try{const r=await fetch(`${R}/lists/${s.id}.txt`);if(r.ok)o+=(await r.text())+'\n\n'}catch(e){o+=`# Error: ${s.id}\n\n`}}return o}
+async function showPre(){openM('👁 Vorschau','Lade …');document.getElementById('mB').textContent=await fetchL(uniq())}
 async function dl(){const b=new Blob([await fetchL(uniq())],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='adguard-allowlist-custom.txt';a.click();URL.revokeObjectURL(a.href)}
-
 render();
 </script>
 </body>
