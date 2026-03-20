@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdGuard Home Allowlist Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0e14;
+  --surface: #151821;
+  --surface2: #1c2030;
+  --border: #2a2f42;
+  --text: #e2e4ea;
+  --text2: #8b90a5;
+  --accent: #4ade80;
+  --accent2: #22c55e;
+  --accent-dim: rgba(74,222,128,0.08);
+  --red: #f87171;
+  --blue: #60a5fa;
+  --purple: #c084fc;
+  --orange: #fb923c;
+  --pink: #f472b6;
+  --cyan: #22d3ee;
+  --yellow: #facc15;
+  --radius: 12px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(180deg, rgba(74,222,128,0.06) 0%, transparent 100%);
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 span { color: var(--accent); }
+
+.hero p {
+  color: var(--text2);
+  font-size: 1.1rem;
+  font-weight: 300;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Stats bar */
+.stats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  min-width: 130px;
+}
+
+.stat-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.controls button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.search-box {
+  flex: 1;
+  min-width: 200px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-box:focus { border-color: var(--accent); }
+.search-box::placeholder { color: var(--text2); }
+
+/* Category sections */
+.category {
+  margin-bottom: 1.5rem;
+}
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cat-header:hover .cat-title { color: var(--accent); }
+
+.cat-icon {
+  font-size: 1.3rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.cat-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: color 0.15s;
+}
+
+.cat-count {
+  font-size: 0.75rem;
+  color: var(--text2);
+  background: var(--surface2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.cat-selectall {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--text2);
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.cat-selectall:hover {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Service cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.service-card:hover {
+  border-color: #4a5068;
+  background: var(--surface2);
+}
+
+.service-card.selected {
+  border-color: var(--accent2);
+  background: rgba(74,222,128,0.06);
+  box-shadow: 0 0 0 1px var(--accent2);
+}
+
+.service-card.selected .card-check {
+  background: var(--accent2);
+  border-color: var(--accent2);
+}
+
+.service-card.selected .card-check::after {
+  content: '✓';
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.card-check {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 5px;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.card-name {
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-rules {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text2);
+  flex-shrink: 0;
+}
+
+/* Output panel */
+.output-panel {
+  position: sticky;
+  bottom: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem -1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.output-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.output-info strong {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.output-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.65rem 1.3rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-primary {
+  background: var(--accent2);
+  color: var(--bg);
+}
+
+.btn-primary:hover { background: var(--accent); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-secondary {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn-secondary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: auto;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.modal pre {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 55vh;
+  overflow-y: auto;
+  line-height: 1.6;
+  color: var(--accent);
+}
+
+.modal-close {
+  float: right;
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover { color: var(--text); }
+
+.toast {
+  position: fixed;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--accent2);
+  color: var(--bg);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 300;
+  pointer-events: none;
+}
+
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.hidden { display: none !important; }
+
+/* GitHub corner */
+.github-link {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 50;
+  transition: color 0.15s;
+}
+
+.github-link:hover { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .output-panel { flex-direction: column; align-items: stretch; text-align: center; }
+  .output-actions { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<a class="github-link" href="https://github.com/Der-Felix/AdGuard-Home-Allowlists" target="_blank">⭐ GitHub</a>
+
+<div class="hero">
+  <h1>🛡️ AdGuard <span>Allowlist</span> Generator</h1>
+  <p>Wähle deine Dienste und generiere eine fertige Allowlist für AdGuard Home.</p>
+</div>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat"><div class="stat-num" id="totalLists">73</div><div class="stat-label">Listen / Lists</div></div>
+    <div class="stat"><div class="stat-num" id="totalRules">1455</div><div class="stat-label">Regeln / Rules</div></div>
+    <div class="stat"><div class="stat-num" id="selectedCount">0</div><div class="stat-label">Ausgewählt / Selected</div></div>
+  </div>
+
+  <div class="controls">
+    <input type="text" class="search-box" placeholder="🔍 Suchen / Search..." id="searchBox">
+    <button onclick="selectAll()">Alle auswählen</button>
+    <button onclick="deselectAll()">Alle abwählen</button>
+  </div>
+
+  <div id="categoriesContainer"></div>
+</div>
+
+<div class="output-panel">
+  <div class="output-info">
+    <strong id="selectedRules">0</strong> Regeln aus <strong id="selectedServices">0</strong> Diensten ausgewählt
+  </div>
+  <div class="output-actions">
+    <button class="btn btn-secondary" onclick="showUrls()" id="btnUrls" disabled>📋 URLs kopieren</button>
+    <button class="btn btn-secondary" onclick="showPreview()" id="btnPreview" disabled>👁️ Vorschau</button>
+    <button class="btn btn-primary" onclick="downloadList()" id="btnDownload" disabled>⬇️ Download .txt</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h2 id="modalTitle"></h2>
+    <pre id="modalContent"></pre>
+    <br>
+    <button class="btn btn-primary" onclick="copyModalContent()" style="width:100%">📋 In Zwischenablage kopieren</button>
+  </div>
+</div>
+
+<div class="toast" id="toast">Kopiert!</div>
+
+<script>
+const REPO = 'https://raw.githubusercontent.com/Der-Felix/AdGuard-Home-Allowlists/main';
+
+const categories = [
+  { id: 'ai', icon: '🤖', title: 'AI Services', color: '#c084fc', services: [
+    { id: 'chatgpt', name: 'ChatGPT / OpenAI', rules: 20 },
+    { id: 'claude-ai', name: 'Claude / Anthropic', rules: 13 },
+    { id: 'gemini', name: 'Google Gemini', rules: 12 },
+    { id: 'midjourney', name: 'Midjourney', rules: 11 },
+    { id: 'perplexity', name: 'Perplexity AI', rules: 5 },
+    { id: 'deepl', name: 'DeepL', rules: 7 },
+    { id: 'copilot', name: 'Microsoft Copilot', rules: 14 },
+    { id: 'huggingface', name: 'Hugging Face', rules: 9 },
+  ]},
+  { id: 'social', icon: '💬', title: 'Social Media', color: '#f472b6', services: [
+    { id: 'instagram', name: 'Instagram', rules: 17 },
+    { id: 'facebook', name: 'Facebook & Messenger', rules: 26 },
+    { id: 'tiktok', name: 'TikTok', rules: 24 },
+    { id: 'twitter', name: 'X (Twitter)', rules: 20 },
+    { id: 'reddit', name: 'Reddit', rules: 21 },
+    { id: 'pinterest', name: 'Pinterest', rules: 11 },
+    { id: 'linkedin', name: 'LinkedIn', rules: 11 },
+    { id: 'snapchat', name: 'Snapchat', rules: 16 },
+    { id: 'mastodon', name: 'Mastodon', rules: 13 },
+    { id: 'threads', name: 'Threads', rules: 9 },
+    { id: 'bluesky', name: 'Bluesky', rules: 9 },
+  ]},
+  { id: 'streaming', icon: '📺', title: 'Streaming & Media', color: '#fb923c', services: [
+    { id: 'youtube', name: 'YouTube', rules: 36 },
+    { id: 'spotify', name: 'Spotify', rules: 45 },
+    { id: 'netflix', name: 'Netflix', rules: 21 },
+    { id: 'disneyplus', name: 'Disney+', rules: 24 },
+    { id: 'primevideo', name: 'Prime Video', rules: 16 },
+    { id: 'appletv', name: 'Apple TV+', rules: 15 },
+    { id: 'crunchyroll', name: 'Crunchyroll', rules: 13 },
+    { id: 'paramountplus', name: 'Paramount+', rules: 11 },
+    { id: 'dazn', name: 'DAZN', rules: 13 },
+    { id: 'plex', name: 'Plex', rules: 21 },
+    { id: 'twitch', name: 'Twitch', rules: 24 },
+    { id: 'ard-zdf', name: 'ARD & ZDF', rules: 29 },
+    { id: 'joyn', name: 'Joyn', rules: 8 },
+    { id: 'rtlplus', name: 'RTL+', rules: 9 },
+  ]},
+  { id: 'messaging', icon: '✉️', title: 'Messaging', color: '#22d3ee', services: [
+    { id: 'whatsapp', name: 'WhatsApp', rules: 28 },
+    { id: 'signal', name: 'Signal', rules: 20 },
+    { id: 'telegram', name: 'Telegram', rules: 19 },
+    { id: 'slack', name: 'Slack', rules: 19 },
+    { id: 'zoom', name: 'Zoom', rules: 17 },
+    { id: 'discord', name: 'Discord', rules: 18 },
+  ]},
+  { id: 'gaming', icon: '🎮', title: 'Gaming', color: '#f87171', services: [
+    { id: 'steam', name: 'Steam', rules: 25 },
+    { id: 'epicgames', name: 'Epic Games', rules: 16 },
+    { id: 'playstation', name: 'PlayStation', rules: 15 },
+    { id: 'nintendo', name: 'Nintendo', rules: 16 },
+    { id: 'riotgames', name: 'Riot Games', rules: 16 },
+    { id: 'xbox', name: 'Xbox', rules: 17 },
+  ]},
+  { id: 'apple', icon: '🍎', title: 'Apple', color: '#e2e4ea', services: [
+    { id: 'icloud', name: 'iCloud & Apple', rules: 82 },
+    { id: 'icloud-privaterelay', name: 'Private Relay', rules: 15 },
+  ]},
+  { id: 'google', icon: '🔍', title: 'Google', color: '#60a5fa', services: [
+    { id: 'google', name: 'Google Services', rules: 80 },
+    { id: 'googlehome', name: 'Google Home / Nest', rules: 17 },
+  ]},
+  { id: 'microsoft', icon: '🪟', title: 'Microsoft', color: '#60a5fa', services: [
+    { id: 'microsoft', name: 'Microsoft 365 / Windows', rules: 60 },
+  ]},
+  { id: 'vpn', icon: '🔐', title: 'VPN & Security', color: '#4ade80', services: [
+    { id: 'nordvpn', name: 'NordVPN', rules: 28 },
+    { id: 'mullvad', name: 'Mullvad VPN', rules: 11 },
+    { id: 'expressvpn', name: 'ExpressVPN', rules: 10 },
+    { id: 'cloudflare', name: 'Cloudflare / WARP', rules: 21 },
+    { id: 'bitwarden', name: 'Bitwarden', rules: 13 },
+    { id: 'proton', name: 'Proton', rules: 32 },
+    { id: 'tailscale', name: 'Tailscale', rules: 12 },
+    { id: 'wireguard', name: 'WireGuard', rules: 4 },
+  ]},
+  { id: 'smarthome', icon: '🏠', title: 'Smart Home', color: '#facc15', services: [
+    { id: 'alexa', name: 'Amazon Alexa', rules: 17 },
+    { id: 'googlehome', name: 'Google Home / Nest', rules: 17 },
+    { id: 'homeassistant', name: 'Home Assistant', rules: 12 },
+    { id: 'sonos', name: 'Sonos', rules: 10 },
+  ]},
+  { id: 'email', icon: '📧', title: 'E-Mail & Cloud', color: '#22d3ee', services: [
+    { id: 'gmx', name: 'GMX & WEB.DE', rules: 34 },
+    { id: 'dropbox', name: 'Dropbox', rules: 15 },
+    { id: 'mega', name: 'MEGA', rules: 9 },
+  ]},
+  { id: 'shopping', icon: '💳', title: 'Shopping & Finance', color: '#fb923c', services: [
+    { id: 'amazon', name: 'Amazon', rules: 36 },
+    { id: 'paypal', name: 'PayPal', rules: 23 },
+    { id: 'ebay', name: 'eBay & Kleinanzeigen', rules: 18 },
+    { id: 'klarna', name: 'Klarna', rules: 10 },
+    { id: 'banking-de', name: 'German Banking', rules: 27 },
+  ]},
+  { id: 'utils', icon: '🔧', title: 'Utilities', color: '#8b90a5', services: [
+    { id: 'github', name: 'GitHub', rules: 28 },
+    { id: 'mozilla', name: 'Mozilla / Firefox', rules: 25 },
+    { id: 'letsencrypt', name: "Let's Encrypt", rules: 13 },
+    { id: 'dhl', name: 'DHL / Deutsche Post', rules: 14 },
+  ]},
+];
+
+const selected = new Set();
+
+function render() {
+  const container = document.getElementById('categoriesContainer');
+  container.innerHTML = '';
+
+  categories.forEach(cat => {
+    const div = document.createElement('div');
+    div.className = 'category';
+    div.dataset.catId = cat.id;
+
+    const allInCat = cat.services.map(s => s.id);
+    const allSelected = allInCat.every(id => selected.has(id));
+
+    div.innerHTML = `
+      <div class="cat-header">
+        <div class="cat-icon" style="background:${cat.color}15; color:${cat.color}">${cat.icon}</div>
+        <span class="cat-title">${cat.title}</span>
+        <span class="cat-count">${cat.services.length} Dienste</span>
+        <span class="cat-selectall" data-cat="${cat.id}">${allSelected ? '✕ Abwählen' : '✓ Alle'}</span>
+      </div>
+      <div class="services-grid">
+        ${cat.services.map(s => `
+          <div class="service-card ${selected.has(s.id) ? 'selected' : ''}" data-id="${s.id}">
+            <div class="card-check">${selected.has(s.id) ? '' : ''}</div>
+            <span class="card-name">${s.name}</span>
+            <span class="card-rules">${s.rules}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    container.appendChild(div);
+  });
+
+  // Events
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => toggleService(card.dataset.id));
+  });
+
+  document.querySelectorAll('.cat-selectall').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleCategory(btn.dataset.cat);
+    });
+  });
+
+  updateStats();
+}
+
+function toggleService(id) {
+  if (selected.has(id)) selected.delete(id);
+  else selected.add(id);
+  render();
+  applySearch();
+}
+
+function toggleCategory(catId) {
+  const cat = categories.find(c => c.id === catId);
+  const allIds = cat.services.map(s => s.id);
+  const allSelected = allIds.every(id => selected.has(id));
+
+  if (allSelected) allIds.forEach(id => selected.delete(id));
+  else allIds.forEach(id => selected.add(id));
+
+  render();
+  applySearch();
+}
+
+function selectAll() {
+  categories.forEach(c => c.services.forEach(s => selected.add(s.id)));
+  render();
+  applySearch();
+}
+
+function deselectAll() {
+  selected.clear();
+  render();
+  applySearch();
+}
+
+function updateStats() {
+  let totalSelectedRules = 0;
+  const uniqueSelected = new Set(selected);
+
+  categories.forEach(cat => {
+    cat.services.forEach(s => {
+      if (uniqueSelected.has(s.id)) {
+        totalSelectedRules += s.rules;
+      }
+    });
+  });
+
+  // Deduplicate (some services appear in multiple categories)
+  const uniqueIds = [...new Set(
+    categories.flatMap(c => c.services.filter(s => selected.has(s.id)).map(s => s.id))
+  )];
+
+  let deduplicatedRules = 0;
+  const seen = new Set();
+  categories.forEach(cat => {
+    cat.services.forEach(s => {
+      if (selected.has(s.id) && !seen.has(s.id)) {
+        deduplicatedRules += s.rules;
+        seen.add(s.id);
+      }
+    });
+  });
+
+  document.getElementById('selectedCount').textContent = uniqueIds.length;
+  document.getElementById('selectedRules').textContent = deduplicatedRules;
+  document.getElementById('selectedServices').textContent = uniqueIds.length;
+
+  const hasSelection = uniqueIds.length > 0;
+  document.getElementById('btnUrls').disabled = !hasSelection;
+  document.getElementById('btnPreview').disabled = !hasSelection;
+  document.getElementById('btnDownload').disabled = !hasSelection;
+}
+
+function getSelectedUniqueIds() {
+  const seen = new Set();
+  const result = [];
+  categories.forEach(cat => {
+    cat.services.forEach(s => {
+      if (selected.has(s.id) && !seen.has(s.id)) {
+        result.push(s);
+        seen.add(s.id);
+      }
+    });
+  });
+  return result;
+}
+
+function showUrls() {
+  const services = getSelectedUniqueIds();
+  const urls = services.map(s => `${REPO}/lists/${s.id}.txt`).join('\n');
+  document.getElementById('modalTitle').textContent = '📋 Raw URLs für AdGuard Home';
+  document.getElementById('modalContent').textContent = urls;
+  document.getElementById('modal').classList.add('active');
+}
+
+async function showPreview() {
+  const services = getSelectedUniqueIds();
+  document.getElementById('modalTitle').textContent = '👁️ Vorschau / Preview';
+  document.getElementById('modalContent').textContent = 'Lade Regeln...';
+  document.getElementById('modal').classList.add('active');
+
+  let combined = `# =============================================================\n`;
+  combined += `# AdGuard Home – Custom Allowlist\n`;
+  combined += `# Generated: ${new Date().toISOString().split('T')[0]}\n`;
+  combined += `# Services: ${services.map(s => s.name).join(', ')}\n`;
+  combined += `# =============================================================\n\n`;
+
+  for (const s of services) {
+    try {
+      const resp = await fetch(`${REPO}/lists/${s.id}.txt`);
+      if (resp.ok) {
+        combined += await resp.text();
+        combined += '\n\n';
+      }
+    } catch(e) {
+      combined += `# Error loading ${s.id}.txt\n\n`;
+    }
+  }
+
+  document.getElementById('modalContent').textContent = combined;
+}
+
+async function downloadList() {
+  const services = getSelectedUniqueIds();
+
+  let combined = `# =============================================================\n`;
+  combined += `# AdGuard Home – Custom Allowlist\n`;
+  combined += `# Generated: ${new Date().toISOString().split('T')[0]}\n`;
+  combined += `# Services: ${services.map(s => s.name).join(', ')}\n`;
+  combined += `# Source: https://github.com/Der-Felix/AdGuard-Home-Allowlists\n`;
+  combined += `# =============================================================\n\n`;
+
+  for (const s of services) {
+    try {
+      const resp = await fetch(`${REPO}/lists/${s.id}.txt`);
+      if (resp.ok) {
+        combined += await resp.text();
+        combined += '\n\n';
+      }
+    } catch(e) {
+      combined += `# Error loading ${s.id}.txt\n\n`;
+    }
+  }
+
+  const blob = new Blob([combined], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'adguard-allowlist-custom.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}
+
+function copyModalContent() {
+  const text = document.getElementById('modalContent').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 1500);
+  });
+}
+
+function applySearch() {
+  const query = document.getElementById('searchBox').value.toLowerCase().trim();
+  document.querySelectorAll('.category').forEach(catEl => {
+    let anyVisible = false;
+    catEl.querySelectorAll('.service-card').forEach(card => {
+      const name = card.querySelector('.card-name').textContent.toLowerCase();
+      const match = !query || name.includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) anyVisible = true;
+    });
+    catEl.style.display = anyVisible ? '' : 'none';
+  });
+}
+
+document.getElementById('searchBox').addEventListener('input', applySearch);
+
+document.getElementById('modal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modal')) closeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+render();
+</script>
+</body>
+</html>

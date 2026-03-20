@@ -1,0 +1,28 @@
+# =============================================
+# Microsoft Copilot – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||copilot.microsoft.com^
+@@||www.bing.com^
+@@||bing.com^
+@@||edgeservices.bing.com^
+
+# --- Copilot API ---
+@@||sydney.bing.com^
+@@||r.bing.com^
+@@||th.bing.com^
+
+# --- Copilot CDN ---
+@@||copilot.blob.core.windows.net^
+@@||studiostaticassetsprod.azureedge.net^
+
+# --- GitHub Copilot ---
+@@||copilot.github.com^
+@@||api.githubcopilot.com^
+@@||copilot-proxy.githubusercontent.com^
+@@||copilot-telemetry.githubusercontent.com^
+
+# --- Designer ---
+@@||designer.microsoft.com^

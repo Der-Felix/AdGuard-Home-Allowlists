@@ -1,0 +1,44 @@
+# =============================================
+# Twitch – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||twitch.tv^
+@@||www.twitch.tv^
+
+# --- API ---
+@@||api.twitch.tv^
+@@||gql.twitch.tv^
+@@||pubsub-edge.twitch.tv^
+
+# --- Video Streaming ---
+@@||video-weaver.*.hls.ttvnw.net^
+@@||video-edge-*.*.hls.ttvnw.net^
+@@||*.hls.ttvnw.net^
+@@||ttvnw.net^
+@@||usher.ttvnw.net^
+
+# --- CDN & Assets ---
+@@||static.twitchcdn.net^
+@@||static-cdn.jtvnw.net^
+@@||jtvnw.net^
+@@||twitchcdn.net^
+@@||assets.twitch.tv^
+@@||vod-secure.twitch.tv^
+@@||clips-media-assets2.twitch.tv^
+
+# --- Chat ---
+@@||irc-ws.chat.twitch.tv^
+@@||irc-ws-r.chat.twitch.tv^
+
+# --- Authentication ---
+@@||id.twitch.tv^
+@@||passport.twitch.tv^
+
+# --- Extensions ---
+@@||ext-twitch.tv^
+@@||extension-files.twitch.tv^
+
+# --- Drops & Commerce ---
+@@||commerce.twitch.tv^

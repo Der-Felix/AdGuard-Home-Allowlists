@@ -1,0 +1,40 @@
+# =============================================
+# TikTok – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tiktok.com^
+@@||www.tiktok.com^
+@@||m.tiktok.com^
+
+# --- API ---
+@@||api.tiktokv.com^
+@@||api*.tiktokv.com^
+@@||webcast.tiktok.com^
+
+# --- Video CDN ---
+@@||v16-webapp-prime.tiktok.com^
+@@||v*.tiktokcdn.com^
+@@||tiktokcdn.com^
+@@||tiktokcdn-*.com^
+@@||*.tiktokcdn.com^
+@@||p16-sign-va.tiktokcdn.com^
+@@||sf16-website-login.neutral.tiktokstaticb.com^
+
+# --- Login & Auth ---
+@@||login.tiktok.com^
+@@||mon.tiktokv.com^
+
+# --- Music ---
+@@||sf-tb-sg.ibytedtos.com^
+@@||ibytedtos.com^
+
+# --- Bytedance Infra ---
+@@||bytedance.com^
+@@||byteoversea.com^
+@@||byteimg.com^
+@@||ibyteimg.com^
+@@||musical.ly^
+@@||tiktokv.com^
+@@||sgsnssdk.com^

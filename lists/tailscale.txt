@@ -1,0 +1,24 @@
+# =============================================
+# Tailscale – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tailscale.com^
+@@||www.tailscale.com^
+
+# --- Control Plane ---
+@@||controlplane.tailscale.com^
+@@||login.tailscale.com^
+@@||log.tailscale.io^
+
+# --- DERP Relay Servers ---
+@@||derp*.tailscale.com^
+@@||derp1.tailscale.com^
+@@||derp2.tailscale.com^
+@@||derp3.tailscale.com^
+@@||derp4.tailscale.com^
+@@||derp5.tailscale.com^
+
+# --- Updates ---
+@@||pkgs.tailscale.com^

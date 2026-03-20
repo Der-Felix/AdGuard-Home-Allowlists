@@ -1,0 +1,21 @@
+# =============================================
+# Pinterest – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||pinterest.com^
+@@||www.pinterest.com^
+@@||pinterest.de^
+@@||pinterest.co.uk^
+
+# --- API ---
+@@||api.pinterest.com^
+@@||widgets.pinterest.com^
+
+# --- CDN & Media ---
+@@||pinimg.com^
+@@||i.pinimg.com^
+@@||s.pinimg.com^
+@@||ct.pinterest.com^
+@@||v1.pinimg.com^

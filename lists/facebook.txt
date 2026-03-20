@@ -1,0 +1,44 @@
+# =============================================
+# Facebook / Meta – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||facebook.com^
+@@||www.facebook.com^
+@@||m.facebook.com^
+@@||web.facebook.com^
+@@||fb.com^
+@@||fb.me^
+
+# --- Authentication ---
+@@||accountscenter.facebook.com^
+@@||facebook.com^
+
+# --- API ---
+@@||graph.facebook.com^
+@@||api.facebook.com^
+
+# --- CDN & Media ---
+@@||fbcdn.net^
+@@||*.fbcdn.net^
+@@||scontent.xx.fbcdn.net^
+@@||static.xx.fbcdn.net^
+@@||video.xx.fbcdn.net^
+@@||external.xx.fbcdn.net^
+@@||connect.facebook.net^
+@@||fbsbx.com^
+
+# --- Messenger ---
+@@||messenger.com^
+@@||www.messenger.com^
+@@||*.messenger.com^
+@@||edge-mqtt.facebook.com^
+@@||mqtt-mini.facebook.com^
+
+# --- Facebook Marketplace ---
+@@||marketplace.facebook.com^
+
+# --- Threads ---
+@@||threads.net^
+@@||www.threads.net^

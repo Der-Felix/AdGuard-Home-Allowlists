@@ -1,0 +1,37 @@
+# =============================================
+# Plex – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||plex.tv^
+@@||www.plex.tv^
+@@||app.plex.tv^
+
+# --- API & Auth ---
+@@||plex.direct^
+@@||*.plex.direct^
+@@||my.plexapp.com^
+
+# --- Metadata & Media ---
+@@||metadata.provider.plex.tv^
+@@||meta.plex.tv^
+@@||meta-db-worker02.pop.ric.plex.bz^
+@@||cpms.spop10.ams.plex.bz^
+@@||tvdb2.plex.tv^
+@@||tvthemes.plexapp.com^
+
+# --- Downloads & Updates ---
+@@||downloads.plex.tv^
+@@||nightlies.plex.tv^
+
+# --- Analytics (required for functionality) ---
+@@||analytics.plex.tv^
+
+# --- Plex CDN ---
+@@||resources-cdn.plexapp.com^
+@@||proxy.plex.tv^
+@@||proxy02.pop.ord.plex.bz^
+@@||pubsub.plex.tv^
+@@||status.plex.tv^
+@@||hub.plex.tv^

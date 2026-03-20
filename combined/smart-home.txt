@@ -1,0 +1,126 @@
+# =============================================================
+# AdGuard Home – Combined: smart-home
+# =============================================================
+
+# =============================================
+# Amazon Alexa – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||alexa.amazon.com^
+@@||alexa.amazon.de^
+
+# --- Voice ---
+@@||avs-alexa-*.amazon.com^
+@@||*.avs-alexa-*.amazon.com^
+
+# --- Skills ---
+@@||skills-store.amazon.com^
+@@||bob-dispatch-prod-na.amazon.com^
+@@||bob-dispatch-prod-eu.amazon.com^
+
+# --- Device ---
+@@||device-metrics-us.amazon.com^
+@@||device-metrics-us-2.amazon.com^
+@@||firs-ta-g7g.amazon.com^
+@@||dp-gw-na.amazon.com^
+@@||unagi-na.amazon.com^
+
+# --- Smart Home ---
+@@||layla.amazon.com^
+@@||todo-ta-g7g.amazon.com^
+
+# --- Music ---
+@@||music.amazon.com^
+@@||music.amazon.de^
+@@||dmls.amazon.com^
+
+# =============================================
+# Google Home / Nest – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||home.google.com^
+
+# --- Chromecast ---
+@@||clients3.google.com^
+@@||clients4.google.com^
+
+# --- Device Setup ---
+@@||connectivitycheck.gstatic.com^
+@@||accounts.google.com^
+@@||oauthaccountmanager.googleapis.com^
+
+# --- Google Assistant ---
+@@||assistant.google.com^
+@@||embeddedassistant.googleapis.com^
+
+# --- Nest ---
+@@||home.nest.com^
+@@||*.home.nest.com^
+@@||nest.com^
+@@||grpc-web.production.nest.com^
+
+# --- Smart Home Actions ---
+@@||homegraph.googleapis.com^
+@@||firebaseinstallations.googleapis.com^
+@@||fcm.googleapis.com^
+
+# --- Updates ---
+@@||update.googleapis.com^
+@@||dl.google.com^
+
+# =============================================
+# Home Assistant – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||home-assistant.io^
+@@||www.home-assistant.io^
+
+# --- Nabu Casa (HA Cloud) ---
+@@||nabucasa.com^
+@@||*.nabucasa.com^
+@@||*.ui.nabu.casa^
+@@||ui.nabu.casa^
+
+# --- Updates ---
+@@||version.home-assistant.io^
+@@||alerts.home-assistant.io^
+
+# --- Add-ons ---
+@@||addons.community.home-assistant.io^
+@@||github.com^
+@@||ghcr.io^
+
+# --- Analytics ---
+@@||analytics.home-assistant.io^
+
+# =============================================
+# Sonos – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||sonos.com^
+@@||www.sonos.com^
+
+# --- API ---
+@@||api.sonos.com^
+@@||api.ws.sonos.com^
+@@||dcapps.sonos.com^
+
+# --- Updates ---
+@@||update.sonos.com^
+@@||update-firmware.sonos.com^
+
+# --- Music Services ---
+@@||msmetrics.ws.sonos.com^
+
+# --- Auth ---
+@@||login.sonos.com^
+@@||player.sonos.com^
+

@@ -1,0 +1,36 @@
+# =============================================
+# Discord – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||discord.com^
+@@||www.discord.com^
+@@||discord.gg^
+@@||discordapp.com^
+
+# --- API & Gateway ---
+@@||gateway.discord.gg^
+@@||api.discord.com^
+@@||status.discord.com^
+
+# --- CDN & Media ---
+@@||cdn.discordapp.com^
+@@||media.discordapp.net^
+@@||images-ext-1.discordapp.net^
+@@||images-ext-2.discordapp.net^
+
+# --- Voice & Video ---
+@@||*.discord.media^
+@@||discord.media^
+
+# --- Updates ---
+@@||dl.discordapp.net^
+@@||updates.discord.com^
+
+# --- Attachments ---
+@@||attachments-cdn.discordapp.com^
+
+# --- Discord Activities ---
+@@||canary.discord.com^
+@@||ptb.discord.com^

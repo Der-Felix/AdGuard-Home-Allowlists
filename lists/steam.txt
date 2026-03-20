@@ -1,0 +1,45 @@
+# =============================================
+# Steam / Valve – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||steampowered.com^
+@@||store.steampowered.com^
+@@||steamcommunity.com^
+
+# --- Client ---
+@@||steamstatic.com^
+@@||*.steamstatic.com^
+@@||client-update.akamai.steamstatic.com^
+
+# --- Content Delivery ---
+@@||steamcdn-a.akamaihd.net^
+@@||cdn.akamai.steamstatic.com^
+@@||cdn.cloudflare.steamstatic.com^
+@@||cdn.steamstatic.com^
+
+# --- API ---
+@@||api.steampowered.com^
+@@||partner.steam-api.com^
+
+# --- Login ---
+@@||login.steampowered.com^
+@@||help.steampowered.com^
+@@||store.steampowered.com^
+
+# --- Steam Chat & Community ---
+@@||community.cloudflare.steamstatic.com^
+@@||avatars.cloudflare.steamstatic.com^
+
+# --- Downloads ---
+@@||lancache.steamcontent.com^
+@@||steamcontent.com^
+@@||*.steamcontent.com^
+
+# --- Valve Infrastructure ---
+@@||valve.net^
+@@||valvesoftware.com^
+@@||steam-chat.com^
+@@||steamgames.com^
+@@||steamusercontent.com^

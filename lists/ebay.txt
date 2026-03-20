@@ -1,0 +1,32 @@
+# =============================================
+# eBay – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||ebay.de^
+@@||ebay.com^
+@@||www.ebay.de^
+@@||www.ebay.com^
+@@||ebay.co.uk^
+
+# --- API ---
+@@||api.ebay.com^
+@@||svcs.ebay.com^
+
+# --- CDN & Images ---
+@@||i.ebayimg.com^
+@@||ir.ebaystatic.com^
+@@||ebaystatic.com^
+@@||ebayimg.com^
+@@||pics.ebay.com^
+
+# --- Auth ---
+@@||signin.ebay.de^
+@@||signin.ebay.com^
+
+# --- Kleinanzeigen ---
+@@||kleinanzeigen.de^
+@@||www.kleinanzeigen.de^
+@@||api.kleinanzeigen.de^
+@@||i.ebayimg.com^

@@ -1,0 +1,62 @@
+# =============================================
+# YouTube – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||youtube.com^
+@@||www.youtube.com^
+@@||m.youtube.com^
+@@||youtube-nocookie.com^
+@@||youtube-ui.l.google.com^
+
+# --- Video Streaming ---
+@@||googlevideo.com^
+@@||*.googlevideo.com^
+@@||r*.googlevideo.com^
+@@||rr*.googlevideo.com^
+@@||videoplayback.googlevideo.com^
+
+# --- YouTube API ---
+@@||youtubei.googleapis.com^
+@@||youtube.googleapis.com^
+@@||www.googleapis.com^
+
+# --- CDN & Thumbnails ---
+@@||ytimg.com^
+@@||i.ytimg.com^
+@@||i9.ytimg.com^
+@@||s.ytimg.com^
+@@||yt3.ggpht.com^
+@@||yt4.ggpht.com^
+@@||yt3.googleusercontent.com^
+
+# --- YouTube Music ---
+@@||music.youtube.com^
+@@||music-pa.googleapis.com^
+
+# --- YouTube TV ---
+@@||tv.youtube.com^
+
+# --- YouTube Kids ---
+@@||kids.youtube.com^
+@@||kids.youtubekids.com^
+@@||youtubekids.com^
+
+# --- YouTube Accounts & Auth ---
+@@||accounts.youtube.com^
+@@||suggestqueries-clients6.youtube.com^
+@@||clients1.youtube.com^
+
+# --- YouTube Embeds ---
+@@||youtube.com^
+@@||youtube-nocookie.com^
+
+# --- YouTube Shorts ---
+@@||shorts.youtube.com^
+
+# --- Necessary Google Dependencies ---
+@@||ggpht.com^
+@@||googleusercontent.com^
+@@||gstatic.com^
+@@||lh3.googleusercontent.com^

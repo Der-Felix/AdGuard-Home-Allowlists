@@ -1,0 +1,33 @@
+# =============================================
+# Zoom – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||zoom.us^
+@@||www.zoom.us^
+@@||zoom.com^
+
+# --- Meetings ---
+@@||*.zoom.us^
+@@||*.zoomgov.com^
+
+# --- CDN ---
+@@||cdn.zoom.us^
+@@||source.zoom.us^
+@@||assets.zoom.us^
+
+# --- API ---
+@@||api.zoom.us^
+@@||ws*.zoom.us^
+@@||web.zoom.us^
+
+# --- Auth ---
+@@||accounts.zoom.us^
+@@||login.zoom.us^
+
+# --- Zoom Phone ---
+@@||zpns.zoom.us^
+@@||logfiles.zoom.us^
+@@||us02st.zoom.us^
+@@||us02web.zoom.us^

@@ -1,0 +1,24 @@
+# =============================================
+# Sonos – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||sonos.com^
+@@||www.sonos.com^
+
+# --- API ---
+@@||api.sonos.com^
+@@||api.ws.sonos.com^
+@@||dcapps.sonos.com^
+
+# --- Updates ---
+@@||update.sonos.com^
+@@||update-firmware.sonos.com^
+
+# --- Music Services ---
+@@||msmetrics.ws.sonos.com^
+
+# --- Auth ---
+@@||login.sonos.com^
+@@||player.sonos.com^

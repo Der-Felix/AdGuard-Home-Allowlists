@@ -1,0 +1,27 @@
+# =============================================
+# Apple TV+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tv.apple.com^
+@@||trailers.apple.com^
+
+# --- Streaming ---
+@@||hls.itunes.apple.com^
+@@||play-edge.itunes.apple.com^
+@@||*.apple.com^
+@@||amp-api.tvos.apple.com^
+
+# --- CDN ---
+@@||is1-ssl.mzstatic.com^
+@@||is2-ssl.mzstatic.com^
+@@||is3-ssl.mzstatic.com^
+@@||is4-ssl.mzstatic.com^
+@@||is5-ssl.mzstatic.com^
+
+# --- Playback ---
+@@||play.itunes.apple.com^
+@@||playback.svod.apple.com^
+@@||linear.tv.apple.com^
+@@||uts-api.itunes.apple.com^

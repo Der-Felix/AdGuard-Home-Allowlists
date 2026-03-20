@@ -1,0 +1,34 @@
+# =============================================
+# Snapchat – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||snapchat.com^
+@@||www.snapchat.com^
+@@||snap.com^
+
+# --- API ---
+@@||app.snapchat.com^
+@@||api.snapchat.com^
+@@||gcp.api.snapchat.com^
+
+# --- CDN & Media ---
+@@||sc-cdn.net^
+@@||snap-storage-cdn.appspot.com^
+@@||cf-st.sc-cdn.net^
+@@||bolt-gcdn.sc-cdn.net^
+
+# --- Snap Map ---
+@@||map.snapchat.com^
+
+# --- Bitmoji ---
+@@||bitmoji.com^
+@@||images.bitmoji.com^
+@@||render.bitstrips.com^
+
+# --- Spotlight ---
+@@||spotlight.snapchat.com^
+
+# --- Auth ---
+@@||accounts.snapchat.com^

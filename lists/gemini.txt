@@ -1,0 +1,24 @@
+# =============================================
+# Google Gemini – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||gemini.google.com^
+@@||gemini.google^
+@@||deepmind.google^
+@@||deepmind.com^
+
+# --- API ---
+@@||generativelanguage.googleapis.com^
+@@||aistudio.google.com^
+@@||makersuite.google.com^
+@@||alkalimakersuite-pa.clients6.google.com^
+
+# --- AI Studio ---
+@@||labs.google.com^
+@@||labs.google^
+
+# --- Notebook LM ---
+@@||notebooklm.google.com^
+@@||notebooklm.google^

@@ -1,0 +1,21 @@
+# =============================================
+# MEGA – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||mega.nz^
+@@||mega.co.nz^
+@@||mega.io^
+
+# --- API ---
+@@||g.api.mega.co.nz^
+@@||*.api.mega.co.nz^
+
+# --- CDN ---
+@@||*.static.mega.co.nz^
+@@||eu.static.mega.co.nz^
+
+# --- Downloads ---
+@@||gfs270n071.userstorage.mega.co.nz^
+@@||*.userstorage.mega.co.nz^

@@ -1,0 +1,23 @@
+# =============================================
+# LinkedIn – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||linkedin.com^
+@@||www.linkedin.com^
+@@||de.linkedin.com^
+
+# --- API ---
+@@||api.linkedin.com^
+@@||platform.linkedin.com^
+
+# --- CDN & Media ---
+@@||media.licdn.com^
+@@||static.licdn.com^
+@@||licdn.com^
+@@||media-exp1.licdn.com^
+
+# --- LinkedIn Learning ---
+@@||learning.linkedin.com^
+@@||lnkd.in^

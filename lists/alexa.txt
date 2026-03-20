@@ -1,0 +1,33 @@
+# =============================================
+# Amazon Alexa – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||alexa.amazon.com^
+@@||alexa.amazon.de^
+
+# --- Voice ---
+@@||avs-alexa-*.amazon.com^
+@@||*.avs-alexa-*.amazon.com^
+
+# --- Skills ---
+@@||skills-store.amazon.com^
+@@||bob-dispatch-prod-na.amazon.com^
+@@||bob-dispatch-prod-eu.amazon.com^
+
+# --- Device ---
+@@||device-metrics-us.amazon.com^
+@@||device-metrics-us-2.amazon.com^
+@@||firs-ta-g7g.amazon.com^
+@@||dp-gw-na.amazon.com^
+@@||unagi-na.amazon.com^
+
+# --- Smart Home ---
+@@||layla.amazon.com^
+@@||todo-ta-g7g.amazon.com^
+
+# --- Music ---
+@@||music.amazon.com^
+@@||music.amazon.de^
+@@||dmls.amazon.com^

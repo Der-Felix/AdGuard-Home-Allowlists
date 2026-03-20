@@ -1,0 +1,46 @@
+# =============================================
+# WhatsApp – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||whatsapp.com^
+@@||whatsapp.net^
+@@||www.whatsapp.com^
+
+# --- API & Web ---
+@@||web.whatsapp.com^
+@@||w*.web.whatsapp.com^
+@@||api.whatsapp.com^
+@@||v.whatsapp.net^
+@@||pps.whatsapp.net^
+
+# --- Media & CDN ---
+@@||media.whatsapp.com^
+@@||media-*.whatsapp.com^
+@@||media-*.cdn.whatsapp.net^
+@@||mmg.whatsapp.net^
+@@||mmg-fna.whatsapp.net^
+@@||static.whatsapp.net^
+@@||scontent.whatsapp.net^
+
+# --- Chat Servers ---
+@@||e*.whatsapp.net^
+@@||g.whatsapp.net^
+@@||chat.whatsapp.com^
+
+# --- Connectivity ---
+@@||crashlogs.whatsapp.net^
+@@||dit.whatsapp.net^
+@@||faq.whatsapp.com^
+
+# --- WhatsApp Business ---
+@@||wa.me^
+@@||graph.whatsapp.com^
+
+# --- Meta/Facebook Dependencies ---
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||fbcdn.net^
+@@||fbsbx.com^
+@@||facebook.com^

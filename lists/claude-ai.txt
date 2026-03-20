@@ -1,0 +1,29 @@
+# =============================================
+# Claude / Anthropic – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||anthropic.com^
+@@||www.anthropic.com^
+@@||claude.ai^
+@@||www.claude.ai^
+
+# --- API ---
+@@||api.anthropic.com^
+@@||api.claude.ai^
+
+# --- CDN & Assets ---
+@@||cdn.anthropic.com^
+@@||assets.anthropic.com^
+
+# --- Console ---
+@@||console.anthropic.com^
+
+# --- Authentication ---
+@@||auth.anthropic.com^
+@@||accounts.anthropic.com^
+
+# --- Docs ---
+@@||docs.anthropic.com^
+@@||support.anthropic.com^

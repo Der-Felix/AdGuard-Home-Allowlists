@@ -1,0 +1,19 @@
+# =============================================
+# Threads (Meta) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||threads.net^
+@@||www.threads.net^
+
+# --- API ---
+@@||api.threads.net^
+
+# --- Meta Dependencies ---
+@@||facebook.com^
+@@||fbcdn.net^
+@@||cdninstagram.com^
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||accountscenter.instagram.com^

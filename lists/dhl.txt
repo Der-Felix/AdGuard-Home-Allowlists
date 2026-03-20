@@ -1,0 +1,30 @@
+# =============================================
+# DHL / Deutsche Post – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||dhl.de^
+@@||www.dhl.de^
+@@||dhl.com^
+@@||www.dhl.com^
+
+# --- Tracking ---
+@@||nolp.dhl.de^
+@@||www.dhl.de^
+
+# --- Paket App ---
+@@||api.dhl.com^
+@@||api-eu.dhl.com^
+
+# --- Login ---
+@@||login.dhl.de^
+@@||meindhl.de^
+
+# --- Post ---
+@@||deutschepost.de^
+@@||www.deutschepost.de^
+
+# --- Packstation ---
+@@||packstation.de^
+@@||www.packstation.de^

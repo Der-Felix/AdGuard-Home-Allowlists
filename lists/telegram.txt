@@ -1,0 +1,39 @@
+# =============================================
+# Telegram – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||telegram.org^
+@@||www.telegram.org^
+@@||telegram.me^
+@@||t.me^
+
+# --- API & Messaging ---
+@@||api.telegram.org^
+@@||core.telegram.org^
+
+# --- CDN & Media ---
+@@||cdn*.telegram.org^
+@@||telegram-cdn.org^
+
+# --- Web Client ---
+@@||web.telegram.org^
+@@||webk.telegram.org^
+@@||webz.telegram.org^
+
+# --- Updates ---
+@@||updates.telegram.org^
+
+# --- DC IP Ranges (Telegram Data Centers) ---
+@@||pluto.telegram.org^
+@@||venus.telegram.org^
+@@||aurora.telegram.org^
+@@||vesta.telegram.org^
+@@||flora.telegram.org^
+
+# --- Telegram Premium / Stickers ---
+@@||static.telegram.org^
+
+# --- Telegram Login ---
+@@||oauth.telegram.org^

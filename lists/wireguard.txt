@@ -1,0 +1,12 @@
+# =============================================
+# WireGuard – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||wireguard.com^
+@@||www.wireguard.com^
+
+# --- Downloads ---
+@@||download.wireguard.com^
+@@||git.zx2c4.com^

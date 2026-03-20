@@ -1,0 +1,52 @@
+# =============================================
+# GMX Mail – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||gmx.net^
+@@||gmx.de^
+@@||gmx.com^
+@@||gmx.at^
+@@||gmx.ch^
+@@||www.gmx.net^
+@@||www.gmx.de^
+
+# --- Mail Servers ---
+@@||mail.gmx.net^
+@@||mail.gmx.com^
+@@||imap.gmx.net^
+@@||pop.gmx.net^
+@@||smtp.gmx.net^
+@@||imap.gmx.com^
+@@||pop.gmx.com^
+@@||smtp.gmx.com^
+
+# --- GMX API & Login ---
+@@||navigator.gmx.net^
+@@||account.gmx.net^
+@@||login.gmx.net^
+@@||registrierung.gmx.net^
+
+# --- GMX Cloud ---
+@@||cloud.gmx.net^
+@@||upload.gmx.net^
+@@||mediencenter.gmx.net^
+
+# --- GMX Mobile ---
+@@||mobile.gmx.net^
+
+# --- CDN / Infrastructure (United Internet) ---
+@@||ui-portal.de^
+@@||uimserv.net^
+@@||uicdn.net^
+@@||uis.uimserv.net^
+@@||s.uicdn.net^
+@@||img.ui-portal.de^
+
+# --- WEB.DE (sister service, shared infra) ---
+@@||web.de^
+@@||smtp.web.de^
+@@||imap.web.de^
+@@||pop.web.de^
+@@||mail.web.de^

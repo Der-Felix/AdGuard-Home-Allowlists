@@ -1,0 +1,26 @@
+# =============================================
+# Home Assistant – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||home-assistant.io^
+@@||www.home-assistant.io^
+
+# --- Nabu Casa (HA Cloud) ---
+@@||nabucasa.com^
+@@||*.nabucasa.com^
+@@||*.ui.nabu.casa^
+@@||ui.nabu.casa^
+
+# --- Updates ---
+@@||version.home-assistant.io^
+@@||alerts.home-assistant.io^
+
+# --- Add-ons ---
+@@||addons.community.home-assistant.io^
+@@||github.com^
+@@||ghcr.io^
+
+# --- Analytics ---
+@@||analytics.home-assistant.io^

@@ -1,0 +1,245 @@
+# =============================================================
+# AdGuard Home – Combined: google-full
+# =============================================================
+
+# =============================================
+# Google Services – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core / Search ---
+@@||google.com^
+@@||google.de^
+@@||www.google.com^
+@@||www.google.de^
+@@||google.co.uk^
+
+# --- Authentication ---
+@@||accounts.google.com^
+@@||myaccount.google.com^
+@@||oauth2.googleapis.com^
+@@||securetoken.googleapis.com^
+@@||oauthaccountmanager.googleapis.com^
+
+# --- Gmail ---
+@@||mail.google.com^
+@@||gmail.com^
+@@||googlemail.com^
+@@||smtp.gmail.com^
+@@||imap.gmail.com^
+@@||smtp-relay.gmail.com^
+@@||gmail-smtp-in.l.google.com^
+
+# --- Google Drive ---
+@@||drive.google.com^
+@@||docs.google.com^
+@@||sheets.google.com^
+@@||slides.google.com^
+@@||forms.google.com^
+@@||drive.usercontent.google.com^
+
+# --- Google Meet ---
+@@||meet.google.com^
+@@||meet.googleapis.com^
+
+# --- Google Calendar ---
+@@||calendar.google.com^
+
+# --- Google Photos ---
+@@||photos.google.com^
+@@||lh3.googleusercontent.com^
+@@||lh4.googleusercontent.com^
+@@||lh5.googleusercontent.com^
+@@||lh6.googleusercontent.com^
+
+# --- Google Maps ---
+@@||maps.google.com^
+@@||maps.googleapis.com^
+@@||maps.gstatic.com^
+@@||mapsengine.google.com^
+@@||khms0.google.com^
+@@||khms1.google.com^
+
+# --- Google Play Store ---
+@@||play.google.com^
+@@||play.googleapis.com^
+@@||android.clients.google.com^
+@@||dl.google.com^
+
+# --- CDN & Static Assets ---
+@@||gstatic.com^
+@@||ssl.gstatic.com^
+@@||fonts.gstatic.com^
+@@||fonts.googleapis.com^
+@@||ajax.googleapis.com^
+@@||storage.googleapis.com^
+@@||firebaseinstallations.googleapis.com^
+@@||firebase-settings.crashlytics.com^
+@@||cdn.firebase.com^
+
+# --- Google APIs ---
+@@||googleapis.com^
+@@||clients1.google.com^
+@@||clients2.google.com^
+@@||clients3.google.com^
+@@||clients4.google.com^
+@@||clients5.google.com^
+@@||clients6.google.com^
+@@||clientservices.googleapis.com^
+@@||fcm.googleapis.com^
+@@||firebaseio.com^
+
+# --- Google Connectivity ---
+@@||connectivitycheck.gstatic.com^
+@@||connectivitycheck.android.com^
+@@||mtalk.google.com^
+@@||alt1-mtalk.google.com^
+@@||alt2-mtalk.google.com^
+@@||alt3-mtalk.google.com^
+
+# --- Google DNS ---
+@@||dns.google^
+@@||dns.google.com^
+@@||8.8.8.8^
+@@||8.8.4.4^
+
+# --- Certificates ---
+@@||pki.goog^
+@@||ocsp.pki.goog^
+@@||crl.pki.goog^
+
+# --- Google Translate ---
+@@||translate.google.com^
+@@||translate.googleapis.com^
+
+# --- Chrome & Updates ---
+@@||update.googleapis.com^
+@@||dl.google.com^
+@@||redirector.gvt1.com^
+@@||gvt1.com^
+@@||gvt2.com^
+
+# =============================================
+# YouTube – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||youtube.com^
+@@||www.youtube.com^
+@@||m.youtube.com^
+@@||youtube-nocookie.com^
+@@||youtube-ui.l.google.com^
+
+# --- Video Streaming ---
+@@||googlevideo.com^
+@@||*.googlevideo.com^
+@@||r*.googlevideo.com^
+@@||rr*.googlevideo.com^
+@@||videoplayback.googlevideo.com^
+
+# --- YouTube API ---
+@@||youtubei.googleapis.com^
+@@||youtube.googleapis.com^
+@@||www.googleapis.com^
+
+# --- CDN & Thumbnails ---
+@@||ytimg.com^
+@@||i.ytimg.com^
+@@||i9.ytimg.com^
+@@||s.ytimg.com^
+@@||yt3.ggpht.com^
+@@||yt4.ggpht.com^
+@@||yt3.googleusercontent.com^
+
+# --- YouTube Music ---
+@@||music.youtube.com^
+@@||music-pa.googleapis.com^
+
+# --- YouTube TV ---
+@@||tv.youtube.com^
+
+# --- YouTube Kids ---
+@@||kids.youtube.com^
+@@||kids.youtubekids.com^
+@@||youtubekids.com^
+
+# --- YouTube Accounts & Auth ---
+@@||accounts.youtube.com^
+@@||suggestqueries-clients6.youtube.com^
+@@||clients1.youtube.com^
+
+# --- YouTube Embeds ---
+@@||youtube.com^
+@@||youtube-nocookie.com^
+
+# --- YouTube Shorts ---
+@@||shorts.youtube.com^
+
+# --- Necessary Google Dependencies ---
+@@||ggpht.com^
+@@||googleusercontent.com^
+@@||gstatic.com^
+@@||lh3.googleusercontent.com^
+
+# =============================================
+# Google Gemini – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||gemini.google.com^
+@@||gemini.google^
+@@||deepmind.google^
+@@||deepmind.com^
+
+# --- API ---
+@@||generativelanguage.googleapis.com^
+@@||aistudio.google.com^
+@@||makersuite.google.com^
+@@||alkalimakersuite-pa.clients6.google.com^
+
+# --- AI Studio ---
+@@||labs.google.com^
+@@||labs.google^
+
+# --- Notebook LM ---
+@@||notebooklm.google.com^
+@@||notebooklm.google^
+
+# =============================================
+# Google Home / Nest – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||home.google.com^
+
+# --- Chromecast ---
+@@||clients3.google.com^
+@@||clients4.google.com^
+
+# --- Device Setup ---
+@@||connectivitycheck.gstatic.com^
+@@||accounts.google.com^
+@@||oauthaccountmanager.googleapis.com^
+
+# --- Google Assistant ---
+@@||assistant.google.com^
+@@||embeddedassistant.googleapis.com^
+
+# --- Nest ---
+@@||home.nest.com^
+@@||*.home.nest.com^
+@@||nest.com^
+@@||grpc-web.production.nest.com^
+
+# --- Smart Home Actions ---
+@@||homegraph.googleapis.com^
+@@||firebaseinstallations.googleapis.com^
+@@||fcm.googleapis.com^
+
+# --- Updates ---
+@@||update.googleapis.com^
+@@||dl.google.com^
+

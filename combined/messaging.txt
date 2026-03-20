@@ -1,0 +1,198 @@
+# =============================================================
+# AdGuard Home – Combined: messaging
+# =============================================================
+
+# =============================================
+# WhatsApp – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||whatsapp.com^
+@@||whatsapp.net^
+@@||www.whatsapp.com^
+
+# --- API & Web ---
+@@||web.whatsapp.com^
+@@||w*.web.whatsapp.com^
+@@||api.whatsapp.com^
+@@||v.whatsapp.net^
+@@||pps.whatsapp.net^
+
+# --- Media & CDN ---
+@@||media.whatsapp.com^
+@@||media-*.whatsapp.com^
+@@||media-*.cdn.whatsapp.net^
+@@||mmg.whatsapp.net^
+@@||mmg-fna.whatsapp.net^
+@@||static.whatsapp.net^
+@@||scontent.whatsapp.net^
+
+# --- Chat Servers ---
+@@||e*.whatsapp.net^
+@@||g.whatsapp.net^
+@@||chat.whatsapp.com^
+
+# --- Connectivity ---
+@@||crashlogs.whatsapp.net^
+@@||dit.whatsapp.net^
+@@||faq.whatsapp.com^
+
+# --- WhatsApp Business ---
+@@||wa.me^
+@@||graph.whatsapp.com^
+
+# --- Meta/Facebook Dependencies ---
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||fbcdn.net^
+@@||fbsbx.com^
+@@||facebook.com^
+
+# =============================================
+# Signal Messenger – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||signal.org^
+@@||www.signal.org^
+
+# --- Messaging & API ---
+@@||chat.signal.org^
+@@||storage.signal.org^
+@@||textsecure-service.whispersystems.org^
+@@||giphy-proxy-production.whispersystems.org^
+
+# --- CDN ---
+@@||cdn.signal.org^
+@@||cdn2.signal.org^
+@@||cdn3.signal.org^
+@@||updates.signal.org^
+@@||updates2.signal.org^
+
+# --- Media & Attachments ---
+@@||contentproxy.signal.org^
+@@||sfu.voip.signal.org^
+@@||turn1.voip.signal.org^
+@@||turn2.voip.signal.org^
+@@||turn3.voip.signal.org^
+
+# --- Key Distribution ---
+@@||api.directory.signal.org^
+@@||directory.signal.org^
+
+# --- Backup ---
+@@||backup.signal.org^
+
+# --- Captcha ---
+@@||signalcaptchas.org^
+
+# =============================================
+# Telegram – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||telegram.org^
+@@||www.telegram.org^
+@@||telegram.me^
+@@||t.me^
+
+# --- API & Messaging ---
+@@||api.telegram.org^
+@@||core.telegram.org^
+
+# --- CDN & Media ---
+@@||cdn*.telegram.org^
+@@||telegram-cdn.org^
+
+# --- Web Client ---
+@@||web.telegram.org^
+@@||webk.telegram.org^
+@@||webz.telegram.org^
+
+# --- Updates ---
+@@||updates.telegram.org^
+
+# --- DC IP Ranges (Telegram Data Centers) ---
+@@||pluto.telegram.org^
+@@||venus.telegram.org^
+@@||aurora.telegram.org^
+@@||vesta.telegram.org^
+@@||flora.telegram.org^
+
+# --- Telegram Premium / Stickers ---
+@@||static.telegram.org^
+
+# --- Telegram Login ---
+@@||oauth.telegram.org^
+
+# =============================================
+# Slack – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||slack.com^
+@@||www.slack.com^
+@@||app.slack.com^
+@@||api.slack.com^
+
+# --- Messaging ---
+@@||wss-primary.slack.com^
+@@||wss-backup.slack.com^
+@@||wss-mobile.slack.com^
+
+# --- CDN & Files ---
+@@||files.slack.com^
+@@||a.slack-edge.com^
+@@||b.slack-edge.com^
+@@||slack-edge.com^
+@@||edgeapi.slack.com^
+@@||slack-imgs.com^
+@@||slack-files.com^
+@@||slack-redir.net^
+@@||slackb.com^
+
+# --- Calls ---
+@@||slack-calls.com^
+@@||*.slack-calls.com^
+
+# --- Workspace ---
+@@||*.slack.com^
+
+# =============================================
+# Zoom – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||zoom.us^
+@@||www.zoom.us^
+@@||zoom.com^
+
+# --- Meetings ---
+@@||*.zoom.us^
+@@||*.zoomgov.com^
+
+# --- CDN ---
+@@||cdn.zoom.us^
+@@||source.zoom.us^
+@@||assets.zoom.us^
+
+# --- API ---
+@@||api.zoom.us^
+@@||ws*.zoom.us^
+@@||web.zoom.us^
+
+# --- Auth ---
+@@||accounts.zoom.us^
+@@||login.zoom.us^
+
+# --- Zoom Phone ---
+@@||zpns.zoom.us^
+@@||logfiles.zoom.us^
+@@||us02st.zoom.us^
+@@||us02web.zoom.us^
+

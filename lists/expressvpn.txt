@@ -1,0 +1,22 @@
+# =============================================
+# ExpressVPN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||expressvpn.com^
+@@||www.expressvpn.com^
+
+# --- API ---
+@@||api.expressvpn.com^
+@@||*.expressvpn.com^
+
+# --- CDN ---
+@@||assets.expressvpn.com^
+@@||expresscdn.com^
+
+# --- VPN Connectivity ---
+@@||*.expressnetw.com^
+@@||expressnetw.com^
+@@||xvpn.io^
+@@||*.xvpn.io^

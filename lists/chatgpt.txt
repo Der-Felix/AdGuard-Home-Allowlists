@@ -1,0 +1,40 @@
+# =============================================
+# ChatGPT / OpenAI – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||openai.com^
+@@||chat.openai.com^
+@@||www.openai.com^
+@@||api.openai.com^
+@@||platform.openai.com^
+
+# --- Authentication ---
+@@||auth0.openai.com^
+@@||auth.openai.com^
+
+# --- CDN & Assets ---
+@@||cdn.openai.com^
+@@||oaiusercontent.com^
+@@||oaistatic.com^
+@@||files.oaiusercontent.com^
+
+# --- ChatGPT Plugins & Browse ---
+@@||browser.chatgpt.com^
+@@||chatgpt.com^
+@@||plugins.chatgpt.com^
+
+# --- DALL-E ---
+@@||dalle.com^
+
+# --- Sora ---
+@@||sora.com^
+
+# --- Realtime / WebSocket ---
+@@||realtime.openai.com^
+
+# --- OpenAI API Infrastructure ---
+@@||api.statsig.com^
+@@||featuregates.org^
+@@||identitytoolkit.googleapis.com^

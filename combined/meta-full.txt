@@ -1,0 +1,148 @@
+# =============================================================
+# AdGuard Home – Combined: meta-full
+# =============================================================
+
+# =============================================
+# Facebook / Meta – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||facebook.com^
+@@||www.facebook.com^
+@@||m.facebook.com^
+@@||web.facebook.com^
+@@||fb.com^
+@@||fb.me^
+
+# --- Authentication ---
+@@||accountscenter.facebook.com^
+@@||facebook.com^
+
+# --- API ---
+@@||graph.facebook.com^
+@@||api.facebook.com^
+
+# --- CDN & Media ---
+@@||fbcdn.net^
+@@||*.fbcdn.net^
+@@||scontent.xx.fbcdn.net^
+@@||static.xx.fbcdn.net^
+@@||video.xx.fbcdn.net^
+@@||external.xx.fbcdn.net^
+@@||connect.facebook.net^
+@@||fbsbx.com^
+
+# --- Messenger ---
+@@||messenger.com^
+@@||www.messenger.com^
+@@||*.messenger.com^
+@@||edge-mqtt.facebook.com^
+@@||mqtt-mini.facebook.com^
+
+# --- Facebook Marketplace ---
+@@||marketplace.facebook.com^
+
+# --- Threads ---
+@@||threads.net^
+@@||www.threads.net^
+
+# =============================================
+# Instagram – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||instagram.com^
+@@||www.instagram.com^
+@@||i.instagram.com^
+@@||l.instagram.com^
+
+# --- API ---
+@@||graph.instagram.com^
+@@||api.instagram.com^
+
+# --- CDN & Media ---
+@@||scontent-*.cdninstagram.com^
+@@||scontent.cdninstagram.com^
+@@||cdninstagram.com^
+@@||static.cdninstagram.com^
+
+# --- Stories & Reels ---
+@@||scontent-*.xx.fbcdn.net^
+
+# --- Meta Dependencies ---
+@@||facebook.com^
+@@||fbcdn.net^
+@@||fbsbx.com^
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||accountscenter.instagram.com^
+
+# =============================================
+# WhatsApp – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||whatsapp.com^
+@@||whatsapp.net^
+@@||www.whatsapp.com^
+
+# --- API & Web ---
+@@||web.whatsapp.com^
+@@||w*.web.whatsapp.com^
+@@||api.whatsapp.com^
+@@||v.whatsapp.net^
+@@||pps.whatsapp.net^
+
+# --- Media & CDN ---
+@@||media.whatsapp.com^
+@@||media-*.whatsapp.com^
+@@||media-*.cdn.whatsapp.net^
+@@||mmg.whatsapp.net^
+@@||mmg-fna.whatsapp.net^
+@@||static.whatsapp.net^
+@@||scontent.whatsapp.net^
+
+# --- Chat Servers ---
+@@||e*.whatsapp.net^
+@@||g.whatsapp.net^
+@@||chat.whatsapp.com^
+
+# --- Connectivity ---
+@@||crashlogs.whatsapp.net^
+@@||dit.whatsapp.net^
+@@||faq.whatsapp.com^
+
+# --- WhatsApp Business ---
+@@||wa.me^
+@@||graph.whatsapp.com^
+
+# --- Meta/Facebook Dependencies ---
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||fbcdn.net^
+@@||fbsbx.com^
+@@||facebook.com^
+
+# =============================================
+# Threads (Meta) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||threads.net^
+@@||www.threads.net^
+
+# --- API ---
+@@||api.threads.net^
+
+# --- Meta Dependencies ---
+@@||facebook.com^
+@@||fbcdn.net^
+@@||cdninstagram.com^
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||accountscenter.instagram.com^
+

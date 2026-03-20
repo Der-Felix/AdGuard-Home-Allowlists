@@ -1,0 +1,29 @@
+# =============================================
+# Bitwarden – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||bitwarden.com^
+@@||www.bitwarden.com^
+@@||vault.bitwarden.com^
+
+# --- API ---
+@@||api.bitwarden.com^
+@@||identity.bitwarden.com^
+@@||notifications.bitwarden.com^
+@@||events.bitwarden.com^
+
+# --- CDN ---
+@@||cdn.bitwarden.net^
+
+# --- Icons ---
+@@||icons.bitwarden.net^
+
+# --- Send ---
+@@||send.bitwarden.com^
+
+# --- EU Servers ---
+@@||vault.bitwarden.eu^
+@@||api.bitwarden.eu^
+@@||identity.bitwarden.eu^

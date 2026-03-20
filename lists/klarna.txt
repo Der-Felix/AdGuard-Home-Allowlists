@@ -1,0 +1,22 @@
+# =============================================
+# Klarna – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||klarna.com^
+@@||www.klarna.com^
+
+# --- API ---
+@@||api.klarna.com^
+@@||js.klarna.com^
+@@||eu.playground.klarna.com^
+@@||x.klarnacdn.net^
+@@||klarnacdn.net^
+
+# --- App ---
+@@||app.klarna.com^
+
+# --- Auth ---
+@@||login.klarna.com^
+@@||auth.klarna.com^

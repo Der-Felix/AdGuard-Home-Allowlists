@@ -1,0 +1,45 @@
+# =============================================
+# PayPal – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||paypal.com^
+@@||www.paypal.com^
+@@||paypal.de^
+@@||www.paypal.de^
+@@||paypal.me^
+
+# --- Authentication ---
+@@||api.paypal.com^
+@@||api-m.paypal.com^
+@@||svcs.paypal.com^
+
+# --- Checkout ---
+@@||checkout.paypal.com^
+@@||securepayments.paypal.com^
+@@||payflowilink.paypal.com^
+
+# --- CDN & Assets ---
+@@||paypalobjects.com^
+@@||t.paypal.com^
+@@||pics.paypal.com^
+
+# --- PayPal Credit ---
+@@||credit.paypal.com^
+@@||creditapply.paypal.com^
+
+# --- Notifications ---
+@@||notify.paypal.com^
+@@||ipnpb.paypal.com^
+
+# --- PayPal Business ---
+@@||business.paypal.com^
+@@||merchantweb.paypal.com^
+
+# --- PayPal Here ---
+@@||here.paypal.com^
+
+# --- Venmo ---
+@@||venmo.com^
+@@||api.venmo.com^

@@ -1,0 +1,31 @@
+# =============================================
+# PlayStation Network – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||playstation.com^
+@@||www.playstation.com^
+@@||playstation.net^
+@@||sonyentertainmentnetwork.com^
+
+# --- PSN ---
+@@||*.playstation.net^
+@@||auth.api.sonyentertainmentnetwork.com^
+@@||account.sonyentertainmentnetwork.com^
+
+# --- PS Store ---
+@@||store.playstation.com^
+@@||store.sonyentertainmentnetwork.com^
+
+# --- CDN ---
+@@||psnobj.playstation.net^
+@@||gs2.ww.prod.dl.playstation.net^
+@@||gs-sec.ww.np.dl.playstation.net^
+
+# --- Remote Play ---
+@@||remoteplay.dl.playstation.net^
+
+# --- PlayStation App ---
+@@||mobile.playstation.com^
+@@||web.np.playstation.com^

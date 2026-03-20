@@ -1,0 +1,47 @@
+# =============================================
+# ARD & ZDF Mediathek – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- ARD Mediathek ---
+@@||ardmediathek.de^
+@@||www.ardmediathek.de^
+@@||api.ardmediathek.de^
+@@||mediathek.daserste.de^
+
+# --- ARD Streaming ---
+@@||daserste.de^
+@@||live.daserste.de^
+@@||ndr.de^
+@@||wdr.de^
+@@||br.de^
+@@||swr.de^
+@@||hr-online.de^
+@@||mdr.de^
+@@||rbb-online.de^
+@@||sr-online.de^
+@@||radiobremen.de^
+
+# --- ZDF Mediathek ---
+@@||zdf.de^
+@@||www.zdf.de^
+@@||api.zdf.de^
+
+# --- ZDF Streaming ---
+@@||nrodlzdf-a.akamaihd.net^
+@@||rodlzdf-a.akamaihd.net^
+@@||zdf-cdn.live.cellular.de^
+
+# --- 3sat & ARTE ---
+@@||3sat.de^
+@@||www.arte.tv^
+@@||arte.tv^
+@@||api.arte.tv^
+
+# --- ZDF CDN ---
+@@||epg-image.zdf.de^
+@@||images.zdf.de^
+
+# --- Tagesschau ---
+@@||tagesschau.de^
+@@||www.tagesschau.de^

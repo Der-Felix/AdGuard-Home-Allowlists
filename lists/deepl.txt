@@ -1,0 +1,17 @@
+# =============================================
+# DeepL Translator – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||deepl.com^
+@@||www.deepl.com^
+
+# --- API ---
+@@||api.deepl.com^
+@@||api-free.deepl.com^
+
+# --- Translation ---
+@@||w.deepl.com^
+@@||s.deepl.com^
+@@||static.deepl.com^

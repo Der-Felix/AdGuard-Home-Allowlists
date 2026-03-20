@@ -1,0 +1,281 @@
+# =============================================================
+# AdGuard Home – Combined: german-services
+# =============================================================
+
+# =============================================
+# GMX Mail – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||gmx.net^
+@@||gmx.de^
+@@||gmx.com^
+@@||gmx.at^
+@@||gmx.ch^
+@@||www.gmx.net^
+@@||www.gmx.de^
+
+# --- Mail Servers ---
+@@||mail.gmx.net^
+@@||mail.gmx.com^
+@@||imap.gmx.net^
+@@||pop.gmx.net^
+@@||smtp.gmx.net^
+@@||imap.gmx.com^
+@@||pop.gmx.com^
+@@||smtp.gmx.com^
+
+# --- GMX API & Login ---
+@@||navigator.gmx.net^
+@@||account.gmx.net^
+@@||login.gmx.net^
+@@||registrierung.gmx.net^
+
+# --- GMX Cloud ---
+@@||cloud.gmx.net^
+@@||upload.gmx.net^
+@@||mediencenter.gmx.net^
+
+# --- GMX Mobile ---
+@@||mobile.gmx.net^
+
+# --- CDN / Infrastructure (United Internet) ---
+@@||ui-portal.de^
+@@||uimserv.net^
+@@||uicdn.net^
+@@||uis.uimserv.net^
+@@||s.uicdn.net^
+@@||img.ui-portal.de^
+
+# --- WEB.DE (sister service, shared infra) ---
+@@||web.de^
+@@||smtp.web.de^
+@@||imap.web.de^
+@@||pop.web.de^
+@@||mail.web.de^
+
+# =============================================
+# ARD & ZDF Mediathek – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- ARD Mediathek ---
+@@||ardmediathek.de^
+@@||www.ardmediathek.de^
+@@||api.ardmediathek.de^
+@@||mediathek.daserste.de^
+
+# --- ARD Streaming ---
+@@||daserste.de^
+@@||live.daserste.de^
+@@||ndr.de^
+@@||wdr.de^
+@@||br.de^
+@@||swr.de^
+@@||hr-online.de^
+@@||mdr.de^
+@@||rbb-online.de^
+@@||sr-online.de^
+@@||radiobremen.de^
+
+# --- ZDF Mediathek ---
+@@||zdf.de^
+@@||www.zdf.de^
+@@||api.zdf.de^
+
+# --- ZDF Streaming ---
+@@||nrodlzdf-a.akamaihd.net^
+@@||rodlzdf-a.akamaihd.net^
+@@||zdf-cdn.live.cellular.de^
+
+# --- 3sat & ARTE ---
+@@||3sat.de^
+@@||www.arte.tv^
+@@||arte.tv^
+@@||api.arte.tv^
+
+# --- ZDF CDN ---
+@@||epg-image.zdf.de^
+@@||images.zdf.de^
+
+# --- Tagesschau ---
+@@||tagesschau.de^
+@@||www.tagesschau.de^
+
+# =============================================
+# Joyn – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||joyn.de^
+@@||www.joyn.de^
+@@||api.joyn.de^
+
+# --- Streaming ---
+@@||cdn.joyn.de^
+@@||playerapi.joyn.de^
+@@||auth.joyn.de^
+
+# --- CDN ---
+@@||images.joyn.de^
+@@||assets.joyn.de^
+
+# =============================================
+# RTL+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||rtlplus.com^
+@@||www.rtlplus.com^
+@@||plus.rtl.de^
+@@||rtl.de^
+
+# --- API ---
+@@||api.rtlplus.com^
+
+# --- Streaming ---
+@@||cdn.rtlplus.com^
+@@||vod.rtl.de^
+
+# --- Auth ---
+@@||auth.rtl.de^
+@@||account.rtl.de^
+
+# =============================================
+# DHL / Deutsche Post – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||dhl.de^
+@@||www.dhl.de^
+@@||dhl.com^
+@@||www.dhl.com^
+
+# --- Tracking ---
+@@||nolp.dhl.de^
+@@||www.dhl.de^
+
+# --- Paket App ---
+@@||api.dhl.com^
+@@||api-eu.dhl.com^
+
+# --- Login ---
+@@||login.dhl.de^
+@@||meindhl.de^
+
+# --- Post ---
+@@||deutschepost.de^
+@@||www.deutschepost.de^
+
+# --- Packstation ---
+@@||packstation.de^
+@@||www.packstation.de^
+
+# =============================================
+# German Banking (DKB, ING, Sparkasse, N26, Comdirect) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- DKB ---
+@@||dkb.de^
+@@||www.dkb.de^
+@@||banking.dkb.de^
+@@||api.dkb.de^
+
+# --- ING ---
+@@||ing.de^
+@@||www.ing.de^
+@@||banking.ing.de^
+@@||api.ing.de^
+
+# --- Sparkasse ---
+@@||sparkasse.de^
+@@||www.sparkasse.de^
+@@||*.sparkasse.de^
+@@||s-fints-pt-*.s-fints.de^
+
+# --- N26 ---
+@@||n26.com^
+@@||www.n26.com^
+@@||api.n26.com^
+@@||app.n26.com^
+
+# --- Comdirect ---
+@@||comdirect.de^
+@@||www.comdirect.de^
+@@||kunde.comdirect.de^
+
+# --- Commerzbank ---
+@@||commerzbank.de^
+@@||www.commerzbank.de^
+
+# --- Deutsche Bank ---
+@@||deutsche-bank.de^
+@@||www.deutsche-bank.de^
+@@||meine.deutsche-bank.de^
+
+# --- Common Banking Infra ---
+@@||giropay.de^
+@@||paydirekt.de^
+@@||girocard.eu^
+
+# =============================================
+# eBay – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||ebay.de^
+@@||ebay.com^
+@@||www.ebay.de^
+@@||www.ebay.com^
+@@||ebay.co.uk^
+
+# --- API ---
+@@||api.ebay.com^
+@@||svcs.ebay.com^
+
+# --- CDN & Images ---
+@@||i.ebayimg.com^
+@@||ir.ebaystatic.com^
+@@||ebaystatic.com^
+@@||ebayimg.com^
+@@||pics.ebay.com^
+
+# --- Auth ---
+@@||signin.ebay.de^
+@@||signin.ebay.com^
+
+# --- Kleinanzeigen ---
+@@||kleinanzeigen.de^
+@@||www.kleinanzeigen.de^
+@@||api.kleinanzeigen.de^
+@@||i.ebayimg.com^
+
+# =============================================
+# Klarna – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||klarna.com^
+@@||www.klarna.com^
+
+# --- API ---
+@@||api.klarna.com^
+@@||js.klarna.com^
+@@||eu.playground.klarna.com^
+@@||x.klarnacdn.net^
+@@||klarnacdn.net^
+
+# --- App ---
+@@||app.klarna.com^
+
+# --- Auth ---
+@@||login.klarna.com^
+@@||auth.klarna.com^
+

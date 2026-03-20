@@ -1,0 +1,23 @@
+# =============================================
+# Midjourney – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||midjourney.com^
+@@||www.midjourney.com^
+
+# --- API & CDN ---
+@@||cdn.midjourney.com^
+@@||api.midjourney.com^
+@@||ws.midjourney.com^
+
+# --- Image Hosting ---
+@@||mj-gallery.com^
+
+# --- Discord (required for Midjourney) ---
+@@||discord.com^
+@@||discord.gg^
+@@||cdn.discordapp.com^
+@@||gateway.discord.gg^
+@@||media.discordapp.net^

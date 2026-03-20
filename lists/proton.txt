@@ -1,0 +1,56 @@
+# =============================================
+# Proton (Mail, VPN, Drive, Calendar, Pass) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||proton.me^
+@@||protonmail.com^
+@@||protonmail.ch^
+@@||protonvpn.com^
+@@||proton.ch^
+@@||www.proton.me^
+
+# --- Proton Mail ---
+@@||mail.proton.me^
+@@||mail.protonmail.com^
+@@||account.proton.me^
+@@||account.protonmail.com^
+@@||api.protonmail.ch^
+
+# --- Proton API ---
+@@||mail-api.proton.me^
+@@||vpn-api.proton.me^
+@@||drive-api.proton.me^
+@@||calendar-api.proton.me^
+@@||pass-api.proton.me^
+@@||account-api.proton.me^
+
+# --- Proton VPN ---
+@@||vpn.proton.me^
+@@||api.protonvpn.ch^
+@@||*.protonvpn.net^
+@@||protonvpn.net^
+
+# --- Proton Drive ---
+@@||drive.proton.me^
+
+# --- Proton Calendar ---
+@@||calendar.proton.me^
+
+# --- Proton Pass ---
+@@||pass.proton.me^
+
+# --- Proton CDN & Infrastructure ---
+@@||proton.me^
+@@||prtn.app^
+@@||protonmail.com^
+@@||proton-api.com^
+@@||protonprivacy.com^
+
+# --- Proton Verification ---
+@@||verify.proton.me^
+@@||signup.proton.me^
+
+# --- Alternative Routing (censorship bypass) ---
+@@||*.compute.amazonaws.com^

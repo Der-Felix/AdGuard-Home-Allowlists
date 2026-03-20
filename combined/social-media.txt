@@ -1,0 +1,340 @@
+# =============================================================
+# AdGuard Home – Combined: social-media
+# =============================================================
+
+# =============================================
+# Instagram – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||instagram.com^
+@@||www.instagram.com^
+@@||i.instagram.com^
+@@||l.instagram.com^
+
+# --- API ---
+@@||graph.instagram.com^
+@@||api.instagram.com^
+
+# --- CDN & Media ---
+@@||scontent-*.cdninstagram.com^
+@@||scontent.cdninstagram.com^
+@@||cdninstagram.com^
+@@||static.cdninstagram.com^
+
+# --- Stories & Reels ---
+@@||scontent-*.xx.fbcdn.net^
+
+# --- Meta Dependencies ---
+@@||facebook.com^
+@@||fbcdn.net^
+@@||fbsbx.com^
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||accountscenter.instagram.com^
+
+# =============================================
+# Facebook / Meta – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||facebook.com^
+@@||www.facebook.com^
+@@||m.facebook.com^
+@@||web.facebook.com^
+@@||fb.com^
+@@||fb.me^
+
+# --- Authentication ---
+@@||accountscenter.facebook.com^
+@@||facebook.com^
+
+# --- API ---
+@@||graph.facebook.com^
+@@||api.facebook.com^
+
+# --- CDN & Media ---
+@@||fbcdn.net^
+@@||*.fbcdn.net^
+@@||scontent.xx.fbcdn.net^
+@@||static.xx.fbcdn.net^
+@@||video.xx.fbcdn.net^
+@@||external.xx.fbcdn.net^
+@@||connect.facebook.net^
+@@||fbsbx.com^
+
+# --- Messenger ---
+@@||messenger.com^
+@@||www.messenger.com^
+@@||*.messenger.com^
+@@||edge-mqtt.facebook.com^
+@@||mqtt-mini.facebook.com^
+
+# --- Facebook Marketplace ---
+@@||marketplace.facebook.com^
+
+# --- Threads ---
+@@||threads.net^
+@@||www.threads.net^
+
+# =============================================
+# TikTok – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tiktok.com^
+@@||www.tiktok.com^
+@@||m.tiktok.com^
+
+# --- API ---
+@@||api.tiktokv.com^
+@@||api*.tiktokv.com^
+@@||webcast.tiktok.com^
+
+# --- Video CDN ---
+@@||v16-webapp-prime.tiktok.com^
+@@||v*.tiktokcdn.com^
+@@||tiktokcdn.com^
+@@||tiktokcdn-*.com^
+@@||*.tiktokcdn.com^
+@@||p16-sign-va.tiktokcdn.com^
+@@||sf16-website-login.neutral.tiktokstaticb.com^
+
+# --- Login & Auth ---
+@@||login.tiktok.com^
+@@||mon.tiktokv.com^
+
+# --- Music ---
+@@||sf-tb-sg.ibytedtos.com^
+@@||ibytedtos.com^
+
+# --- Bytedance Infra ---
+@@||bytedance.com^
+@@||byteoversea.com^
+@@||byteimg.com^
+@@||ibyteimg.com^
+@@||musical.ly^
+@@||tiktokv.com^
+@@||sgsnssdk.com^
+
+# =============================================
+# X (Twitter) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||x.com^
+@@||www.x.com^
+@@||twitter.com^
+@@||www.twitter.com^
+@@||mobile.twitter.com^
+
+# --- API ---
+@@||api.twitter.com^
+@@||api.x.com^
+@@||abs.twimg.com^
+
+# --- CDN & Media ---
+@@||twimg.com^
+@@||pbs.twimg.com^
+@@||video.twimg.com^
+@@||ton.twimg.com^
+@@||cdn.cms-twdigitalassets.com^
+
+# --- t.co Links ---
+@@||t.co^
+
+# --- Streaming & Spaces ---
+@@||broadcast.twitter.com^
+@@||prod-video-us-east-2.pscp.tv^
+@@||pscp.tv^
+
+# --- Grok AI ---
+@@||grok.x.com^
+@@||grok.x.ai^
+@@||x.ai^
+
+# =============================================
+# Reddit – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||reddit.com^
+@@||www.reddit.com^
+@@||old.reddit.com^
+@@||new.reddit.com^
+@@||sh.reddit.com^
+@@||oauth.reddit.com^
+
+# --- API ---
+@@||s.reddit.com^
+@@||api.reddit.com^
+@@||gql.reddit.com^
+
+# --- CDN & Media ---
+@@||i.redd.it^
+@@||v.redd.it^
+@@||preview.redd.it^
+@@||external-preview.redd.it^
+@@||redditmedia.com^
+@@||redditstatic.com^
+@@||reddituploads.com^
+@@||thumbs.redditmedia.com^
+
+# --- Reddit Chat ---
+@@||chat.reddit.com^
+@@||sendbird.com^
+
+# --- Reddit App ---
+@@||reddit.app.link^
+@@||redditapp.com^
+
+# =============================================
+# Pinterest – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||pinterest.com^
+@@||www.pinterest.com^
+@@||pinterest.de^
+@@||pinterest.co.uk^
+
+# --- API ---
+@@||api.pinterest.com^
+@@||widgets.pinterest.com^
+
+# --- CDN & Media ---
+@@||pinimg.com^
+@@||i.pinimg.com^
+@@||s.pinimg.com^
+@@||ct.pinterest.com^
+@@||v1.pinimg.com^
+
+# =============================================
+# LinkedIn – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||linkedin.com^
+@@||www.linkedin.com^
+@@||de.linkedin.com^
+
+# --- API ---
+@@||api.linkedin.com^
+@@||platform.linkedin.com^
+
+# --- CDN & Media ---
+@@||media.licdn.com^
+@@||static.licdn.com^
+@@||licdn.com^
+@@||media-exp1.licdn.com^
+
+# --- LinkedIn Learning ---
+@@||learning.linkedin.com^
+@@||lnkd.in^
+
+# =============================================
+# Snapchat – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||snapchat.com^
+@@||www.snapchat.com^
+@@||snap.com^
+
+# --- API ---
+@@||app.snapchat.com^
+@@||api.snapchat.com^
+@@||gcp.api.snapchat.com^
+
+# --- CDN & Media ---
+@@||sc-cdn.net^
+@@||snap-storage-cdn.appspot.com^
+@@||cf-st.sc-cdn.net^
+@@||bolt-gcdn.sc-cdn.net^
+
+# --- Snap Map ---
+@@||map.snapchat.com^
+
+# --- Bitmoji ---
+@@||bitmoji.com^
+@@||images.bitmoji.com^
+@@||render.bitstrips.com^
+
+# --- Spotlight ---
+@@||spotlight.snapchat.com^
+
+# --- Auth ---
+@@||accounts.snapchat.com^
+
+# =============================================
+# Mastodon / Fediverse – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Popular Instances ---
+@@||mastodon.social^
+@@||mastodon.online^
+@@||mstdn.social^
+@@||mas.to^
+@@||mastodon.world^
+@@||techhub.social^
+@@||infosec.exchange^
+@@||fosstodon.org^
+@@||chaos.social^
+@@||troet.cafe^
+
+# --- Mastodon CDN ---
+@@||files.mastodon.social^
+@@||media.mastodon.social^
+
+# --- Mastodon Project ---
+@@||joinmastodon.org^
+
+# =============================================
+# Threads (Meta) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||threads.net^
+@@||www.threads.net^
+
+# --- API ---
+@@||api.threads.net^
+
+# --- Meta Dependencies ---
+@@||facebook.com^
+@@||fbcdn.net^
+@@||cdninstagram.com^
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||accountscenter.instagram.com^
+
+# =============================================
+# Bluesky – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||bsky.app^
+@@||bsky.social^
+@@||bsky.network^
+
+# --- API ---
+@@||api.bsky.app^
+@@||public.api.bsky.app^
+@@||*.bsky.network^
+
+# --- CDN ---
+@@||cdn.bsky.app^
+@@||video.bsky.app^
+@@||bsky.video^
+

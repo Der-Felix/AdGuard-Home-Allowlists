@@ -1,0 +1,31 @@
+# =============================================
+# Instagram – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||instagram.com^
+@@||www.instagram.com^
+@@||i.instagram.com^
+@@||l.instagram.com^
+
+# --- API ---
+@@||graph.instagram.com^
+@@||api.instagram.com^
+
+# --- CDN & Media ---
+@@||scontent-*.cdninstagram.com^
+@@||scontent.cdninstagram.com^
+@@||cdninstagram.com^
+@@||static.cdninstagram.com^
+
+# --- Stories & Reels ---
+@@||scontent-*.xx.fbcdn.net^
+
+# --- Meta Dependencies ---
+@@||facebook.com^
+@@||fbcdn.net^
+@@||fbsbx.com^
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||accountscenter.instagram.com^

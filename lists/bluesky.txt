@@ -1,0 +1,19 @@
+# =============================================
+# Bluesky – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||bsky.app^
+@@||bsky.social^
+@@||bsky.network^
+
+# --- API ---
+@@||api.bsky.app^
+@@||public.api.bsky.app^
+@@||*.bsky.network^
+
+# --- CDN ---
+@@||cdn.bsky.app^
+@@||video.bsky.app^
+@@||bsky.video^

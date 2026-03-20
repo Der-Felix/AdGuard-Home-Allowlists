@@ -1,0 +1,33 @@
+# =============================================
+# Slack – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||slack.com^
+@@||www.slack.com^
+@@||app.slack.com^
+@@||api.slack.com^
+
+# --- Messaging ---
+@@||wss-primary.slack.com^
+@@||wss-backup.slack.com^
+@@||wss-mobile.slack.com^
+
+# --- CDN & Files ---
+@@||files.slack.com^
+@@||a.slack-edge.com^
+@@||b.slack-edge.com^
+@@||slack-edge.com^
+@@||edgeapi.slack.com^
+@@||slack-imgs.com^
+@@||slack-files.com^
+@@||slack-redir.net^
+@@||slackb.com^
+
+# --- Calls ---
+@@||slack-calls.com^
+@@||*.slack-calls.com^
+
+# --- Workspace ---
+@@||*.slack.com^

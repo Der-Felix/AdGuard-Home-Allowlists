@@ -1,0 +1,31 @@
+# =============================================
+# iCloud Private Relay – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Private Relay Core ---
+@@||mask.icloud.com^
+@@||mask-h2.icloud.com^
+@@||mask-api.icloud.com^
+
+# --- Ingress Proxy (first hop) ---
+@@||mask.apple-dns.net^
+
+# --- Egress Proxy (second hop) ---
+@@||dnsse-*.cloudflare-dns.com^
+@@||doh.dns.apple.com^
+
+# --- Apple CDN for relay config ---
+@@||configuration.apple.com^
+@@||gspe1-ssl.ls.apple.com^
+@@||gsp-ssl.ls.apple.com^
+@@||gsp64-ssl.ls.apple.com^
+
+# --- Token validation ---
+@@||bag.itunes.apple.com^
+@@||init.ess.apple.com^
+
+# --- Connectivity ---
+@@||gateway.icloud.com^
+@@||metrics.icloud.com^
+@@||setup.icloud.com^

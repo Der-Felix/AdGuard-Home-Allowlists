@@ -1,0 +1,32 @@
+# =============================================
+# Epic Games – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||epicgames.com^
+@@||www.epicgames.com^
+@@||store.epicgames.com^
+
+# --- Launcher ---
+@@||launcher-public-service-prod06.ol.epicgames.com^
+@@||download.epicgames.com^
+@@||download*.ol.epicgames.com^
+@@||epicgames-download1.akamaized.net^
+
+# --- CDN ---
+@@||cdn1.epicgames.com^
+@@||cdn2.epicgames.com^
+@@||cdn.unrealengine.com^
+@@||static-assets-prod.epicgames.com^
+
+# --- Auth ---
+@@||account-public-service-prod.ol.epicgames.com^
+@@||accounts.epicgames.com^
+
+# --- Unreal Engine ---
+@@||unrealengine.com^
+
+# --- Fortnite ---
+@@||fortnite.com^
+@@||ol.epicgames.com^

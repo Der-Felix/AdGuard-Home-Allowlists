@@ -1,0 +1,36 @@
+# =============================================
+# X (Twitter) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||x.com^
+@@||www.x.com^
+@@||twitter.com^
+@@||www.twitter.com^
+@@||mobile.twitter.com^
+
+# --- API ---
+@@||api.twitter.com^
+@@||api.x.com^
+@@||abs.twimg.com^
+
+# --- CDN & Media ---
+@@||twimg.com^
+@@||pbs.twimg.com^
+@@||video.twimg.com^
+@@||ton.twimg.com^
+@@||cdn.cms-twdigitalassets.com^
+
+# --- t.co Links ---
+@@||t.co^
+
+# --- Streaming & Spaces ---
+@@||broadcast.twitter.com^
+@@||prod-video-us-east-2.pscp.tv^
+@@||pscp.tv^
+
+# --- Grok AI ---
+@@||grok.x.com^
+@@||grok.x.ai^
+@@||x.ai^

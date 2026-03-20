@@ -1,0 +1,25 @@
+# =============================================
+# Paramount+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||paramountplus.com^
+@@||www.paramountplus.com^
+
+# --- API ---
+@@||cbs.api.edge.bamgrid.com^
+@@||link.paramountplus.com^
+
+# --- Streaming ---
+@@||cbsi.video.theplatform.com^
+@@||vod-gcs-cedexis.cbsaavideo.com^
+@@||cbsaavideo.com^
+
+# --- CDN ---
+@@||wwwimage-tve.cbsstatic.com^
+@@||cbsstatic.com^
+@@||thumbnails.cbsig.net^
+
+# --- Auth ---
+@@||auth.paramountplus.com^

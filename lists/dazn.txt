@@ -1,0 +1,27 @@
+# =============================================
+# DAZN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||dazn.com^
+@@||www.dazn.com^
+
+# --- API ---
+@@||api.dazn.com^
+@@||graphql.dazn.com^
+@@||indazn.com^
+
+# --- Streaming ---
+@@||*.dcbolt.com^
+@@||dcbolt.com^
+@@||daznfiles.com^
+
+# --- CDN ---
+@@||images.dazn.com^
+@@||image.discovery.indazn.com^
+@@||s.dazn.com^
+
+# --- Auth ---
+@@||auth.dazn.com^
+@@||startup.dazn.com^

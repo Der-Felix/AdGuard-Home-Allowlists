@@ -1,0 +1,15 @@
+# =============================================
+# Perplexity AI – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||perplexity.ai^
+@@||www.perplexity.ai^
+
+# --- API ---
+@@||api.perplexity.ai^
+
+# --- CDN ---
+@@||pplx-res.cloudinary.com^
+@@||assets.perplexity.ai^

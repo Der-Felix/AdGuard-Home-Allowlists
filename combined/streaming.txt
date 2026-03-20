@@ -1,0 +1,343 @@
+# =============================================================
+# AdGuard Home – Combined: streaming
+# =============================================================
+
+# =============================================
+# Netflix – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||netflix.com^
+@@||www.netflix.com^
+@@||netflix.net^
+
+# --- Streaming ---
+@@||nflxvideo.net^
+@@||*.nflxvideo.net^
+@@||nflximg.net^
+@@||nflximg.com^
+@@||nflxext.com^
+@@||nflxso.net^
+@@||*.nflxso.net^
+
+# --- CDN ---
+@@||fast.com^
+@@||assets.nflxext.com^
+@@||codex.nflxext.com^
+@@||api-global.netflix.com^
+@@||customerevents.netflix.com^
+
+# --- Authentication ---
+@@||secure.netflix.com^
+@@||login.netflix.com^
+
+# --- Netflix API ---
+@@||ichnaea.netflix.com^
+@@||nmtracking.netflix.com^
+@@||presentationtracking.netflix.com^
+@@||appboot.netflix.com^
+
+# =============================================
+# Disney+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||disneyplus.com^
+@@||www.disneyplus.com^
+@@||disney-plus.net^
+@@||disney.com^
+
+# --- Streaming ---
+@@||bamgrid.com^
+@@||*.bamgrid.com^
+@@||bam.nr-data.net^
+@@||cdn.registerdisney.go.com^
+@@||cws.conviva.com^
+
+# --- API & Auth ---
+@@||disney.api.edge.bamgrid.com^
+@@||disney.content.edge.bamgrid.com^
+@@||global.edge.bamgrid.com^
+@@||registerdisney.go.com^
+
+# --- CDN ---
+@@||disney.images.edge.bamgrid.com^
+@@||prod-static.disney-plus.net^
+@@||cnbl-cdn.bamgrid.com^
+@@||assets.disneyplus.com^
+@@||static-assets.bamgrid.com^
+@@||disney-portal.my.onetrust.com^
+
+# --- Playback ---
+@@||search-api-disney.svcs.dssott.com^
+@@||disney.playback.edge.bamgrid.com^
+@@||vod-hivec-*-*.media.dssott.com^
+@@||dssott.com^
+@@||*.dssott.com^
+
+# =============================================
+# Amazon Prime Video (standalone) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||primevideo.com^
+@@||www.primevideo.com^
+
+# --- Streaming ---
+@@||atv-ps.amazon.com^
+@@||aiv-cdn.net^
+@@||aiv-delivery.net^
+@@||d25xi40x97liuc.cloudfront.net^
+@@||d1v5ir2lpwr8os.cloudfront.net^
+@@||d22qjgkvxw22r6.cloudfront.net^
+@@||dmqdd6hw24ucf.cloudfront.net^
+
+# --- API ---
+@@||api.amazon.com^
+@@||api.amazon.de^
+@@||fls-eu.amazon.de^
+
+# --- CDN ---
+@@||images-na.ssl-images-amazon.com^
+@@||images-eu.ssl-images-amazon.com^
+@@||m.media-amazon.com^
+@@||cloudfront.net^
+
+# =============================================
+# Apple TV+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tv.apple.com^
+@@||trailers.apple.com^
+
+# --- Streaming ---
+@@||hls.itunes.apple.com^
+@@||play-edge.itunes.apple.com^
+@@||*.apple.com^
+@@||amp-api.tvos.apple.com^
+
+# --- CDN ---
+@@||is1-ssl.mzstatic.com^
+@@||is2-ssl.mzstatic.com^
+@@||is3-ssl.mzstatic.com^
+@@||is4-ssl.mzstatic.com^
+@@||is5-ssl.mzstatic.com^
+
+# --- Playback ---
+@@||play.itunes.apple.com^
+@@||playback.svod.apple.com^
+@@||linear.tv.apple.com^
+@@||uts-api.itunes.apple.com^
+
+# =============================================
+# Crunchyroll – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||crunchyroll.com^
+@@||www.crunchyroll.com^
+@@||beta.crunchyroll.com^
+
+# --- API ---
+@@||api.crunchyroll.com^
+@@||beta-api.crunchyroll.com^
+
+# --- Streaming ---
+@@||*.vrv.co^
+@@||vrv.co^
+@@||cr-unblocker.us^
+@@||static.crunchyroll.com^
+@@||pl.crunchyroll.com^
+
+# --- CDN ---
+@@||img1.ak.crunchyroll.com^
+@@||fy.v.vrv.co^
+@@||a-vrv.akamaized.net^
+
+# =============================================
+# Paramount+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||paramountplus.com^
+@@||www.paramountplus.com^
+
+# --- API ---
+@@||cbs.api.edge.bamgrid.com^
+@@||link.paramountplus.com^
+
+# --- Streaming ---
+@@||cbsi.video.theplatform.com^
+@@||vod-gcs-cedexis.cbsaavideo.com^
+@@||cbsaavideo.com^
+
+# --- CDN ---
+@@||wwwimage-tve.cbsstatic.com^
+@@||cbsstatic.com^
+@@||thumbnails.cbsig.net^
+
+# --- Auth ---
+@@||auth.paramountplus.com^
+
+# =============================================
+# DAZN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||dazn.com^
+@@||www.dazn.com^
+
+# --- API ---
+@@||api.dazn.com^
+@@||graphql.dazn.com^
+@@||indazn.com^
+
+# --- Streaming ---
+@@||*.dcbolt.com^
+@@||dcbolt.com^
+@@||daznfiles.com^
+
+# --- CDN ---
+@@||images.dazn.com^
+@@||image.discovery.indazn.com^
+@@||s.dazn.com^
+
+# --- Auth ---
+@@||auth.dazn.com^
+@@||startup.dazn.com^
+
+# =============================================
+# Plex – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||plex.tv^
+@@||www.plex.tv^
+@@||app.plex.tv^
+
+# --- API & Auth ---
+@@||plex.direct^
+@@||*.plex.direct^
+@@||my.plexapp.com^
+
+# --- Metadata & Media ---
+@@||metadata.provider.plex.tv^
+@@||meta.plex.tv^
+@@||meta-db-worker02.pop.ric.plex.bz^
+@@||cpms.spop10.ams.plex.bz^
+@@||tvdb2.plex.tv^
+@@||tvthemes.plexapp.com^
+
+# --- Downloads & Updates ---
+@@||downloads.plex.tv^
+@@||nightlies.plex.tv^
+
+# --- Analytics (required for functionality) ---
+@@||analytics.plex.tv^
+
+# --- Plex CDN ---
+@@||resources-cdn.plexapp.com^
+@@||proxy.plex.tv^
+@@||proxy02.pop.ord.plex.bz^
+@@||pubsub.plex.tv^
+@@||status.plex.tv^
+@@||hub.plex.tv^
+
+# =============================================
+# Joyn – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||joyn.de^
+@@||www.joyn.de^
+@@||api.joyn.de^
+
+# --- Streaming ---
+@@||cdn.joyn.de^
+@@||playerapi.joyn.de^
+@@||auth.joyn.de^
+
+# --- CDN ---
+@@||images.joyn.de^
+@@||assets.joyn.de^
+
+# =============================================
+# RTL+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||rtlplus.com^
+@@||www.rtlplus.com^
+@@||plus.rtl.de^
+@@||rtl.de^
+
+# --- API ---
+@@||api.rtlplus.com^
+
+# --- Streaming ---
+@@||cdn.rtlplus.com^
+@@||vod.rtl.de^
+
+# --- Auth ---
+@@||auth.rtl.de^
+@@||account.rtl.de^
+
+# =============================================
+# ARD & ZDF Mediathek – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- ARD Mediathek ---
+@@||ardmediathek.de^
+@@||www.ardmediathek.de^
+@@||api.ardmediathek.de^
+@@||mediathek.daserste.de^
+
+# --- ARD Streaming ---
+@@||daserste.de^
+@@||live.daserste.de^
+@@||ndr.de^
+@@||wdr.de^
+@@||br.de^
+@@||swr.de^
+@@||hr-online.de^
+@@||mdr.de^
+@@||rbb-online.de^
+@@||sr-online.de^
+@@||radiobremen.de^
+
+# --- ZDF Mediathek ---
+@@||zdf.de^
+@@||www.zdf.de^
+@@||api.zdf.de^
+
+# --- ZDF Streaming ---
+@@||nrodlzdf-a.akamaihd.net^
+@@||rodlzdf-a.akamaihd.net^
+@@||zdf-cdn.live.cellular.de^
+
+# --- 3sat & ARTE ---
+@@||3sat.de^
+@@||www.arte.tv^
+@@||arte.tv^
+@@||api.arte.tv^
+
+# --- ZDF CDN ---
+@@||epg-image.zdf.de^
+@@||images.zdf.de^
+
+# --- Tagesschau ---
+@@||tagesschau.de^
+@@||www.tagesschau.de^
+

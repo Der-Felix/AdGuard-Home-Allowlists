@@ -1,0 +1,23 @@
+# =============================================
+# Mastodon / Fediverse – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Popular Instances ---
+@@||mastodon.social^
+@@||mastodon.online^
+@@||mstdn.social^
+@@||mas.to^
+@@||mastodon.world^
+@@||techhub.social^
+@@||infosec.exchange^
+@@||fosstodon.org^
+@@||chaos.social^
+@@||troet.cafe^
+
+# --- Mastodon CDN ---
+@@||files.mastodon.social^
+@@||media.mastodon.social^
+
+# --- Mastodon Project ---
+@@||joinmastodon.org^

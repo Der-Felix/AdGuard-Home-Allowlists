@@ -1,0 +1,35 @@
+# =============================================
+# Reddit – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||reddit.com^
+@@||www.reddit.com^
+@@||old.reddit.com^
+@@||new.reddit.com^
+@@||sh.reddit.com^
+@@||oauth.reddit.com^
+
+# --- API ---
+@@||s.reddit.com^
+@@||api.reddit.com^
+@@||gql.reddit.com^
+
+# --- CDN & Media ---
+@@||i.redd.it^
+@@||v.redd.it^
+@@||preview.redd.it^
+@@||external-preview.redd.it^
+@@||redditmedia.com^
+@@||redditstatic.com^
+@@||reddituploads.com^
+@@||thumbs.redditmedia.com^
+
+# --- Reddit Chat ---
+@@||chat.reddit.com^
+@@||sendbird.com^
+
+# --- Reddit App ---
+@@||reddit.app.link^
+@@||redditapp.com^

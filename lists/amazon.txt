@@ -1,0 +1,56 @@
+# =============================================
+# Amazon (Shopping, Prime Video, Alexa) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Amazon Shopping ---
+@@||amazon.de^
+@@||amazon.com^
+@@||amazon.co.uk^
+@@||www.amazon.de^
+@@||www.amazon.com^
+@@||smile.amazon.com^
+
+# --- Authentication ---
+@@||fls-eu.amazon.de^
+@@||fls-na.amazon.com^
+@@||cognito-identity.eu-west-1.amazonaws.com^
+@@||cognito-idp.eu-west-1.amazonaws.com^
+
+# --- CDN & Images ---
+@@||images-eu.ssl-images-amazon.com^
+@@||images-na.ssl-images-amazon.com^
+@@||ssl-images-amazon.com^
+@@||m.media-amazon.com^
+@@||media-amazon.com^
+
+# --- Amazon Prime Video ---
+@@||primevideo.com^
+@@||www.primevideo.com^
+@@||atv-ps.amazon.com^
+@@||aiv-cdn.net^
+@@||aiv-delivery.net^
+@@||dmqdd6hw24ucf.cloudfront.net^
+@@||d25xi40x97liuc.cloudfront.net^
+@@||d1v5ir2lpwr8os.cloudfront.net^
+
+# --- Alexa ---
+@@||alexa.amazon.com^
+@@||alexa.amazon.de^
+@@||avs-alexa-*.amazon.com^
+@@||device-metrics-us.amazon.com^
+@@||device-metrics-us-2.amazon.com^
+@@||bob-dispatch-prod-na.amazon.com^
+
+# --- AWS Dependencies ---
+@@||amazonaws.com^
+@@||cloudfront.net^
+
+# --- Amazon Pay ---
+@@||payments.amazon.de^
+@@||payments.amazon.com^
+
+# --- Amazon App ---
+@@||msh.amazon.de^
+@@||api.amazon.de^
+@@||api.amazon.com^

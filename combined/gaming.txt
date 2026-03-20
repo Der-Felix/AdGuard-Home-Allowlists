@@ -1,0 +1,293 @@
+# =============================================================
+# AdGuard Home – Combined: gaming
+# =============================================================
+
+# =============================================
+# Steam / Valve – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||steampowered.com^
+@@||store.steampowered.com^
+@@||steamcommunity.com^
+
+# --- Client ---
+@@||steamstatic.com^
+@@||*.steamstatic.com^
+@@||client-update.akamai.steamstatic.com^
+
+# --- Content Delivery ---
+@@||steamcdn-a.akamaihd.net^
+@@||cdn.akamai.steamstatic.com^
+@@||cdn.cloudflare.steamstatic.com^
+@@||cdn.steamstatic.com^
+
+# --- API ---
+@@||api.steampowered.com^
+@@||partner.steam-api.com^
+
+# --- Login ---
+@@||login.steampowered.com^
+@@||help.steampowered.com^
+@@||store.steampowered.com^
+
+# --- Steam Chat & Community ---
+@@||community.cloudflare.steamstatic.com^
+@@||avatars.cloudflare.steamstatic.com^
+
+# --- Downloads ---
+@@||lancache.steamcontent.com^
+@@||steamcontent.com^
+@@||*.steamcontent.com^
+
+# --- Valve Infrastructure ---
+@@||valve.net^
+@@||valvesoftware.com^
+@@||steam-chat.com^
+@@||steamgames.com^
+@@||steamusercontent.com^
+
+# =============================================
+# Epic Games – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||epicgames.com^
+@@||www.epicgames.com^
+@@||store.epicgames.com^
+
+# --- Launcher ---
+@@||launcher-public-service-prod06.ol.epicgames.com^
+@@||download.epicgames.com^
+@@||download*.ol.epicgames.com^
+@@||epicgames-download1.akamaized.net^
+
+# --- CDN ---
+@@||cdn1.epicgames.com^
+@@||cdn2.epicgames.com^
+@@||cdn.unrealengine.com^
+@@||static-assets-prod.epicgames.com^
+
+# --- Auth ---
+@@||account-public-service-prod.ol.epicgames.com^
+@@||accounts.epicgames.com^
+
+# --- Unreal Engine ---
+@@||unrealengine.com^
+
+# --- Fortnite ---
+@@||fortnite.com^
+@@||ol.epicgames.com^
+
+# =============================================
+# PlayStation Network – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||playstation.com^
+@@||www.playstation.com^
+@@||playstation.net^
+@@||sonyentertainmentnetwork.com^
+
+# --- PSN ---
+@@||*.playstation.net^
+@@||auth.api.sonyentertainmentnetwork.com^
+@@||account.sonyentertainmentnetwork.com^
+
+# --- PS Store ---
+@@||store.playstation.com^
+@@||store.sonyentertainmentnetwork.com^
+
+# --- CDN ---
+@@||psnobj.playstation.net^
+@@||gs2.ww.prod.dl.playstation.net^
+@@||gs-sec.ww.np.dl.playstation.net^
+
+# --- Remote Play ---
+@@||remoteplay.dl.playstation.net^
+
+# --- PlayStation App ---
+@@||mobile.playstation.com^
+@@||web.np.playstation.com^
+
+# =============================================
+# Nintendo – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||nintendo.com^
+@@||www.nintendo.com^
+@@||nintendo.de^
+@@||nintendo.co.uk^
+@@||nintendo.net^
+
+# --- eShop ---
+@@||eshop.nintendo.net^
+@@||bugyo.nintendo.net^
+@@||ctest.cdn.nintendo.net^
+
+# --- Online Services ---
+@@||*.nintendo.net^
+@@||accounts.nintendo.com^
+@@||api.accounts.nintendo.com^
+
+# --- CDN ---
+@@||cdn.nintendo.net^
+@@||conntest.nintendowifi.net^
+@@||npns-dev.c.app.nintendo.net^
+
+# --- Updates ---
+@@||receive-*.dg.srv.nintendo.net^
+@@||*.cdn.nintendo.net^
+
+# =============================================
+# Riot Games (LoL, Valorant, TFT) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||riotgames.com^
+@@||www.riotgames.com^
+
+# --- League of Legends ---
+@@||leagueoflegends.com^
+@@||euw.leagueoflegends.com^
+
+# --- Valorant ---
+@@||playvalorant.com^
+
+# --- Auth ---
+@@||auth.riotgames.com^
+@@||authenticate.riotgames.com^
+@@||login.riotgames.com^
+
+# --- CDN ---
+@@||lol.dyn.riotcdn.net^
+@@||riotcdn.net^
+@@||bacon.secure.dyn.riotcdn.net^
+@@||clientconfig.rpg.riotgames.com^
+
+# --- Game Servers ---
+@@||*.pvp.net^
+@@||pvp.net^
+@@||*.riotgames.com^
+@@||riot.net^
+
+# =============================================
+# Xbox & Xbox Game Pass – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||xbox.com^
+@@||www.xbox.com^
+
+# --- Xbox Live ---
+@@||xboxlive.com^
+@@||*.xboxlive.com^
+@@||xbl.io^
+@@||user.auth.xboxlive.com^
+
+# --- Game Pass ---
+@@||gamepass.com^
+@@||www.xbox.com^
+
+# --- Xbox App ---
+@@||xboxab.com^
+@@||xbox.ipv6.microsoft.com^
+@@||device.auth.xboxlive.com^
+
+# --- CDN ---
+@@||assets1.xboxlive.cn^
+@@||assets2.xboxlive.cn^
+@@||xboxone.loris.llnwd.net^
+@@||images-eds.xboxlive.com^
+@@||compass.xboxlive.com^
+@@||xbox-mb.titlehub.xboxlive.com^
+
+# =============================================
+# Twitch – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||twitch.tv^
+@@||www.twitch.tv^
+
+# --- API ---
+@@||api.twitch.tv^
+@@||gql.twitch.tv^
+@@||pubsub-edge.twitch.tv^
+
+# --- Video Streaming ---
+@@||video-weaver.*.hls.ttvnw.net^
+@@||video-edge-*.*.hls.ttvnw.net^
+@@||*.hls.ttvnw.net^
+@@||ttvnw.net^
+@@||usher.ttvnw.net^
+
+# --- CDN & Assets ---
+@@||static.twitchcdn.net^
+@@||static-cdn.jtvnw.net^
+@@||jtvnw.net^
+@@||twitchcdn.net^
+@@||assets.twitch.tv^
+@@||vod-secure.twitch.tv^
+@@||clips-media-assets2.twitch.tv^
+
+# --- Chat ---
+@@||irc-ws.chat.twitch.tv^
+@@||irc-ws-r.chat.twitch.tv^
+
+# --- Authentication ---
+@@||id.twitch.tv^
+@@||passport.twitch.tv^
+
+# --- Extensions ---
+@@||ext-twitch.tv^
+@@||extension-files.twitch.tv^
+
+# --- Drops & Commerce ---
+@@||commerce.twitch.tv^
+
+# =============================================
+# Discord – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||discord.com^
+@@||www.discord.com^
+@@||discord.gg^
+@@||discordapp.com^
+
+# --- API & Gateway ---
+@@||gateway.discord.gg^
+@@||api.discord.com^
+@@||status.discord.com^
+
+# --- CDN & Media ---
+@@||cdn.discordapp.com^
+@@||media.discordapp.net^
+@@||images-ext-1.discordapp.net^
+@@||images-ext-2.discordapp.net^
+
+# --- Voice & Video ---
+@@||*.discord.media^
+@@||discord.media^
+
+# --- Updates ---
+@@||dl.discordapp.net^
+@@||updates.discord.com^
+
+# --- Attachments ---
+@@||attachments-cdn.discordapp.com^
+
+# --- Discord Activities ---
+@@||canary.discord.com^
+@@||ptb.discord.com^
+

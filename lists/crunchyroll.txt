@@ -1,0 +1,25 @@
+# =============================================
+# Crunchyroll – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||crunchyroll.com^
+@@||www.crunchyroll.com^
+@@||beta.crunchyroll.com^
+
+# --- API ---
+@@||api.crunchyroll.com^
+@@||beta-api.crunchyroll.com^
+
+# --- Streaming ---
+@@||*.vrv.co^
+@@||vrv.co^
+@@||cr-unblocker.us^
+@@||static.crunchyroll.com^
+@@||pl.crunchyroll.com^
+
+# --- CDN ---
+@@||img1.ak.crunchyroll.com^
+@@||fy.v.vrv.co^
+@@||a-vrv.akamaized.net^

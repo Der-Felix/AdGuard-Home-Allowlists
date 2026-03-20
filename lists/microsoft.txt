@@ -1,0 +1,92 @@
+# =============================================
+# Microsoft (365, Teams, OneDrive, Windows) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||microsoft.com^
+@@||www.microsoft.com^
+@@||microsoftonline.com^
+@@||msftauth.net^
+@@||msauth.net^
+
+# --- Authentication ---
+@@||login.microsoftonline.com^
+@@||login.live.com^
+@@||login.microsoft.com^
+@@||account.live.com^
+@@||account.microsoft.com^
+@@||aadcdn.msauth.net^
+@@||aadcdn.msftauth.net^
+
+# --- Microsoft 365 / Office ---
+@@||outlook.office.com^
+@@||outlook.office365.com^
+@@||outlook.live.com^
+@@||office.com^
+@@||office365.com^
+@@||office.net^
+@@||officeclient.microsoft.com^
+@@||onenote.com^
+@@||onenote.net^
+
+# --- Teams ---
+@@||teams.microsoft.com^
+@@||teams.live.com^
+@@||statics.teams.cdn.office.net^
+@@||teams.events.data.microsoft.com^
+
+# --- OneDrive / SharePoint ---
+@@||onedrive.com^
+@@||onedrive.live.com^
+@@||sharepoint.com^
+@@||*.sharepoint.com^
+@@||skyapi.onedrive.live.com^
+@@||storage.live.com^
+
+# --- Windows Updates ---
+@@||update.microsoft.com^
+@@||windowsupdate.com^
+@@||download.windowsupdate.com^
+@@||dl.delivery.mp.microsoft.com^
+@@||*.delivery.mp.microsoft.com^
+@@||ctldl.windowsupdate.com^
+@@||definitionupdates.microsoft.com^
+
+# --- Certificates & CRL ---
+@@||crl.microsoft.com^
+@@||ocsp.msocsp.com^
+@@||oneocsp.microsoft.com^
+
+# --- CDN ---
+@@||msecnd.net^
+@@||akamaized.net^
+@@||azureedge.net^
+@@||msedge.net^
+@@||msftconnecttest.com^
+@@||azure.com^
+@@||azurewebsites.net^
+
+# --- Bing ---
+@@||bing.com^
+@@||www.bing.com^
+
+# --- Xbox / Gaming ---
+@@||xbox.com^
+@@||xboxlive.com^
+
+# --- Skype ---
+@@||skype.com^
+@@||skypeecs-prod-usw-0-b.cloudapp.net^
+
+# --- VS Code / Dev ---
+@@||visualstudio.com^
+@@||vscode.dev^
+@@||marketplace.visualstudio.com^
+
+# --- Copilot ---
+@@||copilot.microsoft.com^
+
+# --- Connectivity Check ---
+@@||msftconnecttest.com^
+@@||dns.msftncsi.com^

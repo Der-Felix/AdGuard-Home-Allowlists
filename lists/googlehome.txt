@@ -1,0 +1,35 @@
+# =============================================
+# Google Home / Nest – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||home.google.com^
+
+# --- Chromecast ---
+@@||clients3.google.com^
+@@||clients4.google.com^
+
+# --- Device Setup ---
+@@||connectivitycheck.gstatic.com^
+@@||accounts.google.com^
+@@||oauthaccountmanager.googleapis.com^
+
+# --- Google Assistant ---
+@@||assistant.google.com^
+@@||embeddedassistant.googleapis.com^
+
+# --- Nest ---
+@@||home.nest.com^
+@@||*.home.nest.com^
+@@||nest.com^
+@@||grpc-web.production.nest.com^
+
+# --- Smart Home Actions ---
+@@||homegraph.googleapis.com^
+@@||firebaseinstallations.googleapis.com^
+@@||fcm.googleapis.com^
+
+# --- Updates ---
+@@||update.googleapis.com^
+@@||dl.google.com^

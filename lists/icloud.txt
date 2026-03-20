@@ -1,0 +1,122 @@
+# =============================================
+# iCloud & Apple Services – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- iCloud Core ---
+@@||icloud.com^
+@@||icloud-content.com^
+@@||icloud.apple.com^
+@@||icloud.com.cn^
+
+# --- Apple ID & Authentication ---
+@@||appleid.apple.com^
+@@||appleid.cdn-apple.com^
+@@||idmsa.apple.com^
+@@||gsa.apple.com^
+@@||setup.icloud.com^
+
+# --- iCloud Drive & Documents ---
+@@||p01-docws.icloud.com^
+@@||p02-docws.icloud.com^
+@@||p03-docws.icloud.com^
+@@||docws.icloud.com^
+@@||p01-ubiquityws.icloud.com^
+@@||p02-ubiquityws.icloud.com^
+@@||p03-ubiquityws.icloud.com^
+
+# --- iCloud Mail ---
+@@||p01-mailws.icloud.com^
+@@||p02-mailws.icloud.com^
+@@||p03-mailws.icloud.com^
+@@||p04-mailws.icloud.com^
+@@||mail.me.com^
+
+# --- iCloud Photos ---
+@@||p01-mediatokenws.icloud.com^
+@@||p02-mediatokenws.icloud.com^
+@@||p03-mediatokenws.icloud.com^
+
+# --- iCloud Backup & Sync ---
+@@||p01-ckdatabasews.icloud.com^
+@@||p02-ckdatabasews.icloud.com^
+@@||p03-ckdatabasews.icloud.com^
+@@||p01-quota.icloud.com^
+@@||p02-quota.icloud.com^
+@@||p03-quota.icloud.com^
+
+# --- iCloud Keychain ---
+@@||p01-escrowproxy.icloud.com^
+@@||p02-escrowproxy.icloud.com^
+@@||p03-escrowproxy.icloud.com^
+
+# --- Find My ---
+@@||p01-fmipws.icloud.com^
+@@||p02-fmipws.icloud.com^
+@@||p03-fmipws.icloud.com^
+@@||fmipmobile.icloud.com^
+
+# --- iCloud Private Relay ---
+@@||mask.icloud.com^
+@@||mask-h2.icloud.com^
+@@||mask-api.icloud.com^
+
+# --- Apple Push Notifications ---
+@@||push.apple.com^
+@@||courier.push.apple.com^
+@@||init-p01st.push.apple.com^
+
+# --- Apple General Infrastructure ---
+@@||apple.com^
+@@||apple.com.cn^
+@@||cdn-apple.com^
+@@||apple-dns.net^
+@@||aaplimg.com^
+@@||apple-cloudkit.com^
+@@||apple-livephotoskit.com^
+@@||appleimg.com^
+
+# --- App Store & iTunes ---
+@@||itunes.apple.com^
+@@||apps.apple.com^
+@@||mzstatic.com^
+@@||itunes.com^
+@@||itunesconnect.apple.com^
+
+# --- Software Updates ---
+@@||swdist.apple.com^
+@@||swcdn.apple.com^
+@@||swdownload.apple.com^
+@@||updates-http.cdn-apple.com^
+@@||updates.cdn-apple.com^
+@@||oscdn.apple.com^
+@@||appldnld.apple.com^
+@@||xp.apple.com^
+@@||gdmf.apple.com^
+@@||mesu.apple.com^
+@@||ns.itunes.apple.com^
+
+# --- Apple Maps ---
+@@||ls.apple.com^
+@@||gs-loc.apple.com^
+@@||gsp-ssl.ls.apple.com^
+
+# --- Siri ---
+@@||guzzoni.apple.com^
+@@||api.smoot.apple.com^
+
+# --- Apple Pay ---
+@@||smp-device-content.apple.com^
+
+# --- Device Activation ---
+@@||albert.apple.com^
+@@||captive.apple.com^
+
+# --- Time & Certificates ---
+@@||time.apple.com^
+@@||time-ios.apple.com^
+@@||ocsp.apple.com^
+@@||ocsp2.apple.com^
+@@||crl.apple.com^
+@@||valid.apple.com^
+@@||certs.apple.com^

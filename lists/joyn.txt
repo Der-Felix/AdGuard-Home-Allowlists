@@ -1,0 +1,18 @@
+# =============================================
+# Joyn – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||joyn.de^
+@@||www.joyn.de^
+@@||api.joyn.de^
+
+# --- Streaming ---
+@@||cdn.joyn.de^
+@@||playerapi.joyn.de^
+@@||auth.joyn.de^
+
+# --- CDN ---
+@@||images.joyn.de^
+@@||assets.joyn.de^

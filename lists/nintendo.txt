@@ -1,0 +1,30 @@
+# =============================================
+# Nintendo – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||nintendo.com^
+@@||www.nintendo.com^
+@@||nintendo.de^
+@@||nintendo.co.uk^
+@@||nintendo.net^
+
+# --- eShop ---
+@@||eshop.nintendo.net^
+@@||bugyo.nintendo.net^
+@@||ctest.cdn.nintendo.net^
+
+# --- Online Services ---
+@@||*.nintendo.net^
+@@||accounts.nintendo.com^
+@@||api.accounts.nintendo.com^
+
+# --- CDN ---
+@@||cdn.nintendo.net^
+@@||conntest.nintendowifi.net^
+@@||npns-dev.c.app.nintendo.net^
+
+# --- Updates ---
+@@||receive-*.dg.srv.nintendo.net^
+@@||*.cdn.nintendo.net^

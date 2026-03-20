@@ -1,0 +1,21 @@
+# =============================================
+# RTL+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||rtlplus.com^
+@@||www.rtlplus.com^
+@@||plus.rtl.de^
+@@||rtl.de^
+
+# --- API ---
+@@||api.rtlplus.com^
+
+# --- Streaming ---
+@@||cdn.rtlplus.com^
+@@||vod.rtl.de^
+
+# --- Auth ---
+@@||auth.rtl.de^
+@@||account.rtl.de^

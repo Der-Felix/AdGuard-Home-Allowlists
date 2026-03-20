@@ -1,0 +1,32 @@
+# =============================================
+# Riot Games (LoL, Valorant, TFT) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||riotgames.com^
+@@||www.riotgames.com^
+
+# --- League of Legends ---
+@@||leagueoflegends.com^
+@@||euw.leagueoflegends.com^
+
+# --- Valorant ---
+@@||playvalorant.com^
+
+# --- Auth ---
+@@||auth.riotgames.com^
+@@||authenticate.riotgames.com^
+@@||login.riotgames.com^
+
+# --- CDN ---
+@@||lol.dyn.riotcdn.net^
+@@||riotcdn.net^
+@@||bacon.secure.dyn.riotcdn.net^
+@@||clientconfig.rpg.riotgames.com^
+
+# --- Game Servers ---
+@@||*.pvp.net^
+@@||pvp.net^
+@@||*.riotgames.com^
+@@||riot.net^

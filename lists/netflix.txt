@@ -1,0 +1,35 @@
+# =============================================
+# Netflix – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||netflix.com^
+@@||www.netflix.com^
+@@||netflix.net^
+
+# --- Streaming ---
+@@||nflxvideo.net^
+@@||*.nflxvideo.net^
+@@||nflximg.net^
+@@||nflximg.com^
+@@||nflxext.com^
+@@||nflxso.net^
+@@||*.nflxso.net^
+
+# --- CDN ---
+@@||fast.com^
+@@||assets.nflxext.com^
+@@||codex.nflxext.com^
+@@||api-global.netflix.com^
+@@||customerevents.netflix.com^
+
+# --- Authentication ---
+@@||secure.netflix.com^
+@@||login.netflix.com^
+
+# --- Netflix API ---
+@@||ichnaea.netflix.com^
+@@||nmtracking.netflix.com^
+@@||presentationtracking.netflix.com^
+@@||appboot.netflix.com^

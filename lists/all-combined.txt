@@ -1,0 +1,2714 @@
+# =============================================================
+# AdGuard Home – ALL Services Combined
+# =============================================================
+
+# =============================================
+# Amazon Alexa – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||alexa.amazon.com^
+@@||alexa.amazon.de^
+
+# --- Voice ---
+@@||avs-alexa-*.amazon.com^
+@@||*.avs-alexa-*.amazon.com^
+
+# --- Skills ---
+@@||skills-store.amazon.com^
+@@||bob-dispatch-prod-na.amazon.com^
+@@||bob-dispatch-prod-eu.amazon.com^
+
+# --- Device ---
+@@||device-metrics-us.amazon.com^
+@@||device-metrics-us-2.amazon.com^
+@@||firs-ta-g7g.amazon.com^
+@@||dp-gw-na.amazon.com^
+@@||unagi-na.amazon.com^
+
+# --- Smart Home ---
+@@||layla.amazon.com^
+@@||todo-ta-g7g.amazon.com^
+
+# --- Music ---
+@@||music.amazon.com^
+@@||music.amazon.de^
+@@||dmls.amazon.com^
+
+# =============================================
+# Amazon (Shopping, Prime Video, Alexa) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Amazon Shopping ---
+@@||amazon.de^
+@@||amazon.com^
+@@||amazon.co.uk^
+@@||www.amazon.de^
+@@||www.amazon.com^
+@@||smile.amazon.com^
+
+# --- Authentication ---
+@@||fls-eu.amazon.de^
+@@||fls-na.amazon.com^
+@@||cognito-identity.eu-west-1.amazonaws.com^
+@@||cognito-idp.eu-west-1.amazonaws.com^
+
+# --- CDN & Images ---
+@@||images-eu.ssl-images-amazon.com^
+@@||images-na.ssl-images-amazon.com^
+@@||ssl-images-amazon.com^
+@@||m.media-amazon.com^
+@@||media-amazon.com^
+
+# --- Amazon Prime Video ---
+@@||primevideo.com^
+@@||www.primevideo.com^
+@@||atv-ps.amazon.com^
+@@||aiv-cdn.net^
+@@||aiv-delivery.net^
+@@||dmqdd6hw24ucf.cloudfront.net^
+@@||d25xi40x97liuc.cloudfront.net^
+@@||d1v5ir2lpwr8os.cloudfront.net^
+
+# --- Alexa ---
+@@||alexa.amazon.com^
+@@||alexa.amazon.de^
+@@||avs-alexa-*.amazon.com^
+@@||device-metrics-us.amazon.com^
+@@||device-metrics-us-2.amazon.com^
+@@||bob-dispatch-prod-na.amazon.com^
+
+# --- AWS Dependencies ---
+@@||amazonaws.com^
+@@||cloudfront.net^
+
+# --- Amazon Pay ---
+@@||payments.amazon.de^
+@@||payments.amazon.com^
+
+# --- Amazon App ---
+@@||msh.amazon.de^
+@@||api.amazon.de^
+@@||api.amazon.com^
+
+# =============================================
+# Apple TV+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tv.apple.com^
+@@||trailers.apple.com^
+
+# --- Streaming ---
+@@||hls.itunes.apple.com^
+@@||play-edge.itunes.apple.com^
+@@||*.apple.com^
+@@||amp-api.tvos.apple.com^
+
+# --- CDN ---
+@@||is1-ssl.mzstatic.com^
+@@||is2-ssl.mzstatic.com^
+@@||is3-ssl.mzstatic.com^
+@@||is4-ssl.mzstatic.com^
+@@||is5-ssl.mzstatic.com^
+
+# --- Playback ---
+@@||play.itunes.apple.com^
+@@||playback.svod.apple.com^
+@@||linear.tv.apple.com^
+@@||uts-api.itunes.apple.com^
+
+# =============================================
+# ARD & ZDF Mediathek – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- ARD Mediathek ---
+@@||ardmediathek.de^
+@@||www.ardmediathek.de^
+@@||api.ardmediathek.de^
+@@||mediathek.daserste.de^
+
+# --- ARD Streaming ---
+@@||daserste.de^
+@@||live.daserste.de^
+@@||ndr.de^
+@@||wdr.de^
+@@||br.de^
+@@||swr.de^
+@@||hr-online.de^
+@@||mdr.de^
+@@||rbb-online.de^
+@@||sr-online.de^
+@@||radiobremen.de^
+
+# --- ZDF Mediathek ---
+@@||zdf.de^
+@@||www.zdf.de^
+@@||api.zdf.de^
+
+# --- ZDF Streaming ---
+@@||nrodlzdf-a.akamaihd.net^
+@@||rodlzdf-a.akamaihd.net^
+@@||zdf-cdn.live.cellular.de^
+
+# --- 3sat & ARTE ---
+@@||3sat.de^
+@@||www.arte.tv^
+@@||arte.tv^
+@@||api.arte.tv^
+
+# --- ZDF CDN ---
+@@||epg-image.zdf.de^
+@@||images.zdf.de^
+
+# --- Tagesschau ---
+@@||tagesschau.de^
+@@||www.tagesschau.de^
+
+# =============================================
+# German Banking (DKB, ING, Sparkasse, N26, Comdirect) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- DKB ---
+@@||dkb.de^
+@@||www.dkb.de^
+@@||banking.dkb.de^
+@@||api.dkb.de^
+
+# --- ING ---
+@@||ing.de^
+@@||www.ing.de^
+@@||banking.ing.de^
+@@||api.ing.de^
+
+# --- Sparkasse ---
+@@||sparkasse.de^
+@@||www.sparkasse.de^
+@@||*.sparkasse.de^
+@@||s-fints-pt-*.s-fints.de^
+
+# --- N26 ---
+@@||n26.com^
+@@||www.n26.com^
+@@||api.n26.com^
+@@||app.n26.com^
+
+# --- Comdirect ---
+@@||comdirect.de^
+@@||www.comdirect.de^
+@@||kunde.comdirect.de^
+
+# --- Commerzbank ---
+@@||commerzbank.de^
+@@||www.commerzbank.de^
+
+# --- Deutsche Bank ---
+@@||deutsche-bank.de^
+@@||www.deutsche-bank.de^
+@@||meine.deutsche-bank.de^
+
+# --- Common Banking Infra ---
+@@||giropay.de^
+@@||paydirekt.de^
+@@||girocard.eu^
+
+# =============================================
+# Bitwarden – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||bitwarden.com^
+@@||www.bitwarden.com^
+@@||vault.bitwarden.com^
+
+# --- API ---
+@@||api.bitwarden.com^
+@@||identity.bitwarden.com^
+@@||notifications.bitwarden.com^
+@@||events.bitwarden.com^
+
+# --- CDN ---
+@@||cdn.bitwarden.net^
+
+# --- Icons ---
+@@||icons.bitwarden.net^
+
+# --- Send ---
+@@||send.bitwarden.com^
+
+# --- EU Servers ---
+@@||vault.bitwarden.eu^
+@@||api.bitwarden.eu^
+@@||identity.bitwarden.eu^
+
+# =============================================
+# Bluesky – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||bsky.app^
+@@||bsky.social^
+@@||bsky.network^
+
+# --- API ---
+@@||api.bsky.app^
+@@||public.api.bsky.app^
+@@||*.bsky.network^
+
+# --- CDN ---
+@@||cdn.bsky.app^
+@@||video.bsky.app^
+@@||bsky.video^
+
+# =============================================
+# ChatGPT / OpenAI – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||openai.com^
+@@||chat.openai.com^
+@@||www.openai.com^
+@@||api.openai.com^
+@@||platform.openai.com^
+
+# --- Authentication ---
+@@||auth0.openai.com^
+@@||auth.openai.com^
+
+# --- CDN & Assets ---
+@@||cdn.openai.com^
+@@||oaiusercontent.com^
+@@||oaistatic.com^
+@@||files.oaiusercontent.com^
+
+# --- ChatGPT Plugins & Browse ---
+@@||browser.chatgpt.com^
+@@||chatgpt.com^
+@@||plugins.chatgpt.com^
+
+# --- DALL-E ---
+@@||dalle.com^
+
+# --- Sora ---
+@@||sora.com^
+
+# --- Realtime / WebSocket ---
+@@||realtime.openai.com^
+
+# --- OpenAI API Infrastructure ---
+@@||api.statsig.com^
+@@||featuregates.org^
+@@||identitytoolkit.googleapis.com^
+
+# =============================================
+# Claude / Anthropic – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||anthropic.com^
+@@||www.anthropic.com^
+@@||claude.ai^
+@@||www.claude.ai^
+
+# --- API ---
+@@||api.anthropic.com^
+@@||api.claude.ai^
+
+# --- CDN & Assets ---
+@@||cdn.anthropic.com^
+@@||assets.anthropic.com^
+
+# --- Console ---
+@@||console.anthropic.com^
+
+# --- Authentication ---
+@@||auth.anthropic.com^
+@@||accounts.anthropic.com^
+
+# --- Docs ---
+@@||docs.anthropic.com^
+@@||support.anthropic.com^
+
+# =============================================
+# Cloudflare (1.1.1.1, WARP, CDN) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- DNS ---
+@@||cloudflare-dns.com^
+@@||one.one.one.one^
+@@||1dot1dot1dot1.cloudflare-dns.com^
+
+# --- WARP ---
+@@||cloudflareclient.com^
+@@||api.cloudflareclient.com^
+@@||*.cloudflareclient.com^
+
+# --- Core ---
+@@||cloudflare.com^
+@@||www.cloudflare.com^
+@@||dash.cloudflare.com^
+
+# --- CDN ---
+@@||cdnjs.cloudflare.com^
+@@||cloudflareinsights.com^
+
+# --- Pages & Workers ---
+@@||pages.dev^
+@@||workers.dev^
+@@||*.pages.dev^
+@@||*.workers.dev^
+
+# --- Certificates ---
+@@||pki.goog^
+@@||cloudflaressl.com^
+
+# --- R2 Storage ---
+@@||r2.dev^
+@@||*.r2.dev^
+
+# --- Speed & Security ---
+@@||speed.cloudflare.com^
+@@||radar.cloudflare.com^
+
+# =============================================
+# Microsoft Copilot – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||copilot.microsoft.com^
+@@||www.bing.com^
+@@||bing.com^
+@@||edgeservices.bing.com^
+
+# --- Copilot API ---
+@@||sydney.bing.com^
+@@||r.bing.com^
+@@||th.bing.com^
+
+# --- Copilot CDN ---
+@@||copilot.blob.core.windows.net^
+@@||studiostaticassetsprod.azureedge.net^
+
+# --- GitHub Copilot ---
+@@||copilot.github.com^
+@@||api.githubcopilot.com^
+@@||copilot-proxy.githubusercontent.com^
+@@||copilot-telemetry.githubusercontent.com^
+
+# --- Designer ---
+@@||designer.microsoft.com^
+
+# =============================================
+# Crunchyroll – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||crunchyroll.com^
+@@||www.crunchyroll.com^
+@@||beta.crunchyroll.com^
+
+# --- API ---
+@@||api.crunchyroll.com^
+@@||beta-api.crunchyroll.com^
+
+# --- Streaming ---
+@@||*.vrv.co^
+@@||vrv.co^
+@@||cr-unblocker.us^
+@@||static.crunchyroll.com^
+@@||pl.crunchyroll.com^
+
+# --- CDN ---
+@@||img1.ak.crunchyroll.com^
+@@||fy.v.vrv.co^
+@@||a-vrv.akamaized.net^
+
+# =============================================
+# DAZN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||dazn.com^
+@@||www.dazn.com^
+
+# --- API ---
+@@||api.dazn.com^
+@@||graphql.dazn.com^
+@@||indazn.com^
+
+# --- Streaming ---
+@@||*.dcbolt.com^
+@@||dcbolt.com^
+@@||daznfiles.com^
+
+# --- CDN ---
+@@||images.dazn.com^
+@@||image.discovery.indazn.com^
+@@||s.dazn.com^
+
+# --- Auth ---
+@@||auth.dazn.com^
+@@||startup.dazn.com^
+
+# =============================================
+# DeepL Translator – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||deepl.com^
+@@||www.deepl.com^
+
+# --- API ---
+@@||api.deepl.com^
+@@||api-free.deepl.com^
+
+# --- Translation ---
+@@||w.deepl.com^
+@@||s.deepl.com^
+@@||static.deepl.com^
+
+# =============================================
+# DHL / Deutsche Post – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||dhl.de^
+@@||www.dhl.de^
+@@||dhl.com^
+@@||www.dhl.com^
+
+# --- Tracking ---
+@@||nolp.dhl.de^
+@@||www.dhl.de^
+
+# --- Paket App ---
+@@||api.dhl.com^
+@@||api-eu.dhl.com^
+
+# --- Login ---
+@@||login.dhl.de^
+@@||meindhl.de^
+
+# --- Post ---
+@@||deutschepost.de^
+@@||www.deutschepost.de^
+
+# --- Packstation ---
+@@||packstation.de^
+@@||www.packstation.de^
+
+# =============================================
+# Discord – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||discord.com^
+@@||www.discord.com^
+@@||discord.gg^
+@@||discordapp.com^
+
+# --- API & Gateway ---
+@@||gateway.discord.gg^
+@@||api.discord.com^
+@@||status.discord.com^
+
+# --- CDN & Media ---
+@@||cdn.discordapp.com^
+@@||media.discordapp.net^
+@@||images-ext-1.discordapp.net^
+@@||images-ext-2.discordapp.net^
+
+# --- Voice & Video ---
+@@||*.discord.media^
+@@||discord.media^
+
+# --- Updates ---
+@@||dl.discordapp.net^
+@@||updates.discord.com^
+
+# --- Attachments ---
+@@||attachments-cdn.discordapp.com^
+
+# --- Discord Activities ---
+@@||canary.discord.com^
+@@||ptb.discord.com^
+
+# =============================================
+# Disney+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||disneyplus.com^
+@@||www.disneyplus.com^
+@@||disney-plus.net^
+@@||disney.com^
+
+# --- Streaming ---
+@@||bamgrid.com^
+@@||*.bamgrid.com^
+@@||bam.nr-data.net^
+@@||cdn.registerdisney.go.com^
+@@||cws.conviva.com^
+
+# --- API & Auth ---
+@@||disney.api.edge.bamgrid.com^
+@@||disney.content.edge.bamgrid.com^
+@@||global.edge.bamgrid.com^
+@@||registerdisney.go.com^
+
+# --- CDN ---
+@@||disney.images.edge.bamgrid.com^
+@@||prod-static.disney-plus.net^
+@@||cnbl-cdn.bamgrid.com^
+@@||assets.disneyplus.com^
+@@||static-assets.bamgrid.com^
+@@||disney-portal.my.onetrust.com^
+
+# --- Playback ---
+@@||search-api-disney.svcs.dssott.com^
+@@||disney.playback.edge.bamgrid.com^
+@@||vod-hivec-*-*.media.dssott.com^
+@@||dssott.com^
+@@||*.dssott.com^
+
+# =============================================
+# Dropbox – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||dropbox.com^
+@@||www.dropbox.com^
+
+# --- Sync & API ---
+@@||api.dropbox.com^
+@@||api.dropboxapi.com^
+@@||content.dropboxapi.com^
+@@||notify.dropboxapi.com^
+@@||dl.dropboxusercontent.com^
+
+# --- CDN ---
+@@||cfl.dropboxstatic.com^
+@@||dropboxstatic.com^
+@@||paper.dropbox.com^
+
+# --- Client ---
+@@||client.dropbox.com^
+@@||client-lb.dropbox.com^
+@@||bolt.dropbox.com^
+@@||d.dropbox.com^
+@@||block.dropbox.com^
+
+# =============================================
+# eBay – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||ebay.de^
+@@||ebay.com^
+@@||www.ebay.de^
+@@||www.ebay.com^
+@@||ebay.co.uk^
+
+# --- API ---
+@@||api.ebay.com^
+@@||svcs.ebay.com^
+
+# --- CDN & Images ---
+@@||i.ebayimg.com^
+@@||ir.ebaystatic.com^
+@@||ebaystatic.com^
+@@||ebayimg.com^
+@@||pics.ebay.com^
+
+# --- Auth ---
+@@||signin.ebay.de^
+@@||signin.ebay.com^
+
+# --- Kleinanzeigen ---
+@@||kleinanzeigen.de^
+@@||www.kleinanzeigen.de^
+@@||api.kleinanzeigen.de^
+@@||i.ebayimg.com^
+
+# =============================================
+# Epic Games – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||epicgames.com^
+@@||www.epicgames.com^
+@@||store.epicgames.com^
+
+# --- Launcher ---
+@@||launcher-public-service-prod06.ol.epicgames.com^
+@@||download.epicgames.com^
+@@||download*.ol.epicgames.com^
+@@||epicgames-download1.akamaized.net^
+
+# --- CDN ---
+@@||cdn1.epicgames.com^
+@@||cdn2.epicgames.com^
+@@||cdn.unrealengine.com^
+@@||static-assets-prod.epicgames.com^
+
+# --- Auth ---
+@@||account-public-service-prod.ol.epicgames.com^
+@@||accounts.epicgames.com^
+
+# --- Unreal Engine ---
+@@||unrealengine.com^
+
+# --- Fortnite ---
+@@||fortnite.com^
+@@||ol.epicgames.com^
+
+# =============================================
+# ExpressVPN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||expressvpn.com^
+@@||www.expressvpn.com^
+
+# --- API ---
+@@||api.expressvpn.com^
+@@||*.expressvpn.com^
+
+# --- CDN ---
+@@||assets.expressvpn.com^
+@@||expresscdn.com^
+
+# --- VPN Connectivity ---
+@@||*.expressnetw.com^
+@@||expressnetw.com^
+@@||xvpn.io^
+@@||*.xvpn.io^
+
+# =============================================
+# Facebook / Meta – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||facebook.com^
+@@||www.facebook.com^
+@@||m.facebook.com^
+@@||web.facebook.com^
+@@||fb.com^
+@@||fb.me^
+
+# --- Authentication ---
+@@||accountscenter.facebook.com^
+@@||facebook.com^
+
+# --- API ---
+@@||graph.facebook.com^
+@@||api.facebook.com^
+
+# --- CDN & Media ---
+@@||fbcdn.net^
+@@||*.fbcdn.net^
+@@||scontent.xx.fbcdn.net^
+@@||static.xx.fbcdn.net^
+@@||video.xx.fbcdn.net^
+@@||external.xx.fbcdn.net^
+@@||connect.facebook.net^
+@@||fbsbx.com^
+
+# --- Messenger ---
+@@||messenger.com^
+@@||www.messenger.com^
+@@||*.messenger.com^
+@@||edge-mqtt.facebook.com^
+@@||mqtt-mini.facebook.com^
+
+# --- Facebook Marketplace ---
+@@||marketplace.facebook.com^
+
+# --- Threads ---
+@@||threads.net^
+@@||www.threads.net^
+
+# =============================================
+# Google Gemini – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||gemini.google.com^
+@@||gemini.google^
+@@||deepmind.google^
+@@||deepmind.com^
+
+# --- API ---
+@@||generativelanguage.googleapis.com^
+@@||aistudio.google.com^
+@@||makersuite.google.com^
+@@||alkalimakersuite-pa.clients6.google.com^
+
+# --- AI Studio ---
+@@||labs.google.com^
+@@||labs.google^
+
+# --- Notebook LM ---
+@@||notebooklm.google.com^
+@@||notebooklm.google^
+
+# =============================================
+# GitHub – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||github.com^
+@@||www.github.com^
+@@||github.io^
+
+# --- API ---
+@@||api.github.com^
+@@||uploads.github.com^
+
+# --- CDN & Assets ---
+@@||github.githubassets.com^
+@@||avatars.githubusercontent.com^
+@@||raw.githubusercontent.com^
+@@||user-images.githubusercontent.com^
+@@||camo.githubusercontent.com^
+@@||objects.githubusercontent.com^
+@@||media.githubusercontent.com^
+@@||cloud.githubusercontent.com^
+@@||repository-images.githubusercontent.com^
+@@||github.map.fastly.net^
+
+# --- Git Operations ---
+@@||github.com^
+@@||ssh.github.com^
+
+# --- GitHub Packages ---
+@@||npm.pkg.github.com^
+@@||maven.pkg.github.com^
+@@||nuget.pkg.github.com^
+@@||ghcr.io^
+
+# --- GitHub Actions ---
+@@||pipelines.actions.githubusercontent.com^
+@@||results-receiver.actions.githubusercontent.com^
+
+# --- GitHub Pages ---
+@@||pages.github.com^
+@@||*.github.io^
+
+# --- Copilot ---
+@@||copilot.github.com^
+@@||api.githubcopilot.com^
+
+# --- GitHub Education ---
+@@||education.github.com^
+
+# =============================================
+# GMX Mail – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||gmx.net^
+@@||gmx.de^
+@@||gmx.com^
+@@||gmx.at^
+@@||gmx.ch^
+@@||www.gmx.net^
+@@||www.gmx.de^
+
+# --- Mail Servers ---
+@@||mail.gmx.net^
+@@||mail.gmx.com^
+@@||imap.gmx.net^
+@@||pop.gmx.net^
+@@||smtp.gmx.net^
+@@||imap.gmx.com^
+@@||pop.gmx.com^
+@@||smtp.gmx.com^
+
+# --- GMX API & Login ---
+@@||navigator.gmx.net^
+@@||account.gmx.net^
+@@||login.gmx.net^
+@@||registrierung.gmx.net^
+
+# --- GMX Cloud ---
+@@||cloud.gmx.net^
+@@||upload.gmx.net^
+@@||mediencenter.gmx.net^
+
+# --- GMX Mobile ---
+@@||mobile.gmx.net^
+
+# --- CDN / Infrastructure (United Internet) ---
+@@||ui-portal.de^
+@@||uimserv.net^
+@@||uicdn.net^
+@@||uis.uimserv.net^
+@@||s.uicdn.net^
+@@||img.ui-portal.de^
+
+# --- WEB.DE (sister service, shared infra) ---
+@@||web.de^
+@@||smtp.web.de^
+@@||imap.web.de^
+@@||pop.web.de^
+@@||mail.web.de^
+
+# =============================================
+# Google Services – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core / Search ---
+@@||google.com^
+@@||google.de^
+@@||www.google.com^
+@@||www.google.de^
+@@||google.co.uk^
+
+# --- Authentication ---
+@@||accounts.google.com^
+@@||myaccount.google.com^
+@@||oauth2.googleapis.com^
+@@||securetoken.googleapis.com^
+@@||oauthaccountmanager.googleapis.com^
+
+# --- Gmail ---
+@@||mail.google.com^
+@@||gmail.com^
+@@||googlemail.com^
+@@||smtp.gmail.com^
+@@||imap.gmail.com^
+@@||smtp-relay.gmail.com^
+@@||gmail-smtp-in.l.google.com^
+
+# --- Google Drive ---
+@@||drive.google.com^
+@@||docs.google.com^
+@@||sheets.google.com^
+@@||slides.google.com^
+@@||forms.google.com^
+@@||drive.usercontent.google.com^
+
+# --- Google Meet ---
+@@||meet.google.com^
+@@||meet.googleapis.com^
+
+# --- Google Calendar ---
+@@||calendar.google.com^
+
+# --- Google Photos ---
+@@||photos.google.com^
+@@||lh3.googleusercontent.com^
+@@||lh4.googleusercontent.com^
+@@||lh5.googleusercontent.com^
+@@||lh6.googleusercontent.com^
+
+# --- Google Maps ---
+@@||maps.google.com^
+@@||maps.googleapis.com^
+@@||maps.gstatic.com^
+@@||mapsengine.google.com^
+@@||khms0.google.com^
+@@||khms1.google.com^
+
+# --- Google Play Store ---
+@@||play.google.com^
+@@||play.googleapis.com^
+@@||android.clients.google.com^
+@@||dl.google.com^
+
+# --- CDN & Static Assets ---
+@@||gstatic.com^
+@@||ssl.gstatic.com^
+@@||fonts.gstatic.com^
+@@||fonts.googleapis.com^
+@@||ajax.googleapis.com^
+@@||storage.googleapis.com^
+@@||firebaseinstallations.googleapis.com^
+@@||firebase-settings.crashlytics.com^
+@@||cdn.firebase.com^
+
+# --- Google APIs ---
+@@||googleapis.com^
+@@||clients1.google.com^
+@@||clients2.google.com^
+@@||clients3.google.com^
+@@||clients4.google.com^
+@@||clients5.google.com^
+@@||clients6.google.com^
+@@||clientservices.googleapis.com^
+@@||fcm.googleapis.com^
+@@||firebaseio.com^
+
+# --- Google Connectivity ---
+@@||connectivitycheck.gstatic.com^
+@@||connectivitycheck.android.com^
+@@||mtalk.google.com^
+@@||alt1-mtalk.google.com^
+@@||alt2-mtalk.google.com^
+@@||alt3-mtalk.google.com^
+
+# --- Google DNS ---
+@@||dns.google^
+@@||dns.google.com^
+@@||8.8.8.8^
+@@||8.8.4.4^
+
+# --- Certificates ---
+@@||pki.goog^
+@@||ocsp.pki.goog^
+@@||crl.pki.goog^
+
+# --- Google Translate ---
+@@||translate.google.com^
+@@||translate.googleapis.com^
+
+# --- Chrome & Updates ---
+@@||update.googleapis.com^
+@@||dl.google.com^
+@@||redirector.gvt1.com^
+@@||gvt1.com^
+@@||gvt2.com^
+
+# =============================================
+# Google Home / Nest – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||home.google.com^
+
+# --- Chromecast ---
+@@||clients3.google.com^
+@@||clients4.google.com^
+
+# --- Device Setup ---
+@@||connectivitycheck.gstatic.com^
+@@||accounts.google.com^
+@@||oauthaccountmanager.googleapis.com^
+
+# --- Google Assistant ---
+@@||assistant.google.com^
+@@||embeddedassistant.googleapis.com^
+
+# --- Nest ---
+@@||home.nest.com^
+@@||*.home.nest.com^
+@@||nest.com^
+@@||grpc-web.production.nest.com^
+
+# --- Smart Home Actions ---
+@@||homegraph.googleapis.com^
+@@||firebaseinstallations.googleapis.com^
+@@||fcm.googleapis.com^
+
+# --- Updates ---
+@@||update.googleapis.com^
+@@||dl.google.com^
+
+# =============================================
+# Home Assistant – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||home-assistant.io^
+@@||www.home-assistant.io^
+
+# --- Nabu Casa (HA Cloud) ---
+@@||nabucasa.com^
+@@||*.nabucasa.com^
+@@||*.ui.nabu.casa^
+@@||ui.nabu.casa^
+
+# --- Updates ---
+@@||version.home-assistant.io^
+@@||alerts.home-assistant.io^
+
+# --- Add-ons ---
+@@||addons.community.home-assistant.io^
+@@||github.com^
+@@||ghcr.io^
+
+# --- Analytics ---
+@@||analytics.home-assistant.io^
+
+# =============================================
+# Hugging Face – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||huggingface.co^
+@@||www.huggingface.co^
+@@||hf.co^
+
+# --- API & Models ---
+@@||api-inference.huggingface.co^
+@@||cdn-lfs.huggingface.co^
+
+# --- Spaces ---
+@@||*.hf.space^
+@@||hf.space^
+
+# --- CDN ---
+@@||cdn-thumbnails.huggingface.co^
+@@||aeiljuispo.cloudimg.io^
+
+# =============================================
+# iCloud Private Relay – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Private Relay Core ---
+@@||mask.icloud.com^
+@@||mask-h2.icloud.com^
+@@||mask-api.icloud.com^
+
+# --- Ingress Proxy (first hop) ---
+@@||mask.apple-dns.net^
+
+# --- Egress Proxy (second hop) ---
+@@||dnsse-*.cloudflare-dns.com^
+@@||doh.dns.apple.com^
+
+# --- Apple CDN for relay config ---
+@@||configuration.apple.com^
+@@||gspe1-ssl.ls.apple.com^
+@@||gsp-ssl.ls.apple.com^
+@@||gsp64-ssl.ls.apple.com^
+
+# --- Token validation ---
+@@||bag.itunes.apple.com^
+@@||init.ess.apple.com^
+
+# --- Connectivity ---
+@@||gateway.icloud.com^
+@@||metrics.icloud.com^
+@@||setup.icloud.com^
+
+# =============================================
+# iCloud & Apple Services – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- iCloud Core ---
+@@||icloud.com^
+@@||icloud-content.com^
+@@||icloud.apple.com^
+@@||icloud.com.cn^
+
+# --- Apple ID & Authentication ---
+@@||appleid.apple.com^
+@@||appleid.cdn-apple.com^
+@@||idmsa.apple.com^
+@@||gsa.apple.com^
+@@||setup.icloud.com^
+
+# --- iCloud Drive & Documents ---
+@@||p01-docws.icloud.com^
+@@||p02-docws.icloud.com^
+@@||p03-docws.icloud.com^
+@@||docws.icloud.com^
+@@||p01-ubiquityws.icloud.com^
+@@||p02-ubiquityws.icloud.com^
+@@||p03-ubiquityws.icloud.com^
+
+# --- iCloud Mail ---
+@@||p01-mailws.icloud.com^
+@@||p02-mailws.icloud.com^
+@@||p03-mailws.icloud.com^
+@@||p04-mailws.icloud.com^
+@@||mail.me.com^
+
+# --- iCloud Photos ---
+@@||p01-mediatokenws.icloud.com^
+@@||p02-mediatokenws.icloud.com^
+@@||p03-mediatokenws.icloud.com^
+
+# --- iCloud Backup & Sync ---
+@@||p01-ckdatabasews.icloud.com^
+@@||p02-ckdatabasews.icloud.com^
+@@||p03-ckdatabasews.icloud.com^
+@@||p01-quota.icloud.com^
+@@||p02-quota.icloud.com^
+@@||p03-quota.icloud.com^
+
+# --- iCloud Keychain ---
+@@||p01-escrowproxy.icloud.com^
+@@||p02-escrowproxy.icloud.com^
+@@||p03-escrowproxy.icloud.com^
+
+# --- Find My ---
+@@||p01-fmipws.icloud.com^
+@@||p02-fmipws.icloud.com^
+@@||p03-fmipws.icloud.com^
+@@||fmipmobile.icloud.com^
+
+# --- iCloud Private Relay ---
+@@||mask.icloud.com^
+@@||mask-h2.icloud.com^
+@@||mask-api.icloud.com^
+
+# --- Apple Push Notifications ---
+@@||push.apple.com^
+@@||courier.push.apple.com^
+@@||init-p01st.push.apple.com^
+
+# --- Apple General Infrastructure ---
+@@||apple.com^
+@@||apple.com.cn^
+@@||cdn-apple.com^
+@@||apple-dns.net^
+@@||aaplimg.com^
+@@||apple-cloudkit.com^
+@@||apple-livephotoskit.com^
+@@||appleimg.com^
+
+# --- App Store & iTunes ---
+@@||itunes.apple.com^
+@@||apps.apple.com^
+@@||mzstatic.com^
+@@||itunes.com^
+@@||itunesconnect.apple.com^
+
+# --- Software Updates ---
+@@||swdist.apple.com^
+@@||swcdn.apple.com^
+@@||swdownload.apple.com^
+@@||updates-http.cdn-apple.com^
+@@||updates.cdn-apple.com^
+@@||oscdn.apple.com^
+@@||appldnld.apple.com^
+@@||xp.apple.com^
+@@||gdmf.apple.com^
+@@||mesu.apple.com^
+@@||ns.itunes.apple.com^
+
+# --- Apple Maps ---
+@@||ls.apple.com^
+@@||gs-loc.apple.com^
+@@||gsp-ssl.ls.apple.com^
+
+# --- Siri ---
+@@||guzzoni.apple.com^
+@@||api.smoot.apple.com^
+
+# --- Apple Pay ---
+@@||smp-device-content.apple.com^
+
+# --- Device Activation ---
+@@||albert.apple.com^
+@@||captive.apple.com^
+
+# --- Time & Certificates ---
+@@||time.apple.com^
+@@||time-ios.apple.com^
+@@||ocsp.apple.com^
+@@||ocsp2.apple.com^
+@@||crl.apple.com^
+@@||valid.apple.com^
+@@||certs.apple.com^
+
+# =============================================
+# Instagram – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||instagram.com^
+@@||www.instagram.com^
+@@||i.instagram.com^
+@@||l.instagram.com^
+
+# --- API ---
+@@||graph.instagram.com^
+@@||api.instagram.com^
+
+# --- CDN & Media ---
+@@||scontent-*.cdninstagram.com^
+@@||scontent.cdninstagram.com^
+@@||cdninstagram.com^
+@@||static.cdninstagram.com^
+
+# --- Stories & Reels ---
+@@||scontent-*.xx.fbcdn.net^
+
+# --- Meta Dependencies ---
+@@||facebook.com^
+@@||fbcdn.net^
+@@||fbsbx.com^
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||accountscenter.instagram.com^
+
+# =============================================
+# Joyn – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||joyn.de^
+@@||www.joyn.de^
+@@||api.joyn.de^
+
+# --- Streaming ---
+@@||cdn.joyn.de^
+@@||playerapi.joyn.de^
+@@||auth.joyn.de^
+
+# --- CDN ---
+@@||images.joyn.de^
+@@||assets.joyn.de^
+
+# =============================================
+# Klarna – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||klarna.com^
+@@||www.klarna.com^
+
+# --- API ---
+@@||api.klarna.com^
+@@||js.klarna.com^
+@@||eu.playground.klarna.com^
+@@||x.klarnacdn.net^
+@@||klarnacdn.net^
+
+# --- App ---
+@@||app.klarna.com^
+
+# --- Auth ---
+@@||login.klarna.com^
+@@||auth.klarna.com^
+
+# =============================================
+# Let's Encrypt / ACME – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||letsencrypt.org^
+@@||www.letsencrypt.org^
+
+# --- ACME ---
+@@||acme-v02.api.letsencrypt.org^
+@@||acme-staging-v02.api.letsencrypt.org^
+
+# --- OCSP & CRL ---
+@@||ocsp.int-x3.letsencrypt.org^
+@@||r3.o.lencr.org^
+@@||r4.o.lencr.org^
+@@||e1.o.lencr.org^
+@@||lencr.org^
+
+# --- Certificates ---
+@@||x1.c.lencr.org^
+@@||x2.c.lencr.org^
+@@||r3.i.lencr.org^
+@@||e1.i.lencr.org^
+
+# =============================================
+# LinkedIn – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||linkedin.com^
+@@||www.linkedin.com^
+@@||de.linkedin.com^
+
+# --- API ---
+@@||api.linkedin.com^
+@@||platform.linkedin.com^
+
+# --- CDN & Media ---
+@@||media.licdn.com^
+@@||static.licdn.com^
+@@||licdn.com^
+@@||media-exp1.licdn.com^
+
+# --- LinkedIn Learning ---
+@@||learning.linkedin.com^
+@@||lnkd.in^
+
+# =============================================
+# Mastodon / Fediverse – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Popular Instances ---
+@@||mastodon.social^
+@@||mastodon.online^
+@@||mstdn.social^
+@@||mas.to^
+@@||mastodon.world^
+@@||techhub.social^
+@@||infosec.exchange^
+@@||fosstodon.org^
+@@||chaos.social^
+@@||troet.cafe^
+
+# --- Mastodon CDN ---
+@@||files.mastodon.social^
+@@||media.mastodon.social^
+
+# --- Mastodon Project ---
+@@||joinmastodon.org^
+
+# =============================================
+# MEGA – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||mega.nz^
+@@||mega.co.nz^
+@@||mega.io^
+
+# --- API ---
+@@||g.api.mega.co.nz^
+@@||*.api.mega.co.nz^
+
+# --- CDN ---
+@@||*.static.mega.co.nz^
+@@||eu.static.mega.co.nz^
+
+# --- Downloads ---
+@@||gfs270n071.userstorage.mega.co.nz^
+@@||*.userstorage.mega.co.nz^
+
+# =============================================
+# Microsoft (365, Teams, OneDrive, Windows) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||microsoft.com^
+@@||www.microsoft.com^
+@@||microsoftonline.com^
+@@||msftauth.net^
+@@||msauth.net^
+
+# --- Authentication ---
+@@||login.microsoftonline.com^
+@@||login.live.com^
+@@||login.microsoft.com^
+@@||account.live.com^
+@@||account.microsoft.com^
+@@||aadcdn.msauth.net^
+@@||aadcdn.msftauth.net^
+
+# --- Microsoft 365 / Office ---
+@@||outlook.office.com^
+@@||outlook.office365.com^
+@@||outlook.live.com^
+@@||office.com^
+@@||office365.com^
+@@||office.net^
+@@||officeclient.microsoft.com^
+@@||onenote.com^
+@@||onenote.net^
+
+# --- Teams ---
+@@||teams.microsoft.com^
+@@||teams.live.com^
+@@||statics.teams.cdn.office.net^
+@@||teams.events.data.microsoft.com^
+
+# --- OneDrive / SharePoint ---
+@@||onedrive.com^
+@@||onedrive.live.com^
+@@||sharepoint.com^
+@@||*.sharepoint.com^
+@@||skyapi.onedrive.live.com^
+@@||storage.live.com^
+
+# --- Windows Updates ---
+@@||update.microsoft.com^
+@@||windowsupdate.com^
+@@||download.windowsupdate.com^
+@@||dl.delivery.mp.microsoft.com^
+@@||*.delivery.mp.microsoft.com^
+@@||ctldl.windowsupdate.com^
+@@||definitionupdates.microsoft.com^
+
+# --- Certificates & CRL ---
+@@||crl.microsoft.com^
+@@||ocsp.msocsp.com^
+@@||oneocsp.microsoft.com^
+
+# --- CDN ---
+@@||msecnd.net^
+@@||akamaized.net^
+@@||azureedge.net^
+@@||msedge.net^
+@@||msftconnecttest.com^
+@@||azure.com^
+@@||azurewebsites.net^
+
+# --- Bing ---
+@@||bing.com^
+@@||www.bing.com^
+
+# --- Xbox / Gaming ---
+@@||xbox.com^
+@@||xboxlive.com^
+
+# --- Skype ---
+@@||skype.com^
+@@||skypeecs-prod-usw-0-b.cloudapp.net^
+
+# --- VS Code / Dev ---
+@@||visualstudio.com^
+@@||vscode.dev^
+@@||marketplace.visualstudio.com^
+
+# --- Copilot ---
+@@||copilot.microsoft.com^
+
+# --- Connectivity Check ---
+@@||msftconnecttest.com^
+@@||dns.msftncsi.com^
+
+# =============================================
+# Midjourney – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||midjourney.com^
+@@||www.midjourney.com^
+
+# --- API & CDN ---
+@@||cdn.midjourney.com^
+@@||api.midjourney.com^
+@@||ws.midjourney.com^
+
+# --- Image Hosting ---
+@@||mj-gallery.com^
+
+# --- Discord (required for Midjourney) ---
+@@||discord.com^
+@@||discord.gg^
+@@||cdn.discordapp.com^
+@@||gateway.discord.gg^
+@@||media.discordapp.net^
+
+# =============================================
+# Mozilla / Firefox – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||mozilla.org^
+@@||www.mozilla.org^
+@@||mozilla.com^
+@@||firefox.com^
+
+# --- Sync & Accounts ---
+@@||accounts.firefox.com^
+@@||api.accounts.firefox.com^
+@@||sync.services.mozilla.com^
+@@||token.services.mozilla.com^
+
+# --- Updates ---
+@@||aus5.mozilla.org^
+@@||download.mozilla.org^
+@@||archive.mozilla.org^
+
+# --- Add-ons ---
+@@||addons.mozilla.org^
+@@||addons.cdn.mozilla.net^
+@@||services.addons.mozilla.org^
+
+# --- Connectivity ---
+@@||detectportal.firefox.com^
+@@||location.services.mozilla.com^
+@@||push.services.mozilla.com^
+
+# --- CDN ---
+@@||cdn.mozilla.net^
+@@||cdn.mozilla.org^
+@@||normandy.cdn.mozilla.net^
+@@||content-signature-2.cdn.mozilla.net^
+
+# --- Telemetry (needed for updates) ---
+@@||incoming.telemetry.mozilla.org^
+@@||firefox.settings.services.mozilla.com^
+@@||shavar.services.mozilla.com^
+@@||tracking-protection.cdn.mozilla.net^
+
+# =============================================
+# Mullvad VPN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||mullvad.net^
+@@||www.mullvad.net^
+
+# --- API ---
+@@||api.mullvad.net^
+@@||am.i.mullvad.net^
+
+# --- VPN Servers ---
+@@||*.mullvad.net^
+@@||*.relays.mullvad.net^
+
+# --- Updates ---
+@@||cdn.mullvad.net^
+@@||releases.mullvad.net^
+
+# --- DNS ---
+@@||dns.mullvad.net^
+@@||adblock.dns.mullvad.net^
+@@||doh.mullvad.net^
+
+# =============================================
+# Netflix – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||netflix.com^
+@@||www.netflix.com^
+@@||netflix.net^
+
+# --- Streaming ---
+@@||nflxvideo.net^
+@@||*.nflxvideo.net^
+@@||nflximg.net^
+@@||nflximg.com^
+@@||nflxext.com^
+@@||nflxso.net^
+@@||*.nflxso.net^
+
+# --- CDN ---
+@@||fast.com^
+@@||assets.nflxext.com^
+@@||codex.nflxext.com^
+@@||api-global.netflix.com^
+@@||customerevents.netflix.com^
+
+# --- Authentication ---
+@@||secure.netflix.com^
+@@||login.netflix.com^
+
+# --- Netflix API ---
+@@||ichnaea.netflix.com^
+@@||nmtracking.netflix.com^
+@@||presentationtracking.netflix.com^
+@@||appboot.netflix.com^
+
+# =============================================
+# Nintendo – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||nintendo.com^
+@@||www.nintendo.com^
+@@||nintendo.de^
+@@||nintendo.co.uk^
+@@||nintendo.net^
+
+# --- eShop ---
+@@||eshop.nintendo.net^
+@@||bugyo.nintendo.net^
+@@||ctest.cdn.nintendo.net^
+
+# --- Online Services ---
+@@||*.nintendo.net^
+@@||accounts.nintendo.com^
+@@||api.accounts.nintendo.com^
+
+# --- CDN ---
+@@||cdn.nintendo.net^
+@@||conntest.nintendowifi.net^
+@@||npns-dev.c.app.nintendo.net^
+
+# --- Updates ---
+@@||receive-*.dg.srv.nintendo.net^
+@@||*.cdn.nintendo.net^
+
+# =============================================
+# NordVPN & Nord Security – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||nordvpn.com^
+@@||www.nordvpn.com^
+@@||my.nordaccount.com^
+@@||nordaccount.com^
+
+# --- NordVPN API & Servers ---
+@@||api.nordvpn.com^
+@@||downloads.nordcdn.com^
+@@||zwyr157wwiu6eior.com^
+@@||*.nordvpn.com^
+@@||server-*.nordvpn.com^
+
+# --- NordVPN CDN ---
+@@||nordcdn.com^
+@@||*.nordcdn.com^
+
+# --- Nord Account & Authentication ---
+@@||id.nord.com^
+@@||hatscripts.github.io^
+
+# --- NordVPN Infrastructure ---
+@@||nordvpn.net^
+@@||*.nordvpn.net^
+@@||notordns.com^
+@@||*.notordns.com^
+
+# --- NordLayer (Business) ---
+@@||nordlayer.com^
+@@||api.nordlayer.com^
+
+# --- NordPass ---
+@@||nordpass.com^
+@@||api.nordpass.com^
+
+# --- NordLocker ---
+@@||nordlocker.com^
+@@||api.nordlocker.com^
+
+# --- Nord Security (Parent) ---
+@@||nordsecurity.com^
+@@||nordsec.com^
+
+# --- Update & Connectivity Checks ---
+@@||repo.nordvpn.com^
+@@||nord-apps.com^
+@@||*.nord-apps.com^
+
+# =============================================
+# Paramount+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||paramountplus.com^
+@@||www.paramountplus.com^
+
+# --- API ---
+@@||cbs.api.edge.bamgrid.com^
+@@||link.paramountplus.com^
+
+# --- Streaming ---
+@@||cbsi.video.theplatform.com^
+@@||vod-gcs-cedexis.cbsaavideo.com^
+@@||cbsaavideo.com^
+
+# --- CDN ---
+@@||wwwimage-tve.cbsstatic.com^
+@@||cbsstatic.com^
+@@||thumbnails.cbsig.net^
+
+# --- Auth ---
+@@||auth.paramountplus.com^
+
+# =============================================
+# PayPal – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||paypal.com^
+@@||www.paypal.com^
+@@||paypal.de^
+@@||www.paypal.de^
+@@||paypal.me^
+
+# --- Authentication ---
+@@||api.paypal.com^
+@@||api-m.paypal.com^
+@@||svcs.paypal.com^
+
+# --- Checkout ---
+@@||checkout.paypal.com^
+@@||securepayments.paypal.com^
+@@||payflowilink.paypal.com^
+
+# --- CDN & Assets ---
+@@||paypalobjects.com^
+@@||t.paypal.com^
+@@||pics.paypal.com^
+
+# --- PayPal Credit ---
+@@||credit.paypal.com^
+@@||creditapply.paypal.com^
+
+# --- Notifications ---
+@@||notify.paypal.com^
+@@||ipnpb.paypal.com^
+
+# --- PayPal Business ---
+@@||business.paypal.com^
+@@||merchantweb.paypal.com^
+
+# --- PayPal Here ---
+@@||here.paypal.com^
+
+# --- Venmo ---
+@@||venmo.com^
+@@||api.venmo.com^
+
+# =============================================
+# Perplexity AI – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||perplexity.ai^
+@@||www.perplexity.ai^
+
+# --- API ---
+@@||api.perplexity.ai^
+
+# --- CDN ---
+@@||pplx-res.cloudinary.com^
+@@||assets.perplexity.ai^
+
+# =============================================
+# Pinterest – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||pinterest.com^
+@@||www.pinterest.com^
+@@||pinterest.de^
+@@||pinterest.co.uk^
+
+# --- API ---
+@@||api.pinterest.com^
+@@||widgets.pinterest.com^
+
+# --- CDN & Media ---
+@@||pinimg.com^
+@@||i.pinimg.com^
+@@||s.pinimg.com^
+@@||ct.pinterest.com^
+@@||v1.pinimg.com^
+
+# =============================================
+# PlayStation Network – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||playstation.com^
+@@||www.playstation.com^
+@@||playstation.net^
+@@||sonyentertainmentnetwork.com^
+
+# --- PSN ---
+@@||*.playstation.net^
+@@||auth.api.sonyentertainmentnetwork.com^
+@@||account.sonyentertainmentnetwork.com^
+
+# --- PS Store ---
+@@||store.playstation.com^
+@@||store.sonyentertainmentnetwork.com^
+
+# --- CDN ---
+@@||psnobj.playstation.net^
+@@||gs2.ww.prod.dl.playstation.net^
+@@||gs-sec.ww.np.dl.playstation.net^
+
+# --- Remote Play ---
+@@||remoteplay.dl.playstation.net^
+
+# --- PlayStation App ---
+@@||mobile.playstation.com^
+@@||web.np.playstation.com^
+
+# =============================================
+# Plex – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||plex.tv^
+@@||www.plex.tv^
+@@||app.plex.tv^
+
+# --- API & Auth ---
+@@||plex.direct^
+@@||*.plex.direct^
+@@||my.plexapp.com^
+
+# --- Metadata & Media ---
+@@||metadata.provider.plex.tv^
+@@||meta.plex.tv^
+@@||meta-db-worker02.pop.ric.plex.bz^
+@@||cpms.spop10.ams.plex.bz^
+@@||tvdb2.plex.tv^
+@@||tvthemes.plexapp.com^
+
+# --- Downloads & Updates ---
+@@||downloads.plex.tv^
+@@||nightlies.plex.tv^
+
+# --- Analytics (required for functionality) ---
+@@||analytics.plex.tv^
+
+# --- Plex CDN ---
+@@||resources-cdn.plexapp.com^
+@@||proxy.plex.tv^
+@@||proxy02.pop.ord.plex.bz^
+@@||pubsub.plex.tv^
+@@||status.plex.tv^
+@@||hub.plex.tv^
+
+# =============================================
+# Amazon Prime Video (standalone) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||primevideo.com^
+@@||www.primevideo.com^
+
+# --- Streaming ---
+@@||atv-ps.amazon.com^
+@@||aiv-cdn.net^
+@@||aiv-delivery.net^
+@@||d25xi40x97liuc.cloudfront.net^
+@@||d1v5ir2lpwr8os.cloudfront.net^
+@@||d22qjgkvxw22r6.cloudfront.net^
+@@||dmqdd6hw24ucf.cloudfront.net^
+
+# --- API ---
+@@||api.amazon.com^
+@@||api.amazon.de^
+@@||fls-eu.amazon.de^
+
+# --- CDN ---
+@@||images-na.ssl-images-amazon.com^
+@@||images-eu.ssl-images-amazon.com^
+@@||m.media-amazon.com^
+@@||cloudfront.net^
+
+# =============================================
+# Proton (Mail, VPN, Drive, Calendar, Pass) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||proton.me^
+@@||protonmail.com^
+@@||protonmail.ch^
+@@||protonvpn.com^
+@@||proton.ch^
+@@||www.proton.me^
+
+# --- Proton Mail ---
+@@||mail.proton.me^
+@@||mail.protonmail.com^
+@@||account.proton.me^
+@@||account.protonmail.com^
+@@||api.protonmail.ch^
+
+# --- Proton API ---
+@@||mail-api.proton.me^
+@@||vpn-api.proton.me^
+@@||drive-api.proton.me^
+@@||calendar-api.proton.me^
+@@||pass-api.proton.me^
+@@||account-api.proton.me^
+
+# --- Proton VPN ---
+@@||vpn.proton.me^
+@@||api.protonvpn.ch^
+@@||*.protonvpn.net^
+@@||protonvpn.net^
+
+# --- Proton Drive ---
+@@||drive.proton.me^
+
+# --- Proton Calendar ---
+@@||calendar.proton.me^
+
+# --- Proton Pass ---
+@@||pass.proton.me^
+
+# --- Proton CDN & Infrastructure ---
+@@||proton.me^
+@@||prtn.app^
+@@||protonmail.com^
+@@||proton-api.com^
+@@||protonprivacy.com^
+
+# --- Proton Verification ---
+@@||verify.proton.me^
+@@||signup.proton.me^
+
+# --- Alternative Routing (censorship bypass) ---
+@@||*.compute.amazonaws.com^
+
+# =============================================
+# Reddit – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||reddit.com^
+@@||www.reddit.com^
+@@||old.reddit.com^
+@@||new.reddit.com^
+@@||sh.reddit.com^
+@@||oauth.reddit.com^
+
+# --- API ---
+@@||s.reddit.com^
+@@||api.reddit.com^
+@@||gql.reddit.com^
+
+# --- CDN & Media ---
+@@||i.redd.it^
+@@||v.redd.it^
+@@||preview.redd.it^
+@@||external-preview.redd.it^
+@@||redditmedia.com^
+@@||redditstatic.com^
+@@||reddituploads.com^
+@@||thumbs.redditmedia.com^
+
+# --- Reddit Chat ---
+@@||chat.reddit.com^
+@@||sendbird.com^
+
+# --- Reddit App ---
+@@||reddit.app.link^
+@@||redditapp.com^
+
+# =============================================
+# Riot Games (LoL, Valorant, TFT) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||riotgames.com^
+@@||www.riotgames.com^
+
+# --- League of Legends ---
+@@||leagueoflegends.com^
+@@||euw.leagueoflegends.com^
+
+# --- Valorant ---
+@@||playvalorant.com^
+
+# --- Auth ---
+@@||auth.riotgames.com^
+@@||authenticate.riotgames.com^
+@@||login.riotgames.com^
+
+# --- CDN ---
+@@||lol.dyn.riotcdn.net^
+@@||riotcdn.net^
+@@||bacon.secure.dyn.riotcdn.net^
+@@||clientconfig.rpg.riotgames.com^
+
+# --- Game Servers ---
+@@||*.pvp.net^
+@@||pvp.net^
+@@||*.riotgames.com^
+@@||riot.net^
+
+# =============================================
+# RTL+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||rtlplus.com^
+@@||www.rtlplus.com^
+@@||plus.rtl.de^
+@@||rtl.de^
+
+# --- API ---
+@@||api.rtlplus.com^
+
+# --- Streaming ---
+@@||cdn.rtlplus.com^
+@@||vod.rtl.de^
+
+# --- Auth ---
+@@||auth.rtl.de^
+@@||account.rtl.de^
+
+# =============================================
+# Signal Messenger – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||signal.org^
+@@||www.signal.org^
+
+# --- Messaging & API ---
+@@||chat.signal.org^
+@@||storage.signal.org^
+@@||textsecure-service.whispersystems.org^
+@@||giphy-proxy-production.whispersystems.org^
+
+# --- CDN ---
+@@||cdn.signal.org^
+@@||cdn2.signal.org^
+@@||cdn3.signal.org^
+@@||updates.signal.org^
+@@||updates2.signal.org^
+
+# --- Media & Attachments ---
+@@||contentproxy.signal.org^
+@@||sfu.voip.signal.org^
+@@||turn1.voip.signal.org^
+@@||turn2.voip.signal.org^
+@@||turn3.voip.signal.org^
+
+# --- Key Distribution ---
+@@||api.directory.signal.org^
+@@||directory.signal.org^
+
+# --- Backup ---
+@@||backup.signal.org^
+
+# --- Captcha ---
+@@||signalcaptchas.org^
+
+# =============================================
+# Slack – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||slack.com^
+@@||www.slack.com^
+@@||app.slack.com^
+@@||api.slack.com^
+
+# --- Messaging ---
+@@||wss-primary.slack.com^
+@@||wss-backup.slack.com^
+@@||wss-mobile.slack.com^
+
+# --- CDN & Files ---
+@@||files.slack.com^
+@@||a.slack-edge.com^
+@@||b.slack-edge.com^
+@@||slack-edge.com^
+@@||edgeapi.slack.com^
+@@||slack-imgs.com^
+@@||slack-files.com^
+@@||slack-redir.net^
+@@||slackb.com^
+
+# --- Calls ---
+@@||slack-calls.com^
+@@||*.slack-calls.com^
+
+# --- Workspace ---
+@@||*.slack.com^
+
+# =============================================
+# Snapchat – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||snapchat.com^
+@@||www.snapchat.com^
+@@||snap.com^
+
+# --- API ---
+@@||app.snapchat.com^
+@@||api.snapchat.com^
+@@||gcp.api.snapchat.com^
+
+# --- CDN & Media ---
+@@||sc-cdn.net^
+@@||snap-storage-cdn.appspot.com^
+@@||cf-st.sc-cdn.net^
+@@||bolt-gcdn.sc-cdn.net^
+
+# --- Snap Map ---
+@@||map.snapchat.com^
+
+# --- Bitmoji ---
+@@||bitmoji.com^
+@@||images.bitmoji.com^
+@@||render.bitstrips.com^
+
+# --- Spotlight ---
+@@||spotlight.snapchat.com^
+
+# --- Auth ---
+@@||accounts.snapchat.com^
+
+# =============================================
+# Sonos – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||sonos.com^
+@@||www.sonos.com^
+
+# --- API ---
+@@||api.sonos.com^
+@@||api.ws.sonos.com^
+@@||dcapps.sonos.com^
+
+# --- Updates ---
+@@||update.sonos.com^
+@@||update-firmware.sonos.com^
+
+# --- Music Services ---
+@@||msmetrics.ws.sonos.com^
+
+# --- Auth ---
+@@||login.sonos.com^
+@@||player.sonos.com^
+
+# =============================================
+# Spotify – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||spotify.com^
+@@||spotify.map.fastly.net^
+@@||spotify.map.fastlylb.net^
+@@||spotifycdn.com^
+@@||spotifycdn.net^
+
+# --- Authentication ---
+@@||accounts.spotify.com^
+@@||login5.spotify.com^
+
+# --- Streaming & Playback ---
+@@||audio-sp-*.pscdn.co^
+@@||audio-ak-spotify-com.akamaized.net^
+@@||audio4-ak-spotify-com.akamaized.net^
+@@||heads-ak-spotify-com.akamaized.net^
+@@||audio-akp-quic-spotify-com.akamaized.net^
+@@||dealer.spotify.com^
+@@||spclient.wg.spotify.com^
+@@||gew1-spclient.spotify.com^
+@@||gew4-spclient.spotify.com^
+@@||gae2-spclient.spotify.com^
+@@||guc3-spclient.spotify.com^
+@@||lon6-spclient.spotify.com^
+
+# --- API & Web Player ---
+@@||api.spotify.com^
+@@||api-partner.spotify.com^
+@@||open.spotify.com^
+@@||apresolve.spotify.com^
+@@||ap-gew1.spotify.com^
+@@||ap-gae2.spotify.com^
+@@||ap-guc3.spotify.com^
+
+# --- CDN & Assets ---
+@@||i.scdn.co^
+@@||mosaic.scdn.co^
+@@||daily-mix.scdn.co^
+@@||newjams-images.scdn.co^
+@@||dailymix-images.scdn.co^
+@@||seed-mix-image.scdn.co^
+@@||lineup-images.scdn.co^
+@@||thisis-images.scdn.co^
+@@||seeded-session-images.scdn.co^
+@@||scdn.co^
+@@||misc.scdn.co^
+@@||encore.scdn.co^
+
+# --- Analytics (required for functionality) ---
+@@||wg.spotify.com^
+@@||event-delivery.spotify.com^
+
+# --- Spotify Connect ---
+@@||apresolve.spotify.com^
+@@||mobile-ap.spotify.com^
+
+# --- Podcasts ---
+@@||podcastsintercom.spotify.com^
+@@||anchor.fm^
+@@||megaphone.fm^
+
+# =============================================
+# Steam / Valve – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||steampowered.com^
+@@||store.steampowered.com^
+@@||steamcommunity.com^
+
+# --- Client ---
+@@||steamstatic.com^
+@@||*.steamstatic.com^
+@@||client-update.akamai.steamstatic.com^
+
+# --- Content Delivery ---
+@@||steamcdn-a.akamaihd.net^
+@@||cdn.akamai.steamstatic.com^
+@@||cdn.cloudflare.steamstatic.com^
+@@||cdn.steamstatic.com^
+
+# --- API ---
+@@||api.steampowered.com^
+@@||partner.steam-api.com^
+
+# --- Login ---
+@@||login.steampowered.com^
+@@||help.steampowered.com^
+@@||store.steampowered.com^
+
+# --- Steam Chat & Community ---
+@@||community.cloudflare.steamstatic.com^
+@@||avatars.cloudflare.steamstatic.com^
+
+# --- Downloads ---
+@@||lancache.steamcontent.com^
+@@||steamcontent.com^
+@@||*.steamcontent.com^
+
+# --- Valve Infrastructure ---
+@@||valve.net^
+@@||valvesoftware.com^
+@@||steam-chat.com^
+@@||steamgames.com^
+@@||steamusercontent.com^
+
+# =============================================
+# Tailscale – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tailscale.com^
+@@||www.tailscale.com^
+
+# --- Control Plane ---
+@@||controlplane.tailscale.com^
+@@||login.tailscale.com^
+@@||log.tailscale.io^
+
+# --- DERP Relay Servers ---
+@@||derp*.tailscale.com^
+@@||derp1.tailscale.com^
+@@||derp2.tailscale.com^
+@@||derp3.tailscale.com^
+@@||derp4.tailscale.com^
+@@||derp5.tailscale.com^
+
+# --- Updates ---
+@@||pkgs.tailscale.com^
+
+# =============================================
+# Telegram – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||telegram.org^
+@@||www.telegram.org^
+@@||telegram.me^
+@@||t.me^
+
+# --- API & Messaging ---
+@@||api.telegram.org^
+@@||core.telegram.org^
+
+# --- CDN & Media ---
+@@||cdn*.telegram.org^
+@@||telegram-cdn.org^
+
+# --- Web Client ---
+@@||web.telegram.org^
+@@||webk.telegram.org^
+@@||webz.telegram.org^
+
+# --- Updates ---
+@@||updates.telegram.org^
+
+# --- DC IP Ranges (Telegram Data Centers) ---
+@@||pluto.telegram.org^
+@@||venus.telegram.org^
+@@||aurora.telegram.org^
+@@||vesta.telegram.org^
+@@||flora.telegram.org^
+
+# --- Telegram Premium / Stickers ---
+@@||static.telegram.org^
+
+# --- Telegram Login ---
+@@||oauth.telegram.org^
+
+# =============================================
+# Threads (Meta) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||threads.net^
+@@||www.threads.net^
+
+# --- API ---
+@@||api.threads.net^
+
+# --- Meta Dependencies ---
+@@||facebook.com^
+@@||fbcdn.net^
+@@||cdninstagram.com^
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||accountscenter.instagram.com^
+
+# =============================================
+# TikTok – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tiktok.com^
+@@||www.tiktok.com^
+@@||m.tiktok.com^
+
+# --- API ---
+@@||api.tiktokv.com^
+@@||api*.tiktokv.com^
+@@||webcast.tiktok.com^
+
+# --- Video CDN ---
+@@||v16-webapp-prime.tiktok.com^
+@@||v*.tiktokcdn.com^
+@@||tiktokcdn.com^
+@@||tiktokcdn-*.com^
+@@||*.tiktokcdn.com^
+@@||p16-sign-va.tiktokcdn.com^
+@@||sf16-website-login.neutral.tiktokstaticb.com^
+
+# --- Login & Auth ---
+@@||login.tiktok.com^
+@@||mon.tiktokv.com^
+
+# --- Music ---
+@@||sf-tb-sg.ibytedtos.com^
+@@||ibytedtos.com^
+
+# --- Bytedance Infra ---
+@@||bytedance.com^
+@@||byteoversea.com^
+@@||byteimg.com^
+@@||ibyteimg.com^
+@@||musical.ly^
+@@||tiktokv.com^
+@@||sgsnssdk.com^
+
+# =============================================
+# Twitch – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||twitch.tv^
+@@||www.twitch.tv^
+
+# --- API ---
+@@||api.twitch.tv^
+@@||gql.twitch.tv^
+@@||pubsub-edge.twitch.tv^
+
+# --- Video Streaming ---
+@@||video-weaver.*.hls.ttvnw.net^
+@@||video-edge-*.*.hls.ttvnw.net^
+@@||*.hls.ttvnw.net^
+@@||ttvnw.net^
+@@||usher.ttvnw.net^
+
+# --- CDN & Assets ---
+@@||static.twitchcdn.net^
+@@||static-cdn.jtvnw.net^
+@@||jtvnw.net^
+@@||twitchcdn.net^
+@@||assets.twitch.tv^
+@@||vod-secure.twitch.tv^
+@@||clips-media-assets2.twitch.tv^
+
+# --- Chat ---
+@@||irc-ws.chat.twitch.tv^
+@@||irc-ws-r.chat.twitch.tv^
+
+# --- Authentication ---
+@@||id.twitch.tv^
+@@||passport.twitch.tv^
+
+# --- Extensions ---
+@@||ext-twitch.tv^
+@@||extension-files.twitch.tv^
+
+# --- Drops & Commerce ---
+@@||commerce.twitch.tv^
+
+# =============================================
+# X (Twitter) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||x.com^
+@@||www.x.com^
+@@||twitter.com^
+@@||www.twitter.com^
+@@||mobile.twitter.com^
+
+# --- API ---
+@@||api.twitter.com^
+@@||api.x.com^
+@@||abs.twimg.com^
+
+# --- CDN & Media ---
+@@||twimg.com^
+@@||pbs.twimg.com^
+@@||video.twimg.com^
+@@||ton.twimg.com^
+@@||cdn.cms-twdigitalassets.com^
+
+# --- t.co Links ---
+@@||t.co^
+
+# --- Streaming & Spaces ---
+@@||broadcast.twitter.com^
+@@||prod-video-us-east-2.pscp.tv^
+@@||pscp.tv^
+
+# --- Grok AI ---
+@@||grok.x.com^
+@@||grok.x.ai^
+@@||x.ai^
+
+# =============================================
+# WhatsApp – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||whatsapp.com^
+@@||whatsapp.net^
+@@||www.whatsapp.com^
+
+# --- API & Web ---
+@@||web.whatsapp.com^
+@@||w*.web.whatsapp.com^
+@@||api.whatsapp.com^
+@@||v.whatsapp.net^
+@@||pps.whatsapp.net^
+
+# --- Media & CDN ---
+@@||media.whatsapp.com^
+@@||media-*.whatsapp.com^
+@@||media-*.cdn.whatsapp.net^
+@@||mmg.whatsapp.net^
+@@||mmg-fna.whatsapp.net^
+@@||static.whatsapp.net^
+@@||scontent.whatsapp.net^
+
+# --- Chat Servers ---
+@@||e*.whatsapp.net^
+@@||g.whatsapp.net^
+@@||chat.whatsapp.com^
+
+# --- Connectivity ---
+@@||crashlogs.whatsapp.net^
+@@||dit.whatsapp.net^
+@@||faq.whatsapp.com^
+
+# --- WhatsApp Business ---
+@@||wa.me^
+@@||graph.whatsapp.com^
+
+# --- Meta/Facebook Dependencies ---
+@@||connect.facebook.net^
+@@||graph.facebook.com^
+@@||fbcdn.net^
+@@||fbsbx.com^
+@@||facebook.com^
+
+# =============================================
+# WireGuard – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||wireguard.com^
+@@||www.wireguard.com^
+
+# --- Downloads ---
+@@||download.wireguard.com^
+@@||git.zx2c4.com^
+
+# =============================================
+# Xbox & Xbox Game Pass – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||xbox.com^
+@@||www.xbox.com^
+
+# --- Xbox Live ---
+@@||xboxlive.com^
+@@||*.xboxlive.com^
+@@||xbl.io^
+@@||user.auth.xboxlive.com^
+
+# --- Game Pass ---
+@@||gamepass.com^
+@@||www.xbox.com^
+
+# --- Xbox App ---
+@@||xboxab.com^
+@@||xbox.ipv6.microsoft.com^
+@@||device.auth.xboxlive.com^
+
+# --- CDN ---
+@@||assets1.xboxlive.cn^
+@@||assets2.xboxlive.cn^
+@@||xboxone.loris.llnwd.net^
+@@||images-eds.xboxlive.com^
+@@||compass.xboxlive.com^
+@@||xbox-mb.titlehub.xboxlive.com^
+
+# =============================================
+# YouTube – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||youtube.com^
+@@||www.youtube.com^
+@@||m.youtube.com^
+@@||youtube-nocookie.com^
+@@||youtube-ui.l.google.com^
+
+# --- Video Streaming ---
+@@||googlevideo.com^
+@@||*.googlevideo.com^
+@@||r*.googlevideo.com^
+@@||rr*.googlevideo.com^
+@@||videoplayback.googlevideo.com^
+
+# --- YouTube API ---
+@@||youtubei.googleapis.com^
+@@||youtube.googleapis.com^
+@@||www.googleapis.com^
+
+# --- CDN & Thumbnails ---
+@@||ytimg.com^
+@@||i.ytimg.com^
+@@||i9.ytimg.com^
+@@||s.ytimg.com^
+@@||yt3.ggpht.com^
+@@||yt4.ggpht.com^
+@@||yt3.googleusercontent.com^
+
+# --- YouTube Music ---
+@@||music.youtube.com^
+@@||music-pa.googleapis.com^
+
+# --- YouTube TV ---
+@@||tv.youtube.com^
+
+# --- YouTube Kids ---
+@@||kids.youtube.com^
+@@||kids.youtubekids.com^
+@@||youtubekids.com^
+
+# --- YouTube Accounts & Auth ---
+@@||accounts.youtube.com^
+@@||suggestqueries-clients6.youtube.com^
+@@||clients1.youtube.com^
+
+# --- YouTube Embeds ---
+@@||youtube.com^
+@@||youtube-nocookie.com^
+
+# --- YouTube Shorts ---
+@@||shorts.youtube.com^
+
+# --- Necessary Google Dependencies ---
+@@||ggpht.com^
+@@||googleusercontent.com^
+@@||gstatic.com^
+@@||lh3.googleusercontent.com^
+
+# =============================================
+# Zoom – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||zoom.us^
+@@||www.zoom.us^
+@@||zoom.com^
+
+# --- Meetings ---
+@@||*.zoom.us^
+@@||*.zoomgov.com^
+
+# --- CDN ---
+@@||cdn.zoom.us^
+@@||source.zoom.us^
+@@||assets.zoom.us^
+
+# --- API ---
+@@||api.zoom.us^
+@@||ws*.zoom.us^
+@@||web.zoom.us^
+
+# --- Auth ---
+@@||accounts.zoom.us^
+@@||login.zoom.us^
+
+# --- Zoom Phone ---
+@@||zpns.zoom.us^
+@@||logfiles.zoom.us^
+@@||us02st.zoom.us^
+@@||us02web.zoom.us^
+

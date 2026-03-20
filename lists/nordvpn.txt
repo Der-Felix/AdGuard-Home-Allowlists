@@ -1,0 +1,52 @@
+# =============================================
+# NordVPN & Nord Security – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||nordvpn.com^
+@@||www.nordvpn.com^
+@@||my.nordaccount.com^
+@@||nordaccount.com^
+
+# --- NordVPN API & Servers ---
+@@||api.nordvpn.com^
+@@||downloads.nordcdn.com^
+@@||zwyr157wwiu6eior.com^
+@@||*.nordvpn.com^
+@@||server-*.nordvpn.com^
+
+# --- NordVPN CDN ---
+@@||nordcdn.com^
+@@||*.nordcdn.com^
+
+# --- Nord Account & Authentication ---
+@@||id.nord.com^
+@@||hatscripts.github.io^
+
+# --- NordVPN Infrastructure ---
+@@||nordvpn.net^
+@@||*.nordvpn.net^
+@@||notordns.com^
+@@||*.notordns.com^
+
+# --- NordLayer (Business) ---
+@@||nordlayer.com^
+@@||api.nordlayer.com^
+
+# --- NordPass ---
+@@||nordpass.com^
+@@||api.nordpass.com^
+
+# --- NordLocker ---
+@@||nordlocker.com^
+@@||api.nordlocker.com^
+
+# --- Nord Security (Parent) ---
+@@||nordsecurity.com^
+@@||nordsec.com^
+
+# --- Update & Connectivity Checks ---
+@@||repo.nordvpn.com^
+@@||nord-apps.com^
+@@||*.nord-apps.com^

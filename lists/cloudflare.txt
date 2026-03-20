@@ -1,0 +1,41 @@
+# =============================================
+# Cloudflare (1.1.1.1, WARP, CDN) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- DNS ---
+@@||cloudflare-dns.com^
+@@||one.one.one.one^
+@@||1dot1dot1dot1.cloudflare-dns.com^
+
+# --- WARP ---
+@@||cloudflareclient.com^
+@@||api.cloudflareclient.com^
+@@||*.cloudflareclient.com^
+
+# --- Core ---
+@@||cloudflare.com^
+@@||www.cloudflare.com^
+@@||dash.cloudflare.com^
+
+# --- CDN ---
+@@||cdnjs.cloudflare.com^
+@@||cloudflareinsights.com^
+
+# --- Pages & Workers ---
+@@||pages.dev^
+@@||workers.dev^
+@@||*.pages.dev^
+@@||*.workers.dev^
+
+# --- Certificates ---
+@@||pki.goog^
+@@||cloudflaressl.com^
+
+# --- R2 Storage ---
+@@||r2.dev^
+@@||*.r2.dev^
+
+# --- Speed & Security ---
+@@||speed.cloudflare.com^
+@@||radar.cloudflare.com^

@@ -1,0 +1,273 @@
+# =============================================================
+# AdGuard Home – Combined: vpn-security
+# =============================================================
+
+# =============================================
+# NordVPN & Nord Security – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||nordvpn.com^
+@@||www.nordvpn.com^
+@@||my.nordaccount.com^
+@@||nordaccount.com^
+
+# --- NordVPN API & Servers ---
+@@||api.nordvpn.com^
+@@||downloads.nordcdn.com^
+@@||zwyr157wwiu6eior.com^
+@@||*.nordvpn.com^
+@@||server-*.nordvpn.com^
+
+# --- NordVPN CDN ---
+@@||nordcdn.com^
+@@||*.nordcdn.com^
+
+# --- Nord Account & Authentication ---
+@@||id.nord.com^
+@@||hatscripts.github.io^
+
+# --- NordVPN Infrastructure ---
+@@||nordvpn.net^
+@@||*.nordvpn.net^
+@@||notordns.com^
+@@||*.notordns.com^
+
+# --- NordLayer (Business) ---
+@@||nordlayer.com^
+@@||api.nordlayer.com^
+
+# --- NordPass ---
+@@||nordpass.com^
+@@||api.nordpass.com^
+
+# --- NordLocker ---
+@@||nordlocker.com^
+@@||api.nordlocker.com^
+
+# --- Nord Security (Parent) ---
+@@||nordsecurity.com^
+@@||nordsec.com^
+
+# --- Update & Connectivity Checks ---
+@@||repo.nordvpn.com^
+@@||nord-apps.com^
+@@||*.nord-apps.com^
+
+# =============================================
+# Mullvad VPN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||mullvad.net^
+@@||www.mullvad.net^
+
+# --- API ---
+@@||api.mullvad.net^
+@@||am.i.mullvad.net^
+
+# --- VPN Servers ---
+@@||*.mullvad.net^
+@@||*.relays.mullvad.net^
+
+# --- Updates ---
+@@||cdn.mullvad.net^
+@@||releases.mullvad.net^
+
+# --- DNS ---
+@@||dns.mullvad.net^
+@@||adblock.dns.mullvad.net^
+@@||doh.mullvad.net^
+
+# =============================================
+# ExpressVPN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||expressvpn.com^
+@@||www.expressvpn.com^
+
+# --- API ---
+@@||api.expressvpn.com^
+@@||*.expressvpn.com^
+
+# --- CDN ---
+@@||assets.expressvpn.com^
+@@||expresscdn.com^
+
+# --- VPN Connectivity ---
+@@||*.expressnetw.com^
+@@||expressnetw.com^
+@@||xvpn.io^
+@@||*.xvpn.io^
+
+# =============================================
+# Cloudflare (1.1.1.1, WARP, CDN) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- DNS ---
+@@||cloudflare-dns.com^
+@@||one.one.one.one^
+@@||1dot1dot1dot1.cloudflare-dns.com^
+
+# --- WARP ---
+@@||cloudflareclient.com^
+@@||api.cloudflareclient.com^
+@@||*.cloudflareclient.com^
+
+# --- Core ---
+@@||cloudflare.com^
+@@||www.cloudflare.com^
+@@||dash.cloudflare.com^
+
+# --- CDN ---
+@@||cdnjs.cloudflare.com^
+@@||cloudflareinsights.com^
+
+# --- Pages & Workers ---
+@@||pages.dev^
+@@||workers.dev^
+@@||*.pages.dev^
+@@||*.workers.dev^
+
+# --- Certificates ---
+@@||pki.goog^
+@@||cloudflaressl.com^
+
+# --- R2 Storage ---
+@@||r2.dev^
+@@||*.r2.dev^
+
+# --- Speed & Security ---
+@@||speed.cloudflare.com^
+@@||radar.cloudflare.com^
+
+# =============================================
+# Bitwarden – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||bitwarden.com^
+@@||www.bitwarden.com^
+@@||vault.bitwarden.com^
+
+# --- API ---
+@@||api.bitwarden.com^
+@@||identity.bitwarden.com^
+@@||notifications.bitwarden.com^
+@@||events.bitwarden.com^
+
+# --- CDN ---
+@@||cdn.bitwarden.net^
+
+# --- Icons ---
+@@||icons.bitwarden.net^
+
+# --- Send ---
+@@||send.bitwarden.com^
+
+# --- EU Servers ---
+@@||vault.bitwarden.eu^
+@@||api.bitwarden.eu^
+@@||identity.bitwarden.eu^
+
+# =============================================
+# Tailscale – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||tailscale.com^
+@@||www.tailscale.com^
+
+# --- Control Plane ---
+@@||controlplane.tailscale.com^
+@@||login.tailscale.com^
+@@||log.tailscale.io^
+
+# --- DERP Relay Servers ---
+@@||derp*.tailscale.com^
+@@||derp1.tailscale.com^
+@@||derp2.tailscale.com^
+@@||derp3.tailscale.com^
+@@||derp4.tailscale.com^
+@@||derp5.tailscale.com^
+
+# --- Updates ---
+@@||pkgs.tailscale.com^
+
+# =============================================
+# WireGuard – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||wireguard.com^
+@@||www.wireguard.com^
+
+# --- Downloads ---
+@@||download.wireguard.com^
+@@||git.zx2c4.com^
+
+# =============================================
+# Proton (Mail, VPN, Drive, Calendar, Pass) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||proton.me^
+@@||protonmail.com^
+@@||protonmail.ch^
+@@||protonvpn.com^
+@@||proton.ch^
+@@||www.proton.me^
+
+# --- Proton Mail ---
+@@||mail.proton.me^
+@@||mail.protonmail.com^
+@@||account.proton.me^
+@@||account.protonmail.com^
+@@||api.protonmail.ch^
+
+# --- Proton API ---
+@@||mail-api.proton.me^
+@@||vpn-api.proton.me^
+@@||drive-api.proton.me^
+@@||calendar-api.proton.me^
+@@||pass-api.proton.me^
+@@||account-api.proton.me^
+
+# --- Proton VPN ---
+@@||vpn.proton.me^
+@@||api.protonvpn.ch^
+@@||*.protonvpn.net^
+@@||protonvpn.net^
+
+# --- Proton Drive ---
+@@||drive.proton.me^
+
+# --- Proton Calendar ---
+@@||calendar.proton.me^
+
+# --- Proton Pass ---
+@@||pass.proton.me^
+
+# --- Proton CDN & Infrastructure ---
+@@||proton.me^
+@@||prtn.app^
+@@||protonmail.com^
+@@||proton-api.com^
+@@||protonprivacy.com^
+
+# --- Proton Verification ---
+@@||verify.proton.me^
+@@||signup.proton.me^
+
+# --- Alternative Routing (censorship bypass) ---
+@@||*.compute.amazonaws.com^
+

@@ -1,0 +1,25 @@
+# =============================================
+# Mullvad VPN – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||mullvad.net^
+@@||www.mullvad.net^
+
+# --- API ---
+@@||api.mullvad.net^
+@@||am.i.mullvad.net^
+
+# --- VPN Servers ---
+@@||*.mullvad.net^
+@@||*.relays.mullvad.net^
+
+# --- Updates ---
+@@||cdn.mullvad.net^
+@@||releases.mullvad.net^
+
+# --- DNS ---
+@@||dns.mullvad.net^
+@@||adblock.dns.mullvad.net^
+@@||doh.mullvad.net^

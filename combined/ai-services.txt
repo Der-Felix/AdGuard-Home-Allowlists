@@ -1,0 +1,209 @@
+# =============================================================
+# AdGuard Home – Combined: ai-services
+# =============================================================
+
+# =============================================
+# ChatGPT / OpenAI – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||openai.com^
+@@||chat.openai.com^
+@@||www.openai.com^
+@@||api.openai.com^
+@@||platform.openai.com^
+
+# --- Authentication ---
+@@||auth0.openai.com^
+@@||auth.openai.com^
+
+# --- CDN & Assets ---
+@@||cdn.openai.com^
+@@||oaiusercontent.com^
+@@||oaistatic.com^
+@@||files.oaiusercontent.com^
+
+# --- ChatGPT Plugins & Browse ---
+@@||browser.chatgpt.com^
+@@||chatgpt.com^
+@@||plugins.chatgpt.com^
+
+# --- DALL-E ---
+@@||dalle.com^
+
+# --- Sora ---
+@@||sora.com^
+
+# --- Realtime / WebSocket ---
+@@||realtime.openai.com^
+
+# --- OpenAI API Infrastructure ---
+@@||api.statsig.com^
+@@||featuregates.org^
+@@||identitytoolkit.googleapis.com^
+
+# =============================================
+# Claude / Anthropic – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||anthropic.com^
+@@||www.anthropic.com^
+@@||claude.ai^
+@@||www.claude.ai^
+
+# --- API ---
+@@||api.anthropic.com^
+@@||api.claude.ai^
+
+# --- CDN & Assets ---
+@@||cdn.anthropic.com^
+@@||assets.anthropic.com^
+
+# --- Console ---
+@@||console.anthropic.com^
+
+# --- Authentication ---
+@@||auth.anthropic.com^
+@@||accounts.anthropic.com^
+
+# --- Docs ---
+@@||docs.anthropic.com^
+@@||support.anthropic.com^
+
+# =============================================
+# Google Gemini – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||gemini.google.com^
+@@||gemini.google^
+@@||deepmind.google^
+@@||deepmind.com^
+
+# --- API ---
+@@||generativelanguage.googleapis.com^
+@@||aistudio.google.com^
+@@||makersuite.google.com^
+@@||alkalimakersuite-pa.clients6.google.com^
+
+# --- AI Studio ---
+@@||labs.google.com^
+@@||labs.google^
+
+# --- Notebook LM ---
+@@||notebooklm.google.com^
+@@||notebooklm.google^
+
+# =============================================
+# Midjourney – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||midjourney.com^
+@@||www.midjourney.com^
+
+# --- API & CDN ---
+@@||cdn.midjourney.com^
+@@||api.midjourney.com^
+@@||ws.midjourney.com^
+
+# --- Image Hosting ---
+@@||mj-gallery.com^
+
+# --- Discord (required for Midjourney) ---
+@@||discord.com^
+@@||discord.gg^
+@@||cdn.discordapp.com^
+@@||gateway.discord.gg^
+@@||media.discordapp.net^
+
+# =============================================
+# Perplexity AI – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||perplexity.ai^
+@@||www.perplexity.ai^
+
+# --- API ---
+@@||api.perplexity.ai^
+
+# --- CDN ---
+@@||pplx-res.cloudinary.com^
+@@||assets.perplexity.ai^
+
+# =============================================
+# DeepL Translator – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||deepl.com^
+@@||www.deepl.com^
+
+# --- API ---
+@@||api.deepl.com^
+@@||api-free.deepl.com^
+
+# --- Translation ---
+@@||w.deepl.com^
+@@||s.deepl.com^
+@@||static.deepl.com^
+
+# =============================================
+# Microsoft Copilot – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||copilot.microsoft.com^
+@@||www.bing.com^
+@@||bing.com^
+@@||edgeservices.bing.com^
+
+# --- Copilot API ---
+@@||sydney.bing.com^
+@@||r.bing.com^
+@@||th.bing.com^
+
+# --- Copilot CDN ---
+@@||copilot.blob.core.windows.net^
+@@||studiostaticassetsprod.azureedge.net^
+
+# --- GitHub Copilot ---
+@@||copilot.github.com^
+@@||api.githubcopilot.com^
+@@||copilot-proxy.githubusercontent.com^
+@@||copilot-telemetry.githubusercontent.com^
+
+# --- Designer ---
+@@||designer.microsoft.com^
+
+# =============================================
+# Hugging Face – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||huggingface.co^
+@@||www.huggingface.co^
+@@||hf.co^
+
+# --- API & Models ---
+@@||api-inference.huggingface.co^
+@@||cdn-lfs.huggingface.co^
+
+# --- Spaces ---
+@@||*.hf.space^
+@@||hf.space^
+
+# --- CDN ---
+@@||cdn-thumbnails.huggingface.co^
+@@||aeiljuispo.cloudimg.io^
+

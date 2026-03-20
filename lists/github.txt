@@ -1,0 +1,50 @@
+# =============================================
+# GitHub – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||github.com^
+@@||www.github.com^
+@@||github.io^
+
+# --- API ---
+@@||api.github.com^
+@@||uploads.github.com^
+
+# --- CDN & Assets ---
+@@||github.githubassets.com^
+@@||avatars.githubusercontent.com^
+@@||raw.githubusercontent.com^
+@@||user-images.githubusercontent.com^
+@@||camo.githubusercontent.com^
+@@||objects.githubusercontent.com^
+@@||media.githubusercontent.com^
+@@||cloud.githubusercontent.com^
+@@||repository-images.githubusercontent.com^
+@@||github.map.fastly.net^
+
+# --- Git Operations ---
+@@||github.com^
+@@||ssh.github.com^
+
+# --- GitHub Packages ---
+@@||npm.pkg.github.com^
+@@||maven.pkg.github.com^
+@@||nuget.pkg.github.com^
+@@||ghcr.io^
+
+# --- GitHub Actions ---
+@@||pipelines.actions.githubusercontent.com^
+@@||results-receiver.actions.githubusercontent.com^
+
+# --- GitHub Pages ---
+@@||pages.github.com^
+@@||*.github.io^
+
+# --- Copilot ---
+@@||copilot.github.com^
+@@||api.githubcopilot.com^
+
+# --- GitHub Education ---
+@@||education.github.com^

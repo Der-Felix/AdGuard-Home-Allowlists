@@ -1,0 +1,25 @@
+# =============================================
+# Let's Encrypt / ACME – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||letsencrypt.org^
+@@||www.letsencrypt.org^
+
+# --- ACME ---
+@@||acme-v02.api.letsencrypt.org^
+@@||acme-staging-v02.api.letsencrypt.org^
+
+# --- OCSP & CRL ---
+@@||ocsp.int-x3.letsencrypt.org^
+@@||r3.o.lencr.org^
+@@||r4.o.lencr.org^
+@@||e1.o.lencr.org^
+@@||lencr.org^
+
+# --- Certificates ---
+@@||x1.c.lencr.org^
+@@||x2.c.lencr.org^
+@@||r3.i.lencr.org^
+@@||e1.i.lencr.org^

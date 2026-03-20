@@ -1,0 +1,21 @@
+# =============================================
+# Hugging Face – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||huggingface.co^
+@@||www.huggingface.co^
+@@||hf.co^
+
+# --- API & Models ---
+@@||api-inference.huggingface.co^
+@@||cdn-lfs.huggingface.co^
+
+# --- Spaces ---
+@@||*.hf.space^
+@@||hf.space^
+
+# --- CDN ---
+@@||cdn-thumbnails.huggingface.co^
+@@||aeiljuispo.cloudimg.io^

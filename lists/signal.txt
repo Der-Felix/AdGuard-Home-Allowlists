@@ -1,0 +1,38 @@
+# =============================================
+# Signal Messenger – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||signal.org^
+@@||www.signal.org^
+
+# --- Messaging & API ---
+@@||chat.signal.org^
+@@||storage.signal.org^
+@@||textsecure-service.whispersystems.org^
+@@||giphy-proxy-production.whispersystems.org^
+
+# --- CDN ---
+@@||cdn.signal.org^
+@@||cdn2.signal.org^
+@@||cdn3.signal.org^
+@@||updates.signal.org^
+@@||updates2.signal.org^
+
+# --- Media & Attachments ---
+@@||contentproxy.signal.org^
+@@||sfu.voip.signal.org^
+@@||turn1.voip.signal.org^
+@@||turn2.voip.signal.org^
+@@||turn3.voip.signal.org^
+
+# --- Key Distribution ---
+@@||api.directory.signal.org^
+@@||directory.signal.org^
+
+# --- Backup ---
+@@||backup.signal.org^
+
+# --- Captcha ---
+@@||signalcaptchas.org^

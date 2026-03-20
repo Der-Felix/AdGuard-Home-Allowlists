@@ -1,0 +1,28 @@
+# =============================================
+# Amazon Prime Video (standalone) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||primevideo.com^
+@@||www.primevideo.com^
+
+# --- Streaming ---
+@@||atv-ps.amazon.com^
+@@||aiv-cdn.net^
+@@||aiv-delivery.net^
+@@||d25xi40x97liuc.cloudfront.net^
+@@||d1v5ir2lpwr8os.cloudfront.net^
+@@||d22qjgkvxw22r6.cloudfront.net^
+@@||dmqdd6hw24ucf.cloudfront.net^
+
+# --- API ---
+@@||api.amazon.com^
+@@||api.amazon.de^
+@@||fls-eu.amazon.de^
+
+# --- CDN ---
+@@||images-na.ssl-images-amazon.com^
+@@||images-eu.ssl-images-amazon.com^
+@@||m.media-amazon.com^
+@@||cloudfront.net^

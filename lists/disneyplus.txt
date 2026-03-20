@@ -1,0 +1,38 @@
+# =============================================
+# Disney+ – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||disneyplus.com^
+@@||www.disneyplus.com^
+@@||disney-plus.net^
+@@||disney.com^
+
+# --- Streaming ---
+@@||bamgrid.com^
+@@||*.bamgrid.com^
+@@||bam.nr-data.net^
+@@||cdn.registerdisney.go.com^
+@@||cws.conviva.com^
+
+# --- API & Auth ---
+@@||disney.api.edge.bamgrid.com^
+@@||disney.content.edge.bamgrid.com^
+@@||global.edge.bamgrid.com^
+@@||registerdisney.go.com^
+
+# --- CDN ---
+@@||disney.images.edge.bamgrid.com^
+@@||prod-static.disney-plus.net^
+@@||cnbl-cdn.bamgrid.com^
+@@||assets.disneyplus.com^
+@@||static-assets.bamgrid.com^
+@@||disney-portal.my.onetrust.com^
+
+# --- Playback ---
+@@||search-api-disney.svcs.dssott.com^
+@@||disney.playback.edge.bamgrid.com^
+@@||vod-hivec-*-*.media.dssott.com^
+@@||dssott.com^
+@@||*.dssott.com^

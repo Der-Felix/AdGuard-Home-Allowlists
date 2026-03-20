@@ -1,0 +1,31 @@
+# =============================================
+# Xbox & Xbox Game Pass – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||xbox.com^
+@@||www.xbox.com^
+
+# --- Xbox Live ---
+@@||xboxlive.com^
+@@||*.xboxlive.com^
+@@||xbl.io^
+@@||user.auth.xboxlive.com^
+
+# --- Game Pass ---
+@@||gamepass.com^
+@@||www.xbox.com^
+
+# --- Xbox App ---
+@@||xboxab.com^
+@@||xbox.ipv6.microsoft.com^
+@@||device.auth.xboxlive.com^
+
+# --- CDN ---
+@@||assets1.xboxlive.cn^
+@@||assets2.xboxlive.cn^
+@@||xboxone.loris.llnwd.net^
+@@||images-eds.xboxlive.com^
+@@||compass.xboxlive.com^
+@@||xbox-mb.titlehub.xboxlive.com^

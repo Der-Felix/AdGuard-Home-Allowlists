@@ -1,0 +1,47 @@
+# =============================================
+# German Banking (DKB, ING, Sparkasse, N26, Comdirect) – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- DKB ---
+@@||dkb.de^
+@@||www.dkb.de^
+@@||banking.dkb.de^
+@@||api.dkb.de^
+
+# --- ING ---
+@@||ing.de^
+@@||www.ing.de^
+@@||banking.ing.de^
+@@||api.ing.de^
+
+# --- Sparkasse ---
+@@||sparkasse.de^
+@@||www.sparkasse.de^
+@@||*.sparkasse.de^
+@@||s-fints-pt-*.s-fints.de^
+
+# --- N26 ---
+@@||n26.com^
+@@||www.n26.com^
+@@||api.n26.com^
+@@||app.n26.com^
+
+# --- Comdirect ---
+@@||comdirect.de^
+@@||www.comdirect.de^
+@@||kunde.comdirect.de^
+
+# --- Commerzbank ---
+@@||commerzbank.de^
+@@||www.commerzbank.de^
+
+# --- Deutsche Bank ---
+@@||deutsche-bank.de^
+@@||www.deutsche-bank.de^
+@@||meine.deutsche-bank.de^
+
+# --- Common Banking Infra ---
+@@||giropay.de^
+@@||paydirekt.de^
+@@||girocard.eu^

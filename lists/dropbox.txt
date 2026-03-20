@@ -1,0 +1,27 @@
+# =============================================
+# Dropbox – DNS Allowlist
+# For use with AdGuard Home
+# =============================================
+
+# --- Core ---
+@@||dropbox.com^
+@@||www.dropbox.com^
+
+# --- Sync & API ---
+@@||api.dropbox.com^
+@@||api.dropboxapi.com^
+@@||content.dropboxapi.com^
+@@||notify.dropboxapi.com^
+@@||dl.dropboxusercontent.com^
+
+# --- CDN ---
+@@||cfl.dropboxstatic.com^
+@@||dropboxstatic.com^
+@@||paper.dropbox.com^
+
+# --- Client ---
+@@||client.dropbox.com^
+@@||client-lb.dropbox.com^
+@@||bolt.dropbox.com^
+@@||d.dropbox.com^
+@@||block.dropbox.com^
