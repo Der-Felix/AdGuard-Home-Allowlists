@@ -302,6 +302,21 @@ body {
   box-shadow: 0 0 8px currentColor;
 }
 
+.cat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.cat-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .cat-label {
   font-family: 'Sora', sans-serif;
   font-size: 0.85rem;
@@ -821,12 +836,142 @@ const C=[
 const picked=new Set();
 const chk=`<svg viewBox="0 0 12 12" fill="none" stroke="#031a09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2.5 6 5 8.5 9.5 3.5"/></svg>`;
 
+/* ===== ANIMATED SVG ICONS ===== */
+const catIcons = {
+  /* AI – brain with neural pulse */
+  ai: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2C7.6 2 4 5.4 4 9.5c0 2.4 1.2 4.5 3 5.8V18a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2.7c1.8-1.3 3-3.4 3-5.8C20 5.4 16.4 2 12 2z" opacity="0.25" fill="currentColor"><animate attributeName="opacity" values="0.12;0.28;0.12" dur="3s" repeatCount="indefinite"/></path>
+    <path d="M12 2C7.6 2 4 5.4 4 9.5c0 2.4 1.2 4.5 3 5.8V18a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2.7c1.8-1.3 3-3.4 3-5.8C20 5.4 16.4 2 12 2z"/>
+    <circle cx="9" cy="9.5" r="1.2" fill="currentColor"><animate attributeName="r" values="1.2;1.6;1.2" dur="2s" repeatCount="indefinite"/></circle>
+    <circle cx="15" cy="9.5" r="1.2" fill="currentColor"><animate attributeName="r" values="1.2;1.6;1.2" dur="2s" begin="0.4s" repeatCount="indefinite"/></circle>
+    <path d="M9 13.5c0 0 1.2 1.5 3 1.5s3-1.5 3-1.5"/>
+    <line x1="9" y1="21" x2="9" y2="22"/><line x1="15" y1="21" x2="15" y2="22"/>
+  </svg>`,
+
+  /* Social – two overlapping chat bubbles with bounce */
+  social: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 8h-1V6a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v5a3 3 0 0 0 2 2.8V17l2.5-2H9" opacity="0.5"/>
+    <rect x="9" y="8" width="12" height="9" rx="3" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.1;0.25;0.1" dur="3s" repeatCount="indefinite"/></rect>
+    <rect x="9" y="8" width="12" height="9" rx="3"/>
+    <path d="M12 20.5l2-2.5h4"/>
+    <circle cx="13" cy="12.5" r="0.8" fill="currentColor"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
+    <circle cx="16" cy="12.5" r="0.8" fill="currentColor"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.25s" repeatCount="indefinite"/></circle>
+    <circle cx="19" cy="12.5" r="0.8" fill="currentColor"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.5s" repeatCount="indefinite"/></circle>
+  </svg>`,
+
+  /* Streaming – play triangle with ring pulse */
+  stream: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9" opacity="0.3"><animate attributeName="r" values="9;10;9" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="12" cy="12" r="9"/>
+    <polygon points="10,7.5 10,16.5 18,12" fill="currentColor" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+  </svg>`,
+
+  /* Messaging – paper plane with fly animation */
+  msg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <g><animateTransform attributeName="transform" type="translate" values="0,0;1,-1;0,0" dur="3s" repeatCount="indefinite"/>
+      <path d="M22 2L11 13"/>
+      <polygon points="22,2 15,22 11,13 2,9" fill="currentColor" opacity="0.12"/>
+      <polygon points="22,2 15,22 11,13 2,9"/>
+      <line x1="11" y1="13" x2="15" y2="22" opacity="0.5"/>
+    </g>
+  </svg>`,
+
+  /* Gaming – gamepad with subtle wiggle */
+  game: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <g><animateTransform attributeName="transform" type="rotate" values="0 12 12;-2 12 12;0 12 12;2 12 12;0 12 12" dur="4s" repeatCount="indefinite"/>
+      <path d="M6 11h4M8 9v4" opacity="0.8"/>
+      <circle cx="16" cy="10" r="0.9" fill="currentColor"/>
+      <circle cx="18" cy="12" r="0.9" fill="currentColor"/>
+      <rect x="3" y="6" width="18" height="12" rx="5" fill="currentColor" opacity="0.1"/>
+      <rect x="3" y="6" width="18" height="12" rx="5"/>
+    </g>
+  </svg>`,
+
+  /* Apple – apple with subtle shine sweep */
+  apple: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3c-1-1.5-3-2-4.5-1.5" opacity="0.7"/>
+    <path d="M17.5 7.5C19.5 9 21 11.5 20 15c-1 3.5-3.5 6-5.5 6s-2-.8-3-.8-1.5.8-3 .8-4-2.5-5-6 0-6 2-8 3.5-2 5-1.5c1-.3 1.5-.5 2.5-.5s1.5.2 2.5.5c1.5-.5 3-.5 4.5 0z" fill="currentColor" opacity="0.15">
+      <animate attributeName="opacity" values="0.1;0.22;0.1" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M17.5 7.5C19.5 9 21 11.5 20 15c-1 3.5-3.5 6-5.5 6s-2-.8-3-.8-1.5.8-3 .8-4-2.5-5-6 0-6 2-8 3.5-2 5-1.5c1-.3 1.5-.5 2.5-.5s1.5.2 2.5.5c1.5-.5 3-.5 4.5 0z"/>
+    <path d="M14.5 4c0 0-.5-2-2.5-2" opacity="0.6"><animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></path>
+  </svg>`,
+
+  /* Google – magnifying glass with scan */
+  goog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10.5" cy="10.5" r="6.5" fill="currentColor" opacity="0.1"><animate attributeName="r" values="6.5;7;6.5" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="10.5" cy="10.5" r="6.5"/>
+    <line x1="15.5" y1="15.5" x2="21" y2="21" stroke-width="2"/>
+    <path d="M7 10.5h7" opacity="0.4"><animate attributeName="transform" attributeType="XML" type="translate" values="0,-2;0,2;0,-2" dur="2.5s" repeatCount="indefinite"/></path>
+  </svg>`,
+
+  /* Microsoft – 4 window panes with stagger fade */
+  ms: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" repeatCount="indefinite"/></rect>
+    <rect x="3" y="3" width="8" height="8" rx="1.5"/>
+    <rect x="13" y="3" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" begin="0.4s" repeatCount="indefinite"/></rect>
+    <rect x="13" y="3" width="8" height="8" rx="1.5"/>
+    <rect x="3" y="13" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" begin="0.8s" repeatCount="indefinite"/></rect>
+    <rect x="3" y="13" width="8" height="8" rx="1.5"/>
+    <rect x="13" y="13" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.15"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
+    <rect x="13" y="13" width="8" height="8" rx="1.5"/>
+  </svg>`,
+
+  /* VPN – shield with lock pulse */
+  vpn: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2L4 6v5c0 5.5 3.4 10.3 8 12 4.6-1.7 8-6.5 8-12V6l-8-4z" fill="currentColor" opacity="0.12"><animate attributeName="opacity" values="0.08;0.22;0.08" dur="3s" repeatCount="indefinite"/></path>
+    <path d="M12 2L4 6v5c0 5.5 3.4 10.3 8 12 4.6-1.7 8-6.5 8-12V6l-8-4z"/>
+    <rect x="9.5" y="11" width="5" height="4.5" rx="1" fill="currentColor" opacity="0.3"/>
+    <rect x="9.5" y="11" width="5" height="4.5" rx="1"/>
+    <path d="M10.5 11V9.5a1.5 1.5 0 0 1 3 0V11"><animate attributeName="stroke-dasharray" values="0,20;12,20;12,20;0,20" dur="4s" repeatCount="indefinite"/></path>
+  </svg>`,
+
+  /* Smart Home – house with glow/pulse light */
+  home: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10.5z" fill="currentColor" opacity="0.1"/>
+    <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10.5z"/>
+    <rect x="9" y="14" width="6" height="7" rx="0.5" opacity="0.5"/>
+    <circle cx="12" cy="10" r="1.5" fill="currentColor" opacity="0.6"><animate attributeName="r" values="1.5;2.2;1.5" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/></circle>
+  </svg>`,
+
+  /* Mail – envelope with flap open/close */
+  mail: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="5" width="20" height="14" rx="3" fill="currentColor" opacity="0.1"/>
+    <rect x="2" y="5" width="20" height="14" rx="3"/>
+    <path d="M2 5l10 8 10-8"><animateTransform attributeName="transform" type="translate" values="0,0;0,-0.5;0,0" dur="3s" repeatCount="indefinite"/></path>
+    <circle cx="18" cy="8" r="2" fill="currentColor" opacity="0"><animate attributeName="opacity" values="0;0.6;0.6;0" dur="4s" repeatCount="indefinite"/></circle>
+  </svg>`,
+
+  /* Shopping – shopping cart with item drop */
+  shop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 1h4l2.7 13.4a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L22 6H6"/>
+    <circle cx="9.5" cy="20" r="1.5" fill="currentColor"/>
+    <circle cx="18.5" cy="20" r="1.5" fill="currentColor"/>
+    <circle cx="14" cy="4" r="1" fill="currentColor" opacity="0">
+      <animate attributeName="cy" values="2;9;9" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </svg>`,
+
+  /* Utilities – gear with slow rotation */
+  util: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <g><animateTransform attributeName="transform" type="rotate" values="0 12 12;360 12 12" dur="20s" repeatCount="indefinite"/>
+      <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.2"/>
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
+    </g>
+  </svg>`
+};
+
 function render(){
   const box=document.getElementById('cats');box.innerHTML='';
   C.forEach(cat=>{
     const el=document.createElement('div');el.className='category';el.dataset.cat=cat.id;
     const allOn=cat.s.every(s=>picked.has(s.id));
-    el.innerHTML=`<div class="cat-bar"><div class="cat-dot" style="color:${cat.c};background:${cat.c}"></div><span class="cat-label">${cat.icon} ${cat.l}</span><span class="cat-count">${cat.s.length}</span><span class="cat-toggle" data-c="${cat.id}">${allOn?'✕ Keine':'✓ Alle'}</span></div><div class="services">${cat.s.map(s=>`<div class="svc ${picked.has(s.id)?'on':''}" data-id="${s.id}"><div class="check">${chk}</div><span class="svc-name">${s.n}</span><span class="svc-rules">${s.r}</span></div>`).join('')}</div>`;
+    const icon=catIcons[cat.id]||'';
+    el.innerHTML=`<div class="cat-bar"><div class="cat-dot" style="color:${cat.c};background:${cat.c}"></div><span class="cat-icon" style="color:${cat.c}">${icon}</span><span class="cat-label">${cat.l}</span><span class="cat-count">${cat.s.length}</span><span class="cat-toggle" data-c="${cat.id}">${allOn?'✕ Keine':'✓ Alle'}</span></div><div class="services">${cat.s.map(s=>`<div class="svc ${picked.has(s.id)?'on':''}" data-id="${s.id}"><div class="check">${chk}</div><span class="svc-name">${s.n}</span><span class="svc-rules">${s.r}</span></div>`).join('')}</div>`;
     box.appendChild(el);
   });
   box.querySelectorAll('.svc').forEach(c=>c.addEventListener('click',()=>tog(c.dataset.id)));
@@ -834,10 +979,41 @@ function render(){
   sync();
 }
 
-function tog(id){picked.has(id)?picked.delete(id):picked.add(id);render();applyF()}
-function togCat(cid){const cat=C.find(c=>c.id===cid);const ids=cat.s.map(s=>s.id);const allOn=ids.every(id=>picked.has(id));ids.forEach(id=>allOn?picked.delete(id):picked.add(id));render();applyF()}
-function pickAll(){C.forEach(c=>c.s.forEach(s=>picked.add(s.id)));render();applyF()}
-function pickNone(){picked.clear();render();applyF()}
+function tog(id){
+  picked.has(id)?picked.delete(id):picked.add(id);
+  const el=document.querySelector(`.svc[data-id="${id}"]`);
+  if(el)el.classList.toggle('on',picked.has(id));
+  updateCatToggles();
+  sync();
+}
+function togCat(cid){
+  const cat=C.find(c=>c.id===cid);
+  const ids=cat.s.map(s=>s.id);
+  const allOn=ids.every(id=>picked.has(id));
+  ids.forEach(id=>allOn?picked.delete(id):picked.add(id));
+  ids.forEach(id=>{const el=document.querySelector(`.svc[data-id="${id}"]`);if(el)el.classList.toggle('on',picked.has(id))});
+  updateCatToggles();
+  sync();
+}
+function pickAll(){
+  C.forEach(c=>c.s.forEach(s=>picked.add(s.id)));
+  document.querySelectorAll('.svc').forEach(el=>el.classList.add('on'));
+  updateCatToggles();
+  sync();
+}
+function pickNone(){
+  picked.clear();
+  document.querySelectorAll('.svc').forEach(el=>el.classList.remove('on'));
+  updateCatToggles();
+  sync();
+}
+function updateCatToggles(){
+  C.forEach(cat=>{
+    const allOn=cat.s.every(s=>picked.has(s.id));
+    const btn=document.querySelector(`.cat-toggle[data-c="${cat.id}"]`);
+    if(btn)btn.textContent=allOn?'✕ Keine':'✓ Alle';
+  });
+}
 
 function uniq(){const seen=new Set(),out=[];C.forEach(c=>c.s.forEach(s=>{if(picked.has(s.id)&&!seen.has(s.id)){out.push(s);seen.add(s.id)}}));return out}
 
