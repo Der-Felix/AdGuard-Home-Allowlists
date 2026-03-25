@@ -1,0 +1,222 @@
+# ============================================================
+# Apple / iCloud – Vollständige Allowlist für AdGuard Home
+# Quelle: Apple Support (support.apple.com/en-us/101555)
+# Stand: März 2026
+# ============================================================
+# Einfügen unter: Filter > DNS-Allowlists > Eigene Filterregeln
+# Jede Zeile mit @@|| ... ^ erlaubt die Domain und alle Subdomains.
+# ============================================================
+
+# =============================================
+# DOMAINS AUS DEINEM QUERY LOG (von HaGeZi geblockt)
+# =============================================
+# Diese wurden konkret bei dir gesperrt und sind relevant:
+@@||metrics.icloud.com^
+@@||feedbackws.icloud.com^
+# Die folgenden sind Tracking/Werbung – nur freigeben wenn du
+# ALLES von Apple erlauben willst (sonst auskommentiert lassen):
+# @@||cf.iadsdk.apple.com^
+# @@||partiality.itunes.apple.com^
+# @@||experiments.apple.com^
+
+# =============================================
+# iCloud-Dienste (Kernbereich)
+# =============================================
+@@||icloud.com^
+@@||icloud.com.cn^
+@@||icloud.apple.com^
+@@||icloud-content.com^
+@@||apple-cloudkit.com^
+@@||apple-livephotoskit.com^
+@@||cdn-apple.com^
+@@||gc.apple.com^
+@@||iwork.apple.com^
+@@||apzones.com^
+@@||setup.icloud.com^
+@@||statici.icloud.com^
+@@||ws-ee-maidsvc.icloud.com^
+@@||probe.icloud.com^
+@@||pong.icloud.com^
+@@||gateway.icloud.com^
+
+# =============================================
+# iCloud Private Relay
+# =============================================
+@@||mask.icloud.com^
+@@||mask-h2.icloud.com^
+@@||mask-api.icloud.com^
+@@||apple-native-relay.apple.com^
+
+# =============================================
+# Apple Account / Authentifizierung
+# =============================================
+@@||account.apple.com^
+@@||appleid.cdn-apple.com^
+@@||idmsa.apple.com^
+@@||gsa.apple.com^
+
+# =============================================
+# Apple Push Notifications (APNs)
+# =============================================
+@@||push.apple.com^
+
+# =============================================
+# Geräte-Setup & Aktivierung
+# =============================================
+@@||albert.apple.com^
+@@||captive.apple.com^
+@@||gs.apple.com^
+@@||humb.apple.com^
+@@||static.ips.apple.com^
+@@||sq-device.apple.com^
+@@||tbsc.apple.com^
+@@||time-ios.apple.com^
+@@||time.apple.com^
+@@||time-macos.apple.com^
+
+# =============================================
+# Zertifikats-Validierung
+# =============================================
+@@||certs.apple.com^
+@@||crl.apple.com^
+@@||crl3.digicert.com^
+@@||crl4.digicert.com^
+@@||ocsp.apple.com^
+@@||ocsp.digicert.cn^
+@@||ocsp.digicert.com^
+@@||ocsp2.apple.com^
+@@||valid.apple.com^
+
+# =============================================
+# Software-Updates
+# =============================================
+@@||appldnld.apple.com^
+@@||configuration.apple.com^
+@@||gdmf.apple.com^
+@@||gg.apple.com^
+@@||ig.apple.com^
+@@||mesu.apple.com^
+@@||oscdn.apple.com^
+@@||osrecovery.apple.com^
+@@||skl.apple.com^
+@@||swcdn.apple.com^
+@@||swdist.apple.com^
+@@||swdownload.apple.com^
+@@||swscan.apple.com^
+@@||updates-http.cdn-apple.com^
+@@||updates.cdn-apple.com^
+@@||xp.apple.com^
+@@||gdmf-ados.apple.com^
+@@||gsra.apple.com^
+@@||wkms-public.apple.com^
+@@||fcs-keys-pub-prod.cdn-apple.com^
+
+# =============================================
+# App Store / Apps / Inhalte
+# =============================================
+@@||itunes.apple.com^
+@@||apps.apple.com^
+@@||mzstatic.com^
+@@||itunes.com^
+@@||ppq.apple.com^
+@@||api.apple-cloudkit.com^
+@@||appattest.apple.com^
+@@||apps-marketplace.apple.com^
+@@||token.safebrowsing.apple^
+@@||audiocontentdownload.apple.com^
+@@||devimages-cdn.apple.com^
+@@||download.developer.apple.com^
+@@||playgrounds-assets-cdn.apple.com^
+@@||playgrounds-cdn.apple.com^
+@@||sylvan.apple.com^
+@@||s.mzstatic.com^
+@@||play.itunes.apple.com^
+
+# =============================================
+# Apple Intelligence / Siri / Suche
+# =============================================
+@@||guzzoni.apple.com^
+@@||smoot.apple.com^
+@@||apple-relay.cloudflare.com^
+@@||apple-relay.fastly-edge.com^
+@@||cp4.cloudflare.com^
+@@||apple-relay.apple.com^
+
+# =============================================
+# DNS über HTTPS (Apple DoH)
+# =============================================
+@@||doh.dns.apple.com^
+
+# =============================================
+# Associated Domains (Universal Links)
+# =============================================
+@@||app-site-association.cdn-apple.com^
+@@||app-site-association.networking.apple^
+
+# =============================================
+# Geräte-Management (MDM)
+# =============================================
+@@||deviceenrollment.apple.com^
+@@||deviceservices-external.apple.com^
+@@||identity.apple.com^
+@@||iprofiles.apple.com^
+@@||mdmenrollment.apple.com^
+@@||vpp.itunes.apple.com^
+@@||axm-servicediscovery.apple.com^
+
+# =============================================
+# Content Caching
+# =============================================
+@@||lcdn-registration.apple.com^
+@@||suconfig.apple.com^
+@@||xp-cdn.apple.com^
+@@||lcdn-locator.apple.com^
+@@||serverstatus.apple.com^
+
+# =============================================
+# Carrier-Updates
+# =============================================
+@@||appldnld.apple.com.edgesuite.net^
+
+# =============================================
+# Tap to Pay / Diagnostics
+# =============================================
+@@||pos-device.apple.com^
+@@||iphonesubmissions.apple.com^
+@@||diagassets.apple.com^
+
+# =============================================
+# Beta-Updates / Feedback
+# =============================================
+@@||bpapi.apple.com^
+@@||cssubmissions.apple.com^
+@@||fba.apple.com^
+
+# =============================================
+# Apple Business / School Manager
+# =============================================
+@@||business.apple.com^
+@@||school.apple.com^
+@@||api.ent.apple.com^
+@@||api.edu.apple.com^
+@@||vertexsmb.com^
+@@||upload.appleschoolcontent.com^
+@@||api-business.apple.com^
+@@||api-school.apple.com^
+@@||ws.school.apple.com^
+@@||pg-bootstrap.itunes.apple.com^
+@@||cls-iosclient.itunes.apple.com^
+@@||cls-ingest.itunes.apple.com^
+
+# =============================================
+# ID Verifier
+# =============================================
+@@||smp-device-content.apple.com^
+@@||idv.cdn-apple.com^
+@@||idv-prod1.apple.com^
+
+# =============================================
+# Allgemeiner Fallback
+# =============================================
+@@||apple.com^
+@@||www.apple.com^
